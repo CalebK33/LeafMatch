@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="en-nz">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LeafMatch App</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>LeafMatch</title>
+    <script>
+        if (!navigator.userAgent.match(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i)) {
+          window.location.href = "desktop.html";
+        }
+    </script>
 </head>
 <body>
     <h>LeafMatch website</h>
