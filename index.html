@@ -1,6 +1,5 @@
 <!doctype html>
-
-<html>
+<html lang = "en-nz">
     <head>
         <script>
             // if (!navigator.userAgent.match(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i)) {
@@ -9,7 +8,7 @@
         </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Camera Integration</title>
+        <title>LeafMatch</title>
         <style>
             video {
             position: fixed;
@@ -21,24 +20,14 @@
             z-index: -1; 
         </style>
     </head>
-
     <body>
         <canvas id="canvas" style="display:none;"></canvas>
-
         <video id="video" autoplay></video>
-
-
-
-        <button onclick="changeValue()" id="button1">Click me</button>
-
-        <button onclick="takePhoto()" id="button2">Testphoto</button>
-
-
-
-        <img id="photo">
-
-        <script src="scripts.js"></script>
         
+        <button onclick="changeValue()" id="button1">Click me</button>
+        <button onclick="takePhoto()" id="button2">Testphoto</button>
+        <img id="photo">
+        
+        <script src="scripts.js"></script>
     </body>
-
 </html>
