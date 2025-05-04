@@ -46,7 +46,5 @@ function takePhoto() {
     video.style.display = 'none';
     button1.style.display = 'none';
     button2.style.display = 'none';
-
 }
-
 startCamera();
