@@ -3,7 +3,6 @@
 <html>
     <head>
         <script>
-            
             // if (!navigator.userAgent.match(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i)) {
             // window.location.href = "desktop.html";
             // }
@@ -13,12 +12,13 @@
         <title>Camera Integration</title>
         <style>
             video {
-            width: 100vw;
+            position: fixed;
+            top: 0;
             left: 0;
-            right: 0;
-            max-width: 6000px;
-            }
-
+            width: 100vw; 
+            height: 100vh; 
+            object-fit: cover;
+            z-index: -1; 
         </style>
     </head>
 
