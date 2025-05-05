@@ -28,6 +28,16 @@ function getValue() {
     return direction
 }
 
+function updateVideoClass() {
+                let videoElement = document.getElementById("myVideo");
+                let mode = getValue();
+                if (mode === "user") {
+                    videoElement.className = "inverted";
+                } else if (mode === "environment") {
+                    videoElement.className = "normal";
+                }
+            }
+
 function takePhoto() {
     const video = document.getElementById('video');
     const canvas = document.getElementById('canvas');
