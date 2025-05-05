@@ -11,6 +11,17 @@
         <title>LeafMatch</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+        <style>
+            .normal {
+                
+            }
+            .inverted {
+                transform: rotateY(180deg);
+                -webkit-transform:rotateY(180deg);
+                -moz-transform:rotateY(180deg); 
+            }
+        </style>
     </head>
     <body style="background-color:black;">
         <canvas id="canvas" style="display:none;"></canvas>
@@ -21,5 +32,16 @@
         <img id="photo" class="photo">
         
         <script src="scripts.js"></script>
+        <script>
+            function updateVideoClass() {
+                let videoElement = document.getElementById("myVideo");
+                let mode = getValue();
+                if (mode === "user") {
+                    videoElement.className = "inverted";
+                } else if (mode === "environment") {
+                    videoElement.className = "normal";
+                }
+            }
+        </script>
     </body>
 </html>
