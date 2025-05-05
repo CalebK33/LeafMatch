@@ -19,6 +19,30 @@ navigator.mediaDevices.getUserMedia({
 });
 }
 
+let uploadButton = document.getElementById("uploadButton");
+let imageUpload = document.getElementById("imageUpload");
+let canvas = document.getElementById("myCanvas");
+let ctx = canvas.getContext("2d");
+
+canvas.width = 400;
+canvas.height = 300;
+
+uploadButton.addEventListener("click", () => {
+    imageUpload.click();
+});
+
+imageUpload.addEventListener("change", (event) => {
+    let file = event.target.files[0];
+    if (file) {
+        let img = new Image();
+        img.src = URL.createObjectURL(file);
+        img.onload = () => {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        };
+    }
+});
+
 function changeValue() {
 direction = (direction === 'environment') ? 'user' : 'environment';
 startCamera();
