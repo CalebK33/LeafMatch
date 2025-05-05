@@ -24,6 +24,10 @@ direction = (direction === 'environment') ? 'user' : 'environment';
 startCamera();
 }
 
+function getValue() {
+    return direction
+}
+
 function takePhoto() {
     const video = document.getElementById('video');
     const canvas = document.getElementById('canvas');
