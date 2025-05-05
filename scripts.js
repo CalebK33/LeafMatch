@@ -22,6 +22,7 @@ navigator.mediaDevices.getUserMedia({
 function changeValue() {
 direction = (direction === 'environment') ? 'user' : 'environment';
 startCamera();
+updateVideoClass();
 }
 
 function getValue() {
