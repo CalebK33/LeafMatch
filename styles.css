@@ -26,4 +26,5 @@ video, .photo {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    bottom: 10%
 }
