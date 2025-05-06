@@ -21,7 +21,7 @@ video, .photo {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    bottom: 50%;
+    bottom: 30%;
 }
 
 .switchcameraimage {
@@ -31,5 +31,5 @@ video, .photo {
     display: block;
     margin-left: 70%;
     margin-right: 30%;
-    bottom: 40%;
+    bottom: 20%;
 }
