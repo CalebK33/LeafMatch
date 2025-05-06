@@ -34,8 +34,6 @@ function takePhoto() {
     const photo = document.getElementById('photo');
     const button1 = document.getElementById('button1');
     const button2 = document.getElementById('button2');
-    const birb = document.getElementById('birb');
-    const hide = document.getElementById('hide');
 
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
@@ -52,7 +50,6 @@ function takePhoto() {
     video.style.display = 'none';
     button1.style.display = 'none';
     button2.style.display = 'none';
-    birb.style.display = 'none';
-    hide.style.display = 'none';
+    document.getElementById('hide').style.visibility = "hidden";
 }
 startCamera();
