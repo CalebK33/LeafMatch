@@ -20,7 +20,10 @@ video, .photo {
 }
         
 .takephotoimage {
-    width: 10%;
-    height: 10%:
+    width: 25%;
+    height: 25%:
     position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
