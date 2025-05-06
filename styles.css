@@ -8,14 +8,6 @@ video, .photo {
     z-index: -1; 
 }
 
-video, .photo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw; 
-    height: 100vh; 
-}
-
 .button1 {
     position: relative;
     bottom: 500px;
