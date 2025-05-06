@@ -13,4 +13,9 @@ video, .photo {
     bottom: 500px;
 }
         
-
+.photo {
+    position: absolue;
+    bottom: 20px;
+    left: 50px;
+    transform: translateX(-50%);
+}
