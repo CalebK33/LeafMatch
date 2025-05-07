@@ -35,7 +35,7 @@ async function startCamera() {
         video.style.transform = shouldFlip ? 'scaleX(-1)' : 'scaleX(1)';
         video.style.display = 'block';
 
-        const switchButton = document.getElementById('switchButton');
+        const switchButton = document.getElementById('button1');
         if (switchButton) {
             switchButton.style.display = canSwitchCamera ? 'inline-block' : 'none';
         }
@@ -56,12 +56,17 @@ function getValue() {
     return direction;
 }
 
+function upload() {
+    
+}
+
 function takePhoto() {
     const video = document.getElementById('video');
     const canvas = document.getElementById('canvas');
     const photo = document.getElementById('photo');
     const button1 = document.getElementById('button1');
     const button2 = document.getElementById('birb');
+    const button3 = document.getElementById('uploadbutton');
 
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
@@ -85,6 +90,7 @@ function takePhoto() {
     video.style.display = 'none';
     button1.style.display = 'none';
     button2.style.display = 'none';
+    button3.style.display = 'none';
 }
 
 startCamera();
