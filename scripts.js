@@ -1,6 +1,6 @@
 let direction = 'environment';
 let currentStream = null;
-let canSwitchCamera = true;
+let onlyHasUserCamera = false;
 
 async function detectCameras() {
     const devices = await navigator.mediaDevices.enumerateDevices();
@@ -8,9 +8,9 @@ async function detectCameras() {
 
     if (videoInputs.length === 1) {
         direction = 'user';
-        canSwitchCamera = false;
+        onlyHasUserCamera = true;
     } else {
-        canSwitchCamera = true;
+        onlyHasUserCamera = false;
     }
 }
 
@@ -30,7 +30,7 @@ async function startCamera() {
         const video = document.getElementById('video');
         video.srcObject = stream;
 
-        const shouldFlip = direction === 'user';
+        const shouldFlip = direction === 'user' || onlyHasUserCamera;
         video.style.transform = shouldFlip ? 'scaleX(-1)' : 'scaleX(1)';
         video.style.display = 'block';
     })
@@ -40,7 +40,6 @@ async function startCamera() {
 }
 
 function changeValue() {
-    if (!canSwitchCamera) return;
     direction = (direction === 'environment') ? 'user' : 'environment';
     startCamera();
 }
@@ -49,24 +48,20 @@ function getValue() {
     return direction;
 }
 
-function upload() {
-    
-}
-
 function takePhoto() {
     const video = document.getElementById('video');
     const canvas = document.getElementById('canvas');
     const photo = document.getElementById('photo');
     const button1 = document.getElementById('button1');
     const button2 = document.getElementById('birb');
-    const button3 = document.getElementById('uploadbutton');
+    const button2 = document.getElementById('uploadbutton');
 
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
 
     const context = canvas.getContext('2d');
 
-    const shouldFlip = direction === 'user';
+    const shouldFlip = direction === 'user' || onlyHasUserCamera;
     if (shouldFlip) {
         context.translate(canvas.width, 0);
         context.scale(-1, 1);
