@@ -10,7 +10,6 @@ async function detectCameras() {
         direction = 'user';
         canSwitchCamera = false;
     } else {
-        direction = 'environment';
         canSwitchCamera = true;
     }
 }
@@ -42,7 +41,6 @@ async function startCamera() {
 
 function changeValue() {
     if (!canSwitchCamera) return;
-
     direction = (direction === 'environment') ? 'user' : 'environment';
     startCamera();
 }
