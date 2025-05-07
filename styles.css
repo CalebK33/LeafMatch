@@ -20,17 +20,18 @@ video, .photo {
     width: auto;
     height: auto;
     position: fixed;
-    bottom: 20;
+    bottom: 80%;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .switchcameraimage {
-    width: 20%;
-    height: 20%;
+    max-width: 20%;
+    max-height: 20%;
+    width: auto;
+    height: auto;
     position: fixed;
-    display: block;
-    margin-left: 70%;
-    margin-right: 30%;
-    bottom: 80%;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
 }
