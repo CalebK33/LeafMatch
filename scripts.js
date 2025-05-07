@@ -1,11 +1,26 @@
 let direction = 'environment';
 let currentStream = null;
+let onlyHasUserCamera = false;
 
-function startCamera() {
+async function detectCameras() {
+    const devices = await navigator.mediaDevices.enumerateDevices();
+    const videoInputs = devices.filter(device => device.kind === 'videoinput');
+
+    if (videoInputs.length === 1) {
+        direction = 'user';
+        onlyHasUserCamera = true;
+    } else {
+        onlyHasUserCamera = false;
+    }
+}
+
+async function startCamera() {
     if (currentStream) {
         currentStream.getTracks().forEach(track => track.stop());
         currentStream = null;
     }
+
+    await detectCameras();
 
     navigator.mediaDevices.getUserMedia({
         video: { facingMode: direction }
@@ -15,12 +30,8 @@ function startCamera() {
         const video = document.getElementById('video');
         video.srcObject = stream;
 
-        if (direction === 'user') {
-            video.style.transform = 'scaleX(-1)';
-        } else {
-            video.style.transform = 'scaleX(1)';
-        }
-
+        const shouldFlip = direction === 'user' || onlyHasUserCamera;
+        video.style.transform = shouldFlip ? 'scaleX(-1)' : 'scaleX(1)';
         video.style.display = 'block';
     })
     .catch(err => {
@@ -49,7 +60,8 @@ function takePhoto() {
 
     const context = canvas.getContext('2d');
 
-    if (direction === 'user') {
+    const shouldFlip = direction === 'user' || onlyHasUserCamera;
+    if (shouldFlip) {
         context.translate(canvas.width, 0);
         context.scale(-1, 1);
     }
