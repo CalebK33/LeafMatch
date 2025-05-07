@@ -5,27 +5,36 @@ function startCamera() {
     if (currentStream) {
         currentStream.getTracks().forEach(track => track.stop());
         currentStream = null;
-}
+    }
 
-navigator.mediaDevices.getUserMedia({
-    video: { facingMode: direction }
-})
-.then(stream => {
-    currentStream = stream; 
-    document.getElementById('video').srcObject = stream;
-})
-.catch(err => {
-    console.error("Camera error:", err);
-});
+    navigator.mediaDevices.getUserMedia({
+        video: { facingMode: direction }
+    })
+    .then(stream => {
+        currentStream = stream;
+        const video = document.getElementById('video');
+        video.srcObject = stream;
+
+        if (direction === 'user') {
+            video.style.transform = 'scaleX(-1)';
+        } else {
+            video.style.transform = 'scaleX(1)';
+        }
+
+        video.style.display = 'block';
+    })
+    .catch(err => {
+        console.error("Camera error:", err);
+    });
 }
 
 function changeValue() {
-direction = (direction === 'environment') ? 'user' : 'environment';
-startCamera();
+    direction = (direction === 'environment') ? 'user' : 'environment';
+    startCamera();
 }
 
 function getValue() {
-    return direction
+    return direction;
 }
 
 function takePhoto() {
@@ -34,21 +43,28 @@ function takePhoto() {
     const photo = document.getElementById('photo');
     const button1 = document.getElementById('button1');
     const button2 = document.getElementById('birb');
+
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
 
     const context = canvas.getContext('2d');
+
+    if (direction === 'user') {
+        context.translate(canvas.width, 0);
+        context.scale(-1, 1);
+    }
+
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
     const imageDataURL = canvas.toDataURL('image/png');
-
     photo.src = imageDataURL;
+
     currentStream.getTracks().forEach(track => track.stop());
     currentStream = null;
     video.srcObject = null;
     video.style.display = 'none';
     button1.style.display = 'none';
     button2.style.display = 'none';
-   
 }
+
 startCamera();
