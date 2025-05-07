@@ -54,7 +54,7 @@ function takePhoto() {
     const photo = document.getElementById('photo');
     const button1 = document.getElementById('button1');
     const button2 = document.getElementById('birb');
-    const button2 = document.getElementById('uploadbutton');
+    const button3 = document.getElementById('uploadbutton');
 
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
