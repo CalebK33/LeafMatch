@@ -34,11 +34,6 @@ async function startCamera() {
         const shouldFlip = direction === 'user';
         video.style.transform = shouldFlip ? 'scaleX(-1)' : 'scaleX(1)';
         video.style.display = 'block';
-
-        const switchButton = document.getElementById('button1');
-        if (switchButton) {
-            switchButton.style.display = canSwitchCamera ? 'inline-block' : 'none';
-        }
     })
     .catch(err => {
         console.error("Camera error:", err);
