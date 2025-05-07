@@ -49,7 +49,38 @@ function getValue() {
 }
 
 function upload() {
-    
+    const fileInput = document.getElementById('fileInput'); 
+    const canvas = document.getElementById('canvas');
+    const photo = document.getElementById('photo');
+    const button1 = document.getElementById('button1');
+    const button2 = document.getElementById('birb');
+    const button3 = document.getElementById('uploadbutton');
+
+    if (fileInput.files.length > 0) {
+        const file = fileInput.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function(event) {
+            const img = new Image();
+            img.src = event.target.result;
+
+            img.onload = function() {
+                canvas.width = img.width;
+                canvas.height = img.height;
+
+                const context = canvas.getContext('2d');
+                context.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                photo.src = canvas.toDataURL('image/png');
+
+                button1.style.display = 'none';
+                button2.style.display = 'none';
+                button3.style.display = 'none';
+            };
+        };
+
+        reader.readAsDataURL(file);
+    }
 }
 
 function takePhoto() {
