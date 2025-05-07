@@ -15,13 +15,14 @@ video, .photo {
 }
         
 .takephotoimage {
-    width: 25%;
-    height: 25%;
+    max-width: 25%;
+    max-height: 25%;
+    width: auto;
+    height: auto;
     position: fixed;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    bottom: 85%;
+    bottom: 20;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .switchcameraimage {
