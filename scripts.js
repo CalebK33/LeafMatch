@@ -1,6 +1,6 @@
 let direction = 'environment';
 let currentStream = null;
-let onlyHasUserCamera = false;
+let canSwitchCamera = true;
 
 async function detectCameras() {
     const devices = await navigator.mediaDevices.enumerateDevices();
@@ -8,9 +8,10 @@ async function detectCameras() {
 
     if (videoInputs.length === 1) {
         direction = 'user';
-        onlyHasUserCamera = true;
+        canSwitchCamera = false;
     } else {
-        onlyHasUserCamera = false;
+        direction = 'environment';
+        canSwitchCamera = true;
     }
 }
 
@@ -30,9 +31,14 @@ async function startCamera() {
         const video = document.getElementById('video');
         video.srcObject = stream;
 
-        const shouldFlip = direction === 'user' || onlyHasUserCamera;
+        const shouldFlip = direction === 'user';
         video.style.transform = shouldFlip ? 'scaleX(-1)' : 'scaleX(1)';
         video.style.display = 'block';
+
+        const switchButton = document.getElementById('switchButton');
+        if (switchButton) {
+            switchButton.style.display = canSwitchCamera ? 'inline-block' : 'none';
+        }
     })
     .catch(err => {
         console.error("Camera error:", err);
@@ -40,6 +46,8 @@ async function startCamera() {
 }
 
 function changeValue() {
+    if (!canSwitchCamera) return;
+
     direction = (direction === 'environment') ? 'user' : 'environment';
     startCamera();
 }
@@ -60,7 +68,7 @@ function takePhoto() {
 
     const context = canvas.getContext('2d');
 
-    const shouldFlip = direction === 'user' || onlyHasUserCamera;
+    const shouldFlip = direction === 'user';
     if (shouldFlip) {
         context.translate(canvas.width, 0);
         context.scale(-1, 1);
