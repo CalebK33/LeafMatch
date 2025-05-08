@@ -92,7 +92,8 @@ function takePhoto() {
     const button3 = document.getElementById('uploadbutton');
     const flash = document.getElementById('flash');
 
-        flash.style.opacity = 1;
+    flash.style.opacity = 1;
+    
     setTimeout(() => {
         flash.style.opacity = 0;
     }, 100);
