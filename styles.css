@@ -69,5 +69,5 @@ video, canvas, img.photo {
     opacity: 0;
     pointer-events: none; /* So it doesn't block interactions */
     z-index: 1000;
-    transition: opacity 5s ease-out;
+    transition: opacity 0.7s ease-out;
 }
