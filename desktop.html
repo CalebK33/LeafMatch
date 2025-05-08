@@ -6,12 +6,24 @@
             window.location.href = "index.html";
         }
     </script>
-</head>
-<body>
-    <canvas id="desktop-canvas" style="display:none;"></canvas>
-    <video id="desktop-video" autoplay playsinline muted></video>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LeafMatch</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/x-icon" href="images/LeafMatchFavicon.ico">
 
-    <img src="images/birb.jpeg" alt="birb" onclick="takePhoto()" class="takephotoimage" id="birb">
-    <img id="photo" class="photo">
-</body>
+        <style>
+        </style>
+    </head>
+    <body>
+        <script src="scripts.js"></script>
+        <canvas id="canvas" style="display:none;"></canvas>
+        <video id="video" autoplay playsinline muted></video>
+        
+        <img src="images/switchcamera.png" onclick="changeValue()" id="button1" class="switchcameraimage" alt="Switch camera">
+        <img src="images/takepicture.png" alt="Take photo" onclick="takePhoto()" class="takephotoimage" id="birb">
+        <img src="images/switchcamera.png" alt="Upload from gallery" onclick="document.getElementById('fileInput').click()" class="uploadimage" id="uploadbutton">
+        <input type="file" id="fileInput" accept="image/*" style="display:none;" onchange="upload()">
+        <img id="photo" class="photo">
+    </body>
 </html>
