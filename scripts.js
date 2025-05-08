@@ -95,7 +95,7 @@ function takePhoto() {
         flash.style.opacity = 1;
     setTimeout(() => {
         flash.style.opacity = 0;
-    }, 100);
+    }, 300);
 
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
