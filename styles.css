@@ -25,7 +25,6 @@ video, .photo {
     bottom: 6%;
     left: 50%;
     transform: translateX(-50%);
-    cursor: pointer;
 }
 
 
@@ -38,7 +37,6 @@ video, .photo {
     bottom: 6%;
     left: 70%;
     transform: translateX(-30%);
-    cursor: pointer;
 }
 
 
@@ -51,7 +49,6 @@ video, .photo {
     bottom: 6%;
     left: 30%;
     transform: translateX(-70%);
-    cursor: pointer;
 }
 
 * {
@@ -73,4 +70,10 @@ video, canvas, img.photo {
     pointer-events: none; /* So it doesn't block interactions */
     z-index: 1000;
     transition: opacity 0.1s ease-out;
+}
+
+.takephotoimage:hover,
+.switchcameraimage:hover,
+.uploadimage:hover {
+    cursor: pointer;
 }
