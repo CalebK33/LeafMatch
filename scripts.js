@@ -90,6 +90,12 @@ function takePhoto() {
     const button1 = document.getElementById('button1');
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
+    const flash = document.getElementById('flash');
+
+        flash.style.opacity = 1;
+    setTimeout(() => {
+        flash.style.opacity = 0;
+    }, 100);
 
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
