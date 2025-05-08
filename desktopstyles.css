@@ -13,9 +13,7 @@ video, .photo {
     object-fit: cover;
     z-index: -1; 
     border: none;
-    left: 10%;
-    transform: translateX(-100%);
-    zoom: 1.5;
+    left: 25%;
 }
         
 .takephotoimage {
