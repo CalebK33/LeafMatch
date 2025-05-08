@@ -22,7 +22,7 @@ video, .photo {
     width: auto;
     height: auto;
     position: fixed;
-    bottom: 8%;
+    bottom: 6%;
     left: 50%;
     transform: translateX(-50%);
 }
