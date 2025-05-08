@@ -75,5 +75,5 @@ video, canvas, img.photo {
 .takephotoimage:hover,
 .switchcameraimage:hover,
 .uploadimage:hover {
-    cursor: help;
+    cursor: pointer;
 }
