@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  overflow: hidden;
+}
+
+video, .photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    object-fit: cover;
+    z-index: -1; 
+    border: none;
+}
+        
+.takephotoimage {
+    max-width: 25%;
+    max-height: 25%;
+    width: auto;
+    height: auto;
+    position: fixed;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.switchcameraimage {
+    max-width: 20%;
+    max-height: 20%;
+    width: auto;
+    height: auto;
+    position: fixed;
+    bottom: 6%;
+    left: 70%;
+    transform: translateX(-30%);
+}
+
+
+.uploadimage {
+    max-width: 20%;
+    max-height: 20%;
+    width: auto;
+    height: auto;
+    position: fixed;
+    bottom: 6%;
+    left: 30%;
+    transform: translateX(-70%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+video, canvas, img.photo {
+  border: none;
+}
