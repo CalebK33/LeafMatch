@@ -13,7 +13,7 @@ video, .photo {
     object-fit: cover;
     z-index: -1; 
     border: none;
-    left: 25%;
+    left: 10000%;
     transform: translateX(-100%);
 }
         
