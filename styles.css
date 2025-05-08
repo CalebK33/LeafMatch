@@ -27,6 +27,7 @@ video, .photo {
     transform: translateX(-50%);
 }
 
+
 .switchcameraimage {
     max-width: 20%;
     max-height: 20%;
@@ -48,4 +49,12 @@ video, .photo {
     bottom: 6%;
     left: 30%;
     transform: translateX(-70%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+video, canvas, img.photo {
+  border: none;
 }
