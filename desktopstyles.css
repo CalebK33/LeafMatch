@@ -14,7 +14,7 @@ video, .photo {
     z-index: -1; 
     border: none;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-100%);
 }
         
 .takephotoimage {
