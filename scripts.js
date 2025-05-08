@@ -95,6 +95,7 @@ function takePhoto() {
     flash.style.opacity = 1;
     
     setTimeout(() => {
+        flash.style.transition = "opacity 1s ease-out";
         flash.style.opacity = 0;
     }, 100);
 
