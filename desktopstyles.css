@@ -15,6 +15,7 @@ video, .photo {
     border: none;
     left: 10%;
     transform: translateX(-100%);
+    zoom: 1.5;
 }
         
 .takephotoimage {
