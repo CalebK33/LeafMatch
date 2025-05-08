@@ -38,6 +38,7 @@ video, .photo {
     bottom: 6%;
     left: 70%;
     transform: translateX(-30%);
+    cursor: pointer;
 }
 
 
@@ -50,6 +51,7 @@ video, .photo {
     bottom: 6%;
     left: 30%;
     transform: translateX(-70%);
+    cursor: pointer;
 }
 
 * {
