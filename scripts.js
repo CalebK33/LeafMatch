@@ -112,19 +112,30 @@ function takePhoto() {
     const button1 = document.getElementById('button1');
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
-    const flashDiv = document.querySelector('.flash');
+    const flash   = document.getElementById('flash');
 
+    // 1. Turn off any transition so the flash jumps instantly:
+    flash.style.transition = 'none';
+    flash.style.opacity    = 1;
+
+    // 2. Force a reflow so the browser "commits" the opacity=1 state
+    //    before we re-enable the fade-out transition.
+    //    (Just reading offsetWidth is enough.)
+    void flash.offsetWidth;
+
+    // 3. Re-enable the fade-out transition and start fading:
+    flash.style.transition = 'opacity 1s ease-out';
+    flash.style.opacity    = 0;
+
+    // …and the rest of your photo code:
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
-
     const context = canvas.getContext('2d');
-
     const shouldFlip = direction === 'user' || onlyHasUserCamera;
     if (shouldFlip) {
         context.translate(canvas.width, 0);
         context.scale(-1, 1);
     }
-
     context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
     const imageDataURL = canvas.toDataURL('image/png');
@@ -138,6 +149,7 @@ function takePhoto() {
     button2.style.display = 'none';
     button3.style.display = 'none';
 }
+
 
 function flash() {
       flashDiv.style.opacity = 1;
