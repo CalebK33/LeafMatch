@@ -139,13 +139,6 @@ function takePhoto() {
     button3.style.display = 'none';
 }
 
-function flash() {
-      flashDiv.style.opacity = 1;
-      setTimeout(() => {
-        flashDiv.style.opacity = 0;
-      }, 300);
-}
-
 document.addEventListener('DOMContentLoaded', () => {
     startCamera();
 });
