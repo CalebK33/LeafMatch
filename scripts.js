@@ -146,4 +146,6 @@ function takePhoto() {
     button3.style.display = 'none';
 }
 
-startCamera();
+document.addEventListener('DOMContentLoaded', () => {
+    startCamera();
+});
