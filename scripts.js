@@ -21,6 +21,7 @@ function closeFullscreen() {
   } else if (document.msExitFullscreen) { /* IE11 */
     document.msExitFullscreen();
   }
+}
 
 
 async function detectCameras() {
