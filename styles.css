@@ -67,9 +67,7 @@ video, canvas, img.photo {
     height: 100vh;
     background-color: white;
     opacity: 0;
-    pointer-events: none; /* So it doesn't block interactions */
     z-index: 1000;
-    transition: opacity 0.1s ease-out;
 }
 
 .takephotoimage:hover,
