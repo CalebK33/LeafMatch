@@ -69,9 +69,3 @@ video, canvas, img.photo {
   /* Default to having a transition, but we’ll disable it in JS when needed */
   transition: opacity 1s ease-out;
 }
-
-.takephotoimage:hover,
-.switchcameraimage:hover,
-.uploadimage:hover {
-    cursor: pointer;
-}
