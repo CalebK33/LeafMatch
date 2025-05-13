@@ -13,6 +13,14 @@ function openFullscreen() {
     elem.msRequestFullscreen();
   }
 }
+function closeFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.webkitExitFullscreen) { /* Safari */
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) { /* IE11 */
+    document.msExitFullscreen();
+  }
 
 
 async function detectCameras() {
