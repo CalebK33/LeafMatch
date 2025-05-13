@@ -58,14 +58,3 @@ video, .photo {
 video, canvas, img.photo {
   border: none;
 }
-
-.flash {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background-color: white;
-  opacity: 0;
-  z-index: 1000;
-  /* Default to having a transition, but we’ll disable it in JS when needed */
-  transition: opacity 1s ease-out;
-}
