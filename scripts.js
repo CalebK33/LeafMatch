@@ -106,6 +106,7 @@ function upload() {
 }
 
 function takePhoto() {
+    flash()
     const video = document.getElementById('video');
     const canvas = document.getElementById('canvas');
     const photo = document.getElementById('photo');
@@ -140,7 +141,6 @@ function takePhoto() {
 }
 
 function flash() {
-  flash()
   const flashDiv = document.createElement('div');
   flashDiv.style.cssText = `
     position: fixed;
