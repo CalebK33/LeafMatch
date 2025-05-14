@@ -106,7 +106,6 @@ function upload() {
 }
 
 function takePhoto() {
-    flash()
     const video = document.getElementById('video');
     const canvas = document.getElementById('canvas');
     const photo = document.getElementById('photo');
