@@ -111,7 +111,6 @@ function takePhoto() {
     const photo = document.getElementById('photo');
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
-    const flashDiv = document.querySelector('.flash');
 
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
