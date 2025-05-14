@@ -144,7 +144,7 @@ function flash() {
   flashDiv.style.cssText = `
     position: fixed;
     top: 0;
-    left: 0;
+    left: 25%;
     width: 50vw;
     height: 100vh;
     background-color: white;
