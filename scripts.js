@@ -140,6 +140,7 @@ function takePhoto() {
 }
 
 function flash() {
+  flash()
   const flashDiv = document.createElement('div');
   flashDiv.style.cssText = `
     position: fixed;
@@ -163,7 +164,6 @@ function flash() {
   }, 100);
 }
 
-document.addEventListener('click', flash);
 
 
 
