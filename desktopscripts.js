@@ -109,7 +109,6 @@ function takePhoto() {
     const video = document.getElementById('video');
     const canvas = document.getElementById('canvas');
     const photo = document.getElementById('photo');
-    const button1 = document.getElementById('button1');
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
     const flashDiv = document.querySelector('.flash');
