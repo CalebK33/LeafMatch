@@ -141,16 +141,27 @@ function takePhoto() {
 }
 
 function flash() {
-  const flashDiv = document.querySelector('.flash');
-  flashDiv.style.display = 'block';
-  flashDiv.style.opacity = '1';
+  const flashDiv = document.createElement('div');
+  flashDiv.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 1;
+    z-index: 9999;
+    pointer-events: none;
+    transition: opacity 0.5s;
+  `;
+  document.body.appendChild(flashDiv);
 
   setTimeout(() => {
-    flashDiv.style.opacity = '0';
+    flashDiv.style.opacity = 0;
     setTimeout(() => {
-      flashDiv.style.display = 'none';
-    }, 300); // Duration of fade-out
-  }, 100); // Duration flash is fully visible
+      document.body.removeChild(flashDiv);
+    }, 500);
+  }, 100);
 }
 
 document.addEventListener('click', flash);
