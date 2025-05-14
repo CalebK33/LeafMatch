@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: rgb(200, 255, 200);
   overflow: hidden;
 }
 
@@ -12,7 +12,7 @@ video, .photo {
     height: 100vh; 
     object-fit: cover;
     z-index: -1; 
-    border: 20px black;
+    border: 20px white;
     left: 25%;
 }
         
