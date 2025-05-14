@@ -12,7 +12,7 @@ video, .photo {
     height: 100vh; 
     object-fit: cover;
     z-index: -1; 
-    border: none;
+    border: 20px black;
     left: 25%;
 }
         
