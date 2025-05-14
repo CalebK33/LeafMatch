@@ -106,6 +106,7 @@ function upload() {
 }
 
 function takePhoto() {
+    flash()
     const video = document.getElementById('video');
     const canvas = document.getElementById('canvas');
     const photo = document.getElementById('photo');
@@ -138,6 +139,23 @@ function takePhoto() {
     button2.style.display = 'none';
     button3.style.display = 'none';
 }
+
+function flash() {
+  const flashDiv = document.querySelector('.flash');
+  flashDiv.style.display = 'block';
+  flashDiv.style.opacity = '1';
+
+  setTimeout(() => {
+    flashDiv.style.opacity = '0';
+    setTimeout(() => {
+      flashDiv.style.display = 'none';
+    }, 300); // Duration of fade-out
+  }, 100); // Duration flash is fully visible
+}
+
+document.addEventListener('click', flash);
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
     startCamera();
