@@ -6,7 +6,7 @@ var elem = document.documentElement;
 
 function dofunny() {
     
-  if fullscreened === 1 {
+  if (fullscreened === 1) {
     closeFullscreen()
     fullscreened = 0;
   }
