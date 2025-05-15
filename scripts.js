@@ -1,7 +1,20 @@
 let direction = 'environment';
+let fullscreened = 0;
 let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
+
+function dofunny() {
+    
+  if fullscreened === 1 {
+    closeFullscreen()
+    fullscreened = 0;
+  }
+  else {
+    openFullscreen()
+    fullscreened = 1;
+  }
+}
 
 
 function openFullscreen() {
