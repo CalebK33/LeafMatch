@@ -74,7 +74,6 @@ function upload() {
     const fileInput = document.getElementById('fileInput'); 
     const canvas = document.getElementById('canvas');
     const photo = document.getElementById('photo');
-    const button1 = document.getElementById('button1');
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
 
@@ -95,7 +94,6 @@ function upload() {
 
                 photo.src = canvas.toDataURL('image/png');
 
-                button1.style.display = 'none';
                 button2.style.display = 'none';
                 button3.style.display = 'none';
             };
