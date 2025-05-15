@@ -85,13 +85,16 @@ function getValue() {
 }
 
 function upload() {
+    fullscreened = 0;
     const fileInput = document.getElementById('fileInput'); 
     const canvas = document.getElementById('canvas');
     const photo = document.getElementById('photo');
     const button1 = document.getElementById('button1');
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
-
+  
+    document.getElementById("fullscreen").src = "images/fullscreen.png";
+  
     if (fileInput.files.length > 0) {
         const file = fileInput.files[0];
         const reader = new FileReader();
