@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(200, 255, 200);
+  background-color: rgb(44, 217, 134);
   overflow: hidden;
 }
 
@@ -12,7 +12,8 @@ video, .photo {
     height: 100vh; 
     object-fit: cover;
     z-index: -1; 
-    border: 20px white;
+    border: 50px rdb(14, 71, 57);
+    border-radius: 10x;
     left: 25%;
 }
         
@@ -23,8 +24,8 @@ video, .photo {
     height: auto;
     position: fixed;
     bottom: 5%;
-    left: 57%;
-    transform: translateX(-57%);
+    left: 58%;
+    transform: translateX(-58%);
 }
 
 .uploadimage {
@@ -34,8 +35,8 @@ video, .photo {
     height: auto;
     position: fixed;
     bottom: 5%;
-    left: 42%;
-    transform: translateX(-42%);
+    left: 41%;
+    transform: translateX(-41%);
 }
 
 * {
