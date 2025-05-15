@@ -20,7 +20,10 @@ video, .photo {
     max-width: 20%;
     max-height: 20%;
     position: fixed;
-    right: 25%;
+    width: auto;
+    height: auto;
+    right: 5%;
+    transform: translateX(-95%);
     top: 5%;
     
 }
@@ -29,7 +32,10 @@ video, .photo {
     max-width: 20%;
     max-height: 20%;
     position: fixed;
+    width: auto;
+    height: auto;
     left: 5%;
+    transform: translateX(-5%);
     top: 5%;
     
 }
