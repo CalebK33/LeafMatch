@@ -87,10 +87,14 @@ function getValue() {
 function otherfunny() {
   if (document.fullscreenElement) {
     alert("fullscreened");
-  } else {
+  } 
+  else {
     alert("notfullscreened");
   }
+  setInterval(otherfunny, 1000);
 }
+
+otherfunny();
 
 function upload() {
     const fileInput = document.getElementById('fileInput'); 
