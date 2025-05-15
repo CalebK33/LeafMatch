@@ -187,5 +187,5 @@ function flash() {
 
 document.addEventListener('DOMContentLoaded', () => {
     startCamera();
-    setInterval(otherfunny, 1000);
+    setInterval(otherfunny, 16);
 });
