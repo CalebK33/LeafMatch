@@ -1,11 +1,10 @@
 let direction = 'environment';
-let fullscreened = 0;
 let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
 function dofunny() {
-  if (fullscreened === 1) {
+  if (document.fullscreenElement) {
     closeFullscreen()
   }
   else {
@@ -83,12 +82,10 @@ function getValue() {
 function otherfunny() {
   if (document.fullscreenElement) {
     alert("a")
-    fullscreened = 1;
     document.getElementById("fullscreen").src = "images/exitfullscreen.png";
   } 
   else {
     document.getElementById("fullscreen").src = "images/fullscreen.png";
-    fullscreened = 0;
   }
 
 }
