@@ -94,7 +94,10 @@ function upload() {
                 context.drawImage(img, 0, 0, canvas.width, canvas.height);
 
                 photo.src = canvas.toDataURL('image/png');
-
+                currentStream.getTracks().forEach(track => track.stop());
+                currentStream = null;
+                video.srcObject = null;
+                video.style.display = 'none';
                 button1.style.display = 'none';
                 button2.style.display = 'none';
                 button3.style.display = 'none';
