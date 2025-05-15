@@ -20,8 +20,8 @@ video, .photo {
     max-width: 20%;
     max-height: 20%;
     position: fixed;
-    left: 80%;
-    top: 20%;
+    right: 25%;
+    top: 5%;
     
 }
 
