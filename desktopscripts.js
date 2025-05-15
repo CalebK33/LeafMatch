@@ -71,6 +71,7 @@ function getValue() {
 }
 
 function upload() {
+    const video = document.getElementById('video');
     const fileInput = document.getElementById('fileInput'); 
     const canvas = document.getElementById('canvas');
     const photo = document.getElementById('photo');
@@ -94,6 +95,10 @@ function upload() {
 
                 photo.src = canvas.toDataURL('image/png');
 
+                currentStream.getTracks().forEach(track => track.stop());
+                currentStream = null;
+                video.srcObject = null;
+                video.style.display = 'none';
                 button2.style.display = 'none';
                 button3.style.display = 'none';
             };
