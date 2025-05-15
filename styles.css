@@ -18,10 +18,10 @@ video, .photo {
 
 .fullscreen {
     max-width: 20%;
-    max-height: 20px;
+    max-height: 20%;
     position: fixed;
-    left: 75%;
-    top: 5%;
+    left: 90%;
+    top: 10%;
     
 }
 
