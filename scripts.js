@@ -11,6 +11,7 @@ function dofunny() {
     fullscreened = 0;
   }
   else {
+    document.getElementById("fullscreen").src = "images/exitfullscreen.png";
     openFullscreen()
     fullscreened = 1;
   }
