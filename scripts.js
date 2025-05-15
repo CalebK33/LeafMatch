@@ -6,14 +6,10 @@ var elem = document.documentElement;
 
 function dofunny() {
   if (fullscreened === 1) {
-    document.getElementById("fullscreen").src = "images/fullscreen.png";
     closeFullscreen()
-    fullscreened = 0;
   }
   else {
-    document.getElementById("fullscreen").src = "images/exitfullscreen.png";
     openFullscreen()
-    fullscreened = 1;
   }
 }
 
@@ -86,10 +82,12 @@ function getValue() {
 
 function otherfunny() {
   if (document.fullscreenElement) {
-    alert("fullscreened");
+    fullscreened = 1;
+    document.getElementById("fullscreen").src = "images/exitfullscreen.png";
   } 
   else {
-    alert("notfullscreened");
+    document.getElementById("fullscreen").src = "images/fullscreen.png";
+    fullscreened = 0;
   }
   setInterval(otherfunny, 1000);
 }
