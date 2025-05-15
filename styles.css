@@ -15,7 +15,16 @@ video, .photo {
     z-index: -1; 
     border: 100px solid black;
 }
-        
+
+.fullscreen {
+    max-width: 20%;
+    max-height: 20px;
+    position: fixed;
+    left: 75%;
+    top: 5%;
+    
+}
+
 .takephotoimage {
     max-width: 25%;
     max-height: 25%;
