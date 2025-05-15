@@ -93,9 +93,6 @@ function otherfunny() {
 
 }
 
-setInterval(otherfunny, 1000);
-otherfunny();
-
 function upload() {
     const fileInput = document.getElementById('fileInput'); 
     const canvas = document.getElementById('canvas');
@@ -194,4 +191,5 @@ function flash() {
 
 document.addEventListener('DOMContentLoaded', () => {
     startCamera();
+    setInterval(otherfunny, 1000);
 });
