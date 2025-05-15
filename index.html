@@ -17,6 +17,13 @@
         <canvas id="canvas" style="display:none;"></canvas>
         <video id="video" autoplay playsinline muted></video>
 
+        <div class="sidebar bar-block border-right" style="display:none" id="Sidebar">
+        <button onclick="wclose()" class="w3-bar-item w3-large">Close &times;</button>
+        <a href="#" class="bar-item button">Link 1</a>
+        <a href="#" class="bar-item button">Link 2</a>
+        <a href="#" class="bar-item button">Link 3</a>
+        </div>
+        
         <button onclick="dofunny()" id="fullscreen">full screen</button>
         <img src="images/switchcamera.png" onclick="changeValue()" id="button1" class="switchcameraimage" alt="Switch camera">
         <img src="images/takepicture.png" alt="Take photo" onclick="flash();takePhoto()" class="takephotoimage" id="birb">
