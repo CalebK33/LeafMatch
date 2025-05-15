@@ -89,9 +89,10 @@ function otherfunny() {
     document.getElementById("fullscreen").src = "images/fullscreen.png";
     fullscreened = 0;
   }
-  setInterval(otherfunny, 1000);
+
 }
 
+setInterval(otherfunny, 1000);
 otherfunny();
 
 function upload() {
