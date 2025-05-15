@@ -25,6 +25,15 @@ video, .photo {
     
 }
 
+.sidebar {
+    max-width: 20%;
+    max-height: 20%;
+    position: fixed;
+    left: 20%;
+    top: 80%;
+    
+}
+
 .takephotoimage {
     max-width: 25%;
     max-height: 25%;
