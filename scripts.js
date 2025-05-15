@@ -85,6 +85,7 @@ function getValue() {
 }
 
 function otherfunny() {
+  alert("alert")
   fullscreened = 0;
   document.getElementById("fullscreen").src = "images/fullscreen.png";
 }
