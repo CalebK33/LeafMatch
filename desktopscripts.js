@@ -3,6 +3,9 @@ let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
+function alertfunction() {
+  alert("text")
+}
 
 function openFullscreen() {
   if (elem.requestFullscreen) {
