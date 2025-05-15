@@ -82,6 +82,7 @@ function getValue() {
 
 function otherfunny() {
   if (document.fullscreenElement) {
+    alert("a")
     fullscreened = 1;
     document.getElementById("fullscreen").src = "images/exitfullscreen.png";
   } 
