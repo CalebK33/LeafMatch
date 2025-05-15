@@ -177,14 +177,6 @@ function flash() {
     }, 500);
   }, 100);
 }
-function open() {
-  document.getElementById("Sidebar").style.display = "block";
-}
-
-function close() {
-  document.getElementById("Sidebar").style.display = "none";
-}
-
 
 
 document.addEventListener('DOMContentLoaded', () => {
