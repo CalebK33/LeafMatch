@@ -23,8 +23,8 @@ video, .photo {
     height: auto;
     position: fixed;
     bottom: 5%;
-    left: 45%;
-    transform: translateX(-45%);
+    left: 57%;
+    transform: translateX(-57%);
 }
 
 .uploadimage {
@@ -34,8 +34,8 @@ video, .photo {
     height: auto;
     position: fixed;
     bottom: 5%;
-    left: 55%;
-    transform: translateX(-55%);
+    left: 42%;
+    transform: translateX(-42%);
 }
 
 * {
