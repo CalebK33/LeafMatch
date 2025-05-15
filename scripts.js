@@ -112,7 +112,6 @@ function takePhoto() {
     const button1 = document.getElementById('button1');
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
-    const fullscreen = document.getElementById('fullscreen');
 
     canvas.width = video.videoWidth;
     canvas.height = video.videoHeight;
@@ -137,7 +136,6 @@ function takePhoto() {
     button1.style.display = 'none';
     button2.style.display = 'none';
     button3.style.display = 'none';
-    fullscreen.style.display = 'none';
 }
 
 function flash() {
