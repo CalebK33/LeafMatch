@@ -40,7 +40,11 @@ async function detectCameras() {
     if (videoInputs.length === 1) {
         direction = 'user';
         onlyHasUserCamera = true;
-    } else {
+    } 
+    else if (videoInputs.length === 0) {
+        alert("Error, no camera detected :(")
+    }
+    else {
         onlyHasUserCamera = false;
     }
 }
