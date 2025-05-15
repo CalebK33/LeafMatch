@@ -3,10 +3,18 @@ let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
-function alertfunction() {
-  alert("text")
-}
 
+const video = document.getElementById('video');
+
+video.addEventListener('play', () => {
+  const checkFrame = (now, metadata) => {
+    alert("test")
+  };
+
+video.requestVideoFrameCallback(checkFrame);
+
+
+  
 function openFullscreen() {
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
