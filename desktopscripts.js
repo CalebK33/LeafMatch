@@ -1,4 +1,5 @@
 let direction = 'environment';
+let fullscreened = 0;
 let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
