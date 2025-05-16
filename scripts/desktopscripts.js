@@ -3,20 +3,6 @@ let fullscreened = 0;
 let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
-
-function dofunny() {
-  if (fullscreened === 1) {
-    document.getElementById("fullscreen").src = "images/fullscreen.png";
-    closeFullscreen()
-    fullscreened = 0;
-  }
-  else {
-    document.getElementById("fullscreen").src = "images/exitfullscreen.png";
-    openFullscreen()
-    fullscreened = 1;
-  }
-}
-
   
 function openFullscreen() {
   if (elem.requestFullscreen) {
