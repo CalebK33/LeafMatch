@@ -16,18 +16,18 @@ function dofunny() {
 function openFullscreen() {
   if (elem.requestFullscreen) {
     elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
+  } else if (elem.webkitRequestFullscreen) { 
     elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
+  } else if (elem.msRequestFullscreen) { 
     elem.msRequestFullscreen();
   }
 }
 function closeFullscreen() {
   if (document.exitFullscreen) {
     document.exitFullscreen();
-  } else if (document.webkitExitFullscreen) { /* Safari */
+  } else if (document.webkitExitFullscreen) { 
     document.webkitExitFullscreen();
-  } else if (document.msExitFullscreen) { /* IE11 */
+  } else if (document.msExitFullscreen) { 
     document.msExitFullscreen();
   }
 }
@@ -42,7 +42,7 @@ async function detectCameras() {
         onlyHasUserCamera = true;
     } 
     else if (videoInputs.length === 0) {
-        alert("Error, no camera detected :(")
+        alert("I think you need a camera for this...")
     }
     else {
         onlyHasUserCamera = false;
@@ -85,10 +85,10 @@ function getValue() {
 
 function otherfunny() {
   if (document.fullscreenElement) {
-    document.getElementById("fullscreen").src = "images/exitfullscreen.png";
+    document.getElementById("fullscreen").src = "images/ui/exitfullscreen.png";
   } 
   else {
-    document.getElementById("fullscreen").src = "images/fullscreen.png";
+    document.getElementById("fullscreen").src = "images/ui/fullscreen.png";
   }
 
 }
