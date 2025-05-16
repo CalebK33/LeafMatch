@@ -3,6 +3,9 @@ let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
+sidenav = document.getElementById(sidenav);
+sidenav.style.display = "none";
+
 function changeFullscreen() {
   if (document.fullscreenElement) {
     closeFullscreen()
