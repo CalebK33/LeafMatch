@@ -40,6 +40,10 @@ function opensidenav() {
   sidenav.style.display = '';
 }
 
+function closesidenav() {
+  sidenav = document.getElementById('sidenav');
+  sidenav.style.display = '';
+}
 async function detectCameras() {
     const devices = await navigator.mediaDevices.enumerateDevices();
     const videoInputs = devices.filter(device => device.kind === 'videoinput');
