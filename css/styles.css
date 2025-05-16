@@ -91,7 +91,7 @@ video, canvas, img.photo {
   z-index: 1; 
   top: 0; 
   left: 0;
-  background-color: rgb(140, 255, 140);
+  background-color: rgb(160, 255, 160);
   overflow-x: hidden;
   padding-top: 20px;
 }
