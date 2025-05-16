@@ -4,8 +4,8 @@ let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
-tick = document.getElementById('tick');
-cross = document.getElementById('cross');
+let tick = document.getElementById('tick');
+let cross = document.getElementById('cross');
 
 tick.style.display = "none";
 cross.style.display = "none";
@@ -81,10 +81,14 @@ function retakePhoto() {
     const video = document.getElementById('video');
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
+    const tick = document.getElementById('tick');
+    const cross = document.getElementById('cross');
 
     video.style.display = '';
     button2.style.display = '';
     button3.style.display = '';
+    tick.style.display = "none";
+    cross.style.display = "none";
 }
 
 function upload() {
