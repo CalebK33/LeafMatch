@@ -35,6 +35,9 @@ function closeFullscreen() {
   }
 }
 
+function opensidebar() {
+  sidenav.style.display = '';
+}
 
 async function detectCameras() {
     const devices = await navigator.mediaDevices.enumerateDevices();
