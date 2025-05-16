@@ -4,8 +4,8 @@ let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
-tick = getElementById('tick');
-cross = getElementById('cross');
+tick = document.getElementById('tick');
+cross = document.getElementById('cross');
 
 tick.style.display = "none";
 tick.style.display = "none";
@@ -62,16 +62,16 @@ function getValue() {
 }
 
 function acceptordeny() {
-    tick = getElementById('tick');
-    cross = getElementById('cross');
+    tick = document.getElementById('tick');
+    cross = document.getElementById('cross');
 
     tick.style.display = "";
     tick.style.display = "";
 }
 
 function acceptedPhoto() {
-    tick = getElementById('tick');
-    cross = getElementById('cross');
+    tick = document.getElementById('tick');
+    cross = document.getElementById('cross');
 
     tick.style.display = "none";
     tick.style.display = "none";
