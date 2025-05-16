@@ -8,7 +8,7 @@ tick = document.getElementById('tick');
 cross = document.getElementById('cross');
 
 tick.style.display = "none";
-tick.style.display = "none";
+cross.style.display = "none";
 
 
 async function detectCameras() {
@@ -66,7 +66,7 @@ function acceptordeny() {
     cross = document.getElementById('cross');
 
     tick.style.display = "";
-    tick.style.display = "";
+    cross.style.display = "";
 }
 
 function acceptedPhoto() {
@@ -74,7 +74,7 @@ function acceptedPhoto() {
     cross = document.getElementById('cross');
 
     tick.style.display = "none";
-    tick.style.display = "none";
+    cross.style.display = "none";
 }
 
 function retakePhoto() {
