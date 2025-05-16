@@ -35,7 +35,8 @@ function closeFullscreen() {
   }
 }
 
-function opensidebar() {
+function opensidenav() {
+  sidenav = document.getElementById('sidenav');
   sidenav.style.display = '';
 }
 
