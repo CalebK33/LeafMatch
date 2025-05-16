@@ -38,7 +38,7 @@ async function startCamera() {
         video.style.display = 'block';
     })
     .catch(err => {
-        console.error("Camera error:", err);
+        alert("Please allow access to camera or use the upload files button")
     });
 }
 
