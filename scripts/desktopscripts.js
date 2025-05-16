@@ -12,10 +12,13 @@ async function detectCameras() {
     if (videoInputs.length === 1) {
         direction = 'user';
         onlyHasUserCamera = true;
-    } else {
+    } 
+    else if (videoInputs.length === 0) {
+        alert("I think you need a camera for this...")
+    }
+    else {
         onlyHasUserCamera = false;
     }
-}
 
 async function startCamera() {
     if (currentStream) {
