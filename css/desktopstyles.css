@@ -78,7 +78,7 @@ video, canvas, img.photo {
   width: auto;
   height: auto;
   position: fixed;
-  bottom: 5%
+  bottom: 5%;
   left: 45%;
   transform: translateX(-45%);
 }
@@ -90,6 +90,6 @@ video, canvas, img.photo {
   height: auto;
   position: fixed;
   bottom: 5%;
-  left: 55%
+  left: 55%;
   transform: translateX(-55%);
 }
