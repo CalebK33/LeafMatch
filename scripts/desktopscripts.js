@@ -19,6 +19,7 @@ async function detectCameras() {
     else {
         onlyHasUserCamera = false;
     }
+}
 
 async function startCamera() {
     if (currentStream) {
