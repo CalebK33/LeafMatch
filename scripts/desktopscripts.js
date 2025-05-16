@@ -4,6 +4,12 @@ let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
+tick = getElementById('tick');
+cross = getElementById('cross');
+
+tick.style.display("none")
+tick.style.display("none")
+
 
 async function detectCameras() {
     const devices = await navigator.mediaDevices.enumerateDevices();
@@ -55,6 +61,14 @@ function getValue() {
     return direction;
 }
 
+function acceptordeny() {
+    tick = getElementById('tick');
+    cross = getElementById('cross');
+
+    tick.style.display("")
+    tick.style.display("")
+}
+
 function upload() {
     const video = document.getElementById('video');
     const fileInput = document.getElementById('fileInput'); 
@@ -86,6 +100,7 @@ function upload() {
                 video.style.display = 'none';
                 button2.style.display = 'none';
                 button3.style.display = 'none';
+                acceptordeny()
             };
         };
 
@@ -122,6 +137,7 @@ function takePhoto() {
     video.style.display = 'none';
     button2.style.display = 'none';
     button3.style.display = 'none';
+    acceptordeny()
 }
 
 function flash() {
