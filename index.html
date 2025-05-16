@@ -9,19 +9,19 @@
         <meta charset="UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>LeafMatch</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="css/styles.css">
         <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     </head>
     <body>
-        <script src="scripts.js"></script>
+        <script src="scripts/scripts.js"></script>
         <canvas id="canvas" style="display:none;"></canvas>
         <video id="video" autoplay playsinline muted></video>
         
-        <img onclick="dofunny()" id="fullscreen" class="fullscreen" src="images/fullscreen.png">
-        <img onclick="opensidebar()" id="fullscreen" class="sidebar" src="images/sidebar.png">
-        <img src="images/switchcamera.png" onclick="changeValue()" id="button1" class="switchcameraimage" alt="Switch camera">
-        <img src="images/takepicture.png" alt="Take photo" onclick="flash();takePhoto()" class="takephotoimage" id="birb">
-        <img src="images/addfilesbutton.png" alt="Upload from gallery" onclick="document.getElementById('fileInput').click()" class="uploadimage" id="uploadbutton">
+        <img onclick="dofunny()" id="fullscreen" class="fullscreen" src="images/ui/fullscreen.png">
+        <img onclick="opensidebar()" id="fullscreen" class="sidebar" src="images/ui/sidebar.png">
+        <img src="images/ui/switchcamera.png" onclick="changeValue()" id="button1" class="switchcameraimage" alt="Switch camera">
+        <img src="images/ui/takepicture.png" alt="Take photo" onclick="flash();takePhoto()" class="takephotoimage" id="birb">
+        <img src="images/ui/addfilesbutton.png" alt="Upload from gallery" onclick="document.getElementById('fileInput').click()" class="uploadimage" id="uploadbutton">
         <input type="file" id="fileInput" accept="image/*" style="display:none;" onchange="upload()">
         <img id="photo" class="photo">
 
