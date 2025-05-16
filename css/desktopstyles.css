@@ -71,3 +71,25 @@ video, .photo {
 video, canvas, img.photo {
   border: none;
 }
+
+.tick {
+  max-width: 20%;
+  max-height: 20%;
+  width: auto;
+  height: auto;
+  position: fixed;
+  bottom: 5%
+  left: 45%;
+  transform: translateX(-45%);
+}
+
+.cross {
+  max-width: 20%;
+  max-height: 20%;
+  width: auto;
+  height: auto;
+  position: fixed;
+  bottom: 5%;
+  left: 55%
+  transform: translateX(-55%);
+}
