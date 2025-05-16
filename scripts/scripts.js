@@ -42,7 +42,7 @@ function opensidenav() {
 
 function closesidenav() {
   sidenav = document.getElementById('sidenav');
-  sidenav.style.display = '';
+  sidenav.style.display = 'none';
 }
 async function detectCameras() {
     const devices = await navigator.mediaDevices.enumerateDevices();
