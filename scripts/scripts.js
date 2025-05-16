@@ -3,7 +3,7 @@ let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
-function dofunny() {
+function changeFullscreen() {
   if (document.fullscreenElement) {
     closeFullscreen()
   }
@@ -83,7 +83,7 @@ function getValue() {
     return direction;
 }
 
-function otherfunny() {
+function changeFullscreenButton() {
   if (document.fullscreenElement) {
     document.getElementById("fullscreen").src = "images/ui/exitfullscreen.png";
   } 
@@ -191,5 +191,5 @@ function flash() {
 
 document.addEventListener('DOMContentLoaded', () => {
     startCamera();
-    setInterval(otherfunny, 20);
+    setInterval(changeFullscreenButton, 20);
 });
