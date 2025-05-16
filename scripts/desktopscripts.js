@@ -69,6 +69,24 @@ function acceptordeny() {
     tick.style.display("")
 }
 
+function acceptedPhoto() {
+    tick = getElementById('tick');
+    cross = getElementById('cross');
+
+    tick.style.display("none")
+    tick.style.display("none")
+}
+
+function retakePhoto() {
+    const video = document.getElementById('video');
+    const button2 = document.getElementById('birb');
+    const button3 = document.getElementById('uploadbutton');
+
+    video.style.display = '';
+    button2.style.display = '';
+    button3.style.display = '';
+}
+
 function upload() {
     const video = document.getElementById('video');
     const fileInput = document.getElementById('fileInput'); 
