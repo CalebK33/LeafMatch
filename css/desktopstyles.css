@@ -1,3 +1,9 @@
+.ubuntu {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
