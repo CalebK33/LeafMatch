@@ -34,7 +34,6 @@ video, .photo {
     transform: translateX(-58%);
 }
 
-
 .sidenav {
   height: 100%; 
   width: 17%;
@@ -50,8 +49,8 @@ video, .photo {
 .sidenav a {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  font-size: 33px;
-  color: rgb(70, 100, 70);
+  font-size: 50px;
+  color: rgb(110, 160, 110);
   display: block;
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
