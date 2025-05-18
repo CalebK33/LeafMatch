@@ -50,18 +50,19 @@ video, .photo {
 .sidebar a {
   display: block;
   color: rgb(120, 170, 120);
+  font-size: 30px;
   padding: 16px;
   text-decoration: none;
 }
  
 .sidebar a.active {
-  background-color: rgb(200, 255, 200);
-  color: rgb(120, 170, 120);
+  background-color: rgb(120, 170, 120);
+  color: (200, 255, 200);
 }
 
 .sidebar a:hover:not(.active) {
-  background-color: #555;
-  color: white;
+  background-color: rgba(120, 170, 120, 0.5);
+  color: rgba(200, 255, 200, 0.8);
 }
 
 div.content {
