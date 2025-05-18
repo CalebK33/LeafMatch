@@ -61,7 +61,7 @@ video, .photo {
   color: rgba(70, 100, 70, 0.6):
 }
 
-.sidebar input {
+.sidebar input[type=search] {
   float: right;
   padding: 6px;
   border: none;
