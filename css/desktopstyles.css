@@ -18,7 +18,7 @@ video, .photo {
     height: 100vh; 
     object-fit: cover;
     z-index: -1; 
-    border: 50px rdb(14, 71, 57);
+    border: 50px rgb(14, 71, 57);
     border-radius: 10x;
     left: 25%;
 }
