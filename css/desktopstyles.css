@@ -22,7 +22,7 @@ video, .photo {
     object-fit: cover;
     z-index: -1; 
     border: 50px rgb(14, 71, 57);
-    border-radius: 10x;
+    border-radius: 10px;
     left: 25%;
 }
         
@@ -68,8 +68,6 @@ div.content {
   margin-left: 200px;
   padding: 1px 16px;
   height: 1000px;
-}
-
 }
 
 .uploadimage {
