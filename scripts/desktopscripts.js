@@ -78,6 +78,7 @@ function acceptedPhoto() {
 }
 
 function retakePhoto() {
+    photo.style.display = 'none';
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
     const tick = document.getElementById('tick');
@@ -123,6 +124,9 @@ function upload() {
                 video.style.display = 'none';
                 button2.style.display = 'none';
                 button3.style.display = 'none';
+                
+                photo.style.display = '';
+                    
                 acceptordeny()
             };
         };
@@ -160,6 +164,7 @@ function takePhoto() {
     video.style.display = 'none';
     button2.style.display = 'none';
     button3.style.display = 'none';
+    photo.style.display = '';
 }
 
 function flash() {
