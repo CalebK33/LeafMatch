@@ -159,7 +159,6 @@ function takePhoto() {
     video.style.display = 'none';
     button2.style.display = 'none';
     button3.style.display = 'none';
-    acceptordeny()
 }
 
 function flash() {
@@ -184,6 +183,8 @@ function flash() {
       document.body.removeChild(flashDiv);
     }, 500);
   }, 100);
+    
+  acceptordeny()
 }
 
 
