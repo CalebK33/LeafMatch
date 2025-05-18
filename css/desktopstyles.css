@@ -62,8 +62,14 @@ video, .photo {
 }
 
 .sidebar input {
-  background-color: rgba(0, 0, 0, 0)
-  border: 5px green;
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
 }
 
 .uploadimage {
