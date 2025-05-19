@@ -13,11 +13,15 @@
         <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     </head>
     <body>
-        <div class="sidebar" id="sidenav">
+        <div class="sidebar" id="sidebar">
             <img onclick="closeSidebar()" src="images/ui/anotherplaceholder.png">
-            <a href="index.html">Scan</a>
-            
+            <input type="search" placeholder="Search">
+            <a class="active" href="index.html">Scan</a>
+            <a href="database.html">Database</a>
+            <a href="help.html">Help</a>
+            <a href="about.html">About us</a>
         </div>
+        
         <script src="scripts/scripts.js"></script>
         <canvas id="canvas" style="display:none;"></canvas>
         <video id="video" autoplay playsinline muted></video>
