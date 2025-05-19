@@ -69,9 +69,9 @@ video, .photo {
 .sidebar input[type="text"],
 .sidebar input[type="search"] {
   width: 100%;
-  margin: 16px auto;
+  margin: 10px auto;
   padding: 8px 11px;
-  font-size: 28px;
+  font-size: 25px;
   border: 0px solid rgb(110, 160, 110);
   border-radius: 8px;
   background-color: rgba(120, 170, 120, 0);
@@ -79,7 +79,7 @@ video, .photo {
   display: block;
   outline: none;
   font-family: "Ubuntu", sans-serif;
-  font-weight: 900;
+  font-weight: 400;
   font-style: normal;
   transition: background-color 0.3s ease;
 }
