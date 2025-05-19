@@ -84,13 +84,21 @@ video, canvas, img.photo {
 }
 
 .sidebar {
-  margin: 0;
-  padding: 0;
-  width: 25%;
-  background-color: rgb(200, 255, 200);
   position: fixed;
+  top: 0;
+  left: -25%; 
+  width: 25%;
   height: 100%;
+  background-color: rgb(200, 255, 200);
   overflow: auto;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar.open {
+  left: 0;
 }
 
 .sidebar a {
@@ -101,7 +109,7 @@ video, canvas, img.photo {
   text-decoration: none;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
- 
+
 .sidebar a.active {
   background-color: rgb(120, 170, 120);
   color: rgb(200, 255, 200);
@@ -125,8 +133,15 @@ video, canvas, img.photo {
   font-style: normal;
 }
 
-div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: rgb(120, 170, 120);
+  cursor: pointer;
+  padding: 10px 16px;
+  text-align: left;
+  width: 100%;
+  font-weight: bold;
 }
+
