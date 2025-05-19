@@ -86,7 +86,7 @@ video, canvas, img.photo {
   position: fixed;
   top: 0;
   left: -25%; 
-  width: 25%;
+  width: 75%;
   height: 100%;
   background-color: rgb(200, 255, 200);
   overflow: auto;
@@ -98,6 +98,10 @@ video, canvas, img.photo {
 
 .sidebar.open {
   left: 0;
+}
+
+.sidebar.logo {
+  height: 10% 
 }
 
 .sidebar a {
