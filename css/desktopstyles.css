@@ -62,7 +62,7 @@ video, .photo {
 
 .sidebar a:hover:not(.active) {
   background-color: rgba(120, 170, 120, 0.5);
-  color: rgba(200, 255, 200, 0.8);
+  color: rgb(120, 170, 120);
 }
 
 div.content {
