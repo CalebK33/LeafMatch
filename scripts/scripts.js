@@ -15,13 +15,14 @@ function changeFullscreen() {
   }
 }
 
-async function openSidebar()
+async function openSidebar() {
   const toggleButton = document.getElementById("toggleSidebar");
   const sidebar = document.getElementById("sidebar");
 
   toggleButton.addEventListener("click", () => {
     sidebar.classList.toggle("open");
   });
+}
 
 function openFullscreen() {
   if (elem.requestFullscreen) {
@@ -42,15 +43,6 @@ function closeFullscreen() {
   }
 }
 
-function opensidenav() {
-  sidenav = document.getElementById('sidenav');
-  sidenav.style.display = '';
-}
-
-function closesidenav() {
-  sidenav = document.getElementById('sidenav');
-  sidenav.style.display = 'none';
-}
 async function detectCameras() {
     const devices = await navigator.mediaDevices.enumerateDevices();
     const videoInputs = devices.filter(device => device.kind === 'videoinput');
