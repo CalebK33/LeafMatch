@@ -92,6 +92,12 @@ video, .photo {
   font-style: normal;
 }
 
+.sidebar input[type="search"]::placeholder, 
+.sidebar input[type="text"]::placeholder {
+  color: rgb(120, 170, 120); 
+  opacity: 1; 
+}
+
 div.content {
   margin-left: 200px;
   padding: 1px 16px;
