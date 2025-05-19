@@ -17,7 +17,6 @@
         <img onclick="acceptedPhoto()" src="images/ui/tick.png" alt="accept" class="tick" id="tick">
         <img onclick="retakePhoto()" src="images/ui/cross.png" alt="retake" class="cross" id="cross">
         
-        <script src="scripts/desktopscripts.js"></script>
         <div class="video-wrapper">
             <canvas id="canvas" style="display:none;"></canvas>
             <video id="video" autoplay playsinline muted></video>
@@ -34,9 +33,9 @@
         
         <img src="images/ui/takepicture.png" alt="Take photo" onclick="takePhoto();flash()" class="takephotoimage" id="birb">
         <img src="images/ui/addfilesbutton.png" alt="Upload from gallery" onclick="document.getElementById('fileInput').click()" class="uploadimage" id="uploadbutton">
-
-        
         <input type="file" id="fileInput" accept="image/*" style="display:none;" onchange="upload()">
         <img id="photo" class="photo">
+
+        <script src="scripts/desktopscripts.js"></script>
     </body>
 </html>
