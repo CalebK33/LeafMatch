@@ -9,6 +9,9 @@ body {
   padding: 0;
   background-color: rgb(200, 255, 200);
   overflow: hidden;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .video-wrapper {
