@@ -122,8 +122,8 @@ video, canvas, img.photo {
   height: auto;
   position: fixed;
   bottom: 5%;
-  left: 40%;
-  transform: translateX(-40%);
+  left: 60%;
+  transform: translateX(-60%);
 }
 
 .cross {
@@ -133,6 +133,6 @@ video, canvas, img.photo {
   height: auto;
   position: fixed;
   bottom: 5%;
-  left: 60%;
-  transform: translateX(-60%);
+  left: 40%;
+  transform: translateX(-40%);
 }
