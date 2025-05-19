@@ -72,21 +72,22 @@ video, .photo {
   margin: 0px auto;
   padding: 8px 11px;
   font-size: 25px;
-  border: 5px solid rgb(110, 160, 110);
-  border-radius: 0px;
+  border: 2px solid rgb(110, 160, 110);
+  border-radius: 4px;
   background-color: rgba(120, 170, 120, 0);
   color: rgb(110, 160, 110);
   display: block;
   outline: none;
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
-  font-style: normal;
+  font-style: italic;
   transition: background-color 0.3s ease;
 }
 
 .sidebar input[type="text"]:focus,
 .sidebar input[type="search"]:focus {
   background-color: rgba(120, 170, 120, 0.25);
+  font-style: normal;
 }
 
 div.content {
