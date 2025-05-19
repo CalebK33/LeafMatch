@@ -16,11 +16,11 @@ function changeFullscreen() {
 }
 
 function openSidebar() {
-  document.getElementById("mySidebar").classList.add("open");
+  document.getElementById("sidebar").classList.add("open");
 }
 
 function closeSidebar() {
-  document.getElementById("mySidebar").classList.remove("open");
+  document.getElementById("sidebar").classList.remove("open");
 }
 
 function openFullscreen() {
