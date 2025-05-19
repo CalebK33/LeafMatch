@@ -72,8 +72,8 @@ video, .photo {
   margin: 10px auto;
   padding: 8px 11px;
   font-size: 25px;
-  border: 0px solid rgb(110, 160, 110);
-  border-radius: 8px;
+  border: 5px solid rgb(110, 160, 110);
+  border-radius: 0px;
   background-color: rgba(120, 170, 120, 0);
   color: rgb(110, 160, 110);
   display: block;
