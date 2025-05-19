@@ -20,9 +20,10 @@ video, .photo {
     width: 50vw; 
     height: 100vh; 
     object-fit: cover;
-    z-index: -1; 
+    z-index: 1; 
     border: 50px solid rgb(14, 71, 57);
     border-radius: 10px;
+    box-sizing: border-box;
     left: 25%;
 }
         
