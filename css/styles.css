@@ -13,7 +13,6 @@ video, .photo {
     height: 100vh; 
     object-fit: cover;
     z-index: -1; 
-    border: 100px solid black;
 }
 
 .sidebarimg {
