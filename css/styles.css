@@ -145,3 +145,8 @@ video, .photo {
   opacity: 1; 
   font-style: italic;
 }
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
