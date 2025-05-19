@@ -65,6 +65,27 @@ video, .photo {
   color: rgb(120, 170, 120);
 }
 
+.sidebar input[type="text"],
+.sidebar input[type="search"] {
+  width: 80%;
+  margin: 16px auto;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(120, 170, 120, 0.15);
+  color: rgb(200, 255, 200);
+  display: block;
+  outline: none;
+  font-family: "Ubuntu", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar input[type="text"]:focus,
+.sidebar input[type="search"]:focus {
+  background-color: rgba(120, 170, 120, 0.25);
+}
+
 div.content {
   margin-left: 200px;
   padding: 1px 16px;
