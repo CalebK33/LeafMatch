@@ -96,12 +96,12 @@ video, .photo {
 .sidebar input[type="text"]:focus,
 .sidebar input[type="search"]:focus {
   background-color: rgba(120, 170, 120, 0.35);
-  font-style: normal;
 }
 
 .sidebar input[type="search"]::placeholder, 
 .sidebar input[type="text"]::placeholder {
   color: rgb(120, 170, 120); 
+  font-style: normal;
   opacity: 1; 
 }
 
