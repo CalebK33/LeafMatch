@@ -69,7 +69,7 @@ video, .photo {
 .sidebar input[type="text"],
 .sidebar input[type="search"] {
   width: 100%;
-  margin: 5px auto;
+  margin: 10px auto;
   padding: 8px 11px;
   font-size: 25px;
   border: 2px solid rgb(110, 160, 110);
@@ -122,8 +122,8 @@ video, canvas, img.photo {
   height: auto;
   position: fixed;
   bottom: 5%;
-  left: 45%;
-  transform: translateX(-45%);
+  left: 40%;
+  transform: translateX(-40%);
 }
 
 .cross {
@@ -133,6 +133,6 @@ video, canvas, img.photo {
   height: auto;
   position: fixed;
   bottom: 5%;
-  left: 55%;
-  transform: translateX(-55%);
+  left: 60%;
+  transform: translateX(-60%);
 }
