@@ -10,14 +10,6 @@ let cross = document.getElementById('cross');
 tick.style.display = "none";
 cross.style.display = "none";
 
-async function openSidebar()
-  const toggleButton = document.getElementById("toggleSidebar");
-  const sidebar = document.getElementById("mySidebar");
-
-  toggleButton.addEventListener("click", () => {
-    sidebar.classList.toggle("open");
-  });
-
 async function detectCameras() {
     const devices = await navigator.mediaDevices.enumerateDevices();
     const videoInputs = devices.filter(device => device.kind === 'videoinput');
