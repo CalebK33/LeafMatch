@@ -79,12 +79,15 @@ video, .photo {
   display: block;
   outline: none;
   font-family: "Ubuntu", sans-serif;
+  font-weight: 900;
+  font-style: normal;
   transition: background-color 0.3s ease;
 }
 
 .sidebar input[type="text"]:focus,
 .sidebar input[type="search"]:focus {
   background-color: rgba(120, 170, 120, 0.25);
+  border: 5px solid rgb(110, 160, 110, 0.8)
 }
 
 div.content {
