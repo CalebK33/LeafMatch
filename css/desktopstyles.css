@@ -70,8 +70,8 @@ video, .photo {
 .sidebar input[type="search"] {
   width: 100%;
   margin: 16px auto;
-  padding: 12px 16px;
-  font-size: 35px;
+  padding: 8px 11px;
+  font-size: 28px;
   border: 0px solid rgb(110, 160, 110);
   border-radius: 8px;
   background-color: rgba(120, 170, 120, 0);
