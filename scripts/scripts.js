@@ -15,13 +15,12 @@ function changeFullscreen() {
   }
 }
 
-async function openSidebar() {
-  const toggleButton = document.getElementById("toggleSidebar");
-  const sidebar = document.getElementById("sidebar");
+function openSidebar() {
+  document.getElementById("mySidebar").classList.add("open");
+}
 
-  toggleButton.addEventListener("click", () => {
-    sidebar.classList.toggle("open");
-  });
+function closeSidebar() {
+  document.getElementById("mySidebar").classList.remove("open");
 }
 
 function openFullscreen() {
