@@ -83,27 +83,50 @@ video, canvas, img.photo {
   border: none;
 }
 
-
-.sidenav {
-  height: 100%; 
-  width: 50%;
-  position: fixed; 
-  z-index: 1; 
-  top: 0; 
-  left: 0;
-  background-color: rgb(160, 255, 160);
-  overflow-x: hidden;
-  padding-top: 20px;
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: rgb(200, 255, 200);
+  position: fixed;
+  height: 100%;
+  overflow: auto;
 }
 
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 25px;
-  color: rgb(30, 100, 30);
+.sidebar a {
   display: block;
+  color: rgb(120, 170, 120);
+  font-size: 30px;
+  padding: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+ 
+.sidebar a.active {
+  background-color: rgb(120, 170, 120);
+  color: rgb(200, 255, 200);
 }
 
-.sidenav a:hover {
-  color: rgba(30, 100, 30, 0.6);
+.sidebar input[type="text"],
+.sidebar input[type="search"] {
+  width: 100%;
+  margin: 10px auto;
+  padding: 8px 11px;
+  font-size: 25px;
+  border: none;
+  box-shadow: none;
+  border-radius: 0px;
+  background-color: rgba(120, 170, 120, 0.20);
+  color: rgb(110, 160, 110);
+  display: block;
+  outline: none;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
 }
