@@ -28,18 +28,6 @@ video, .photo {
     
 }
 
-.sidebar {
-    max-width: 20%;
-    max-height: 20%;
-    position: fixed;
-    width: auto;
-    height: auto;
-    left: 5%;
-    transform: translateX(-5%);
-    top: 5%;
-    
-}
-
 .takephotoimage {
     max-width: 25%;
     max-height: 25%;
