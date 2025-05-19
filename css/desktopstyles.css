@@ -72,9 +72,9 @@ video, .photo {
   margin: 10px auto;
   padding: 8px 11px;
   font-size: 25px;
-  border: 2px solid rgb(110, 160, 110);
-  border-radius: 4px;
-  background-color: rgba(120, 170, 120, 0);
+  border: 0x solid rgb(110, 160, 110);
+  border-radius: 0px;
+  background-color: rgba(120, 170, 120, 0.20);
   color: rgb(110, 160, 110);
   display: block;
   outline: none;
@@ -86,7 +86,7 @@ video, .photo {
 
 .sidebar input[type="text"]:focus,
 .sidebar input[type="search"]:focus {
-  background-color: rgba(120, 170, 120, 0.25);
+  background-color: rgba(120, 170, 120, 0.35);
   font-style: normal;
 }
 
