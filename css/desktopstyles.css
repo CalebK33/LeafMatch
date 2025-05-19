@@ -53,6 +53,7 @@ video, .photo {
   font-size: 30px;
   padding: 16px;
   text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
  
 .sidebar a.active {
@@ -67,14 +68,14 @@ video, .photo {
 
 .sidebar input[type="text"],
 .sidebar input[type="search"] {
-  width: 80%;
+  width: 90%;
   margin: 16px auto;
   padding: 12px 16px;
   font-size: 16px;
   border: none;
   border-radius: 8px;
-  background-color: rgba(120, 170, 120, 0.15);
-  color: rgb(200, 255, 200);
+  background-color: rgba(120, 170, 120, 0.6);
+  color: rgb(120, 170, 120);
   display: block;
   outline: none;
   font-family: "Ubuntu", sans-serif;
