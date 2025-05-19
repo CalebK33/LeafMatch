@@ -14,7 +14,7 @@ async function detectCameras() {
     const devices = await navigator.mediaDevices.enumerateDevices();
     const videoInputs = devices.filter(device => device.kind === 'videoinput');
 
-    if (videoInputs.length === 1) {e
+    if (videoInputs.length === 1) {
         direction = 'user';
         onlyHasUserCamera = true;
     } 
