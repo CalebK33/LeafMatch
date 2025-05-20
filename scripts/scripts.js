@@ -3,8 +3,6 @@ let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
-sidenav = document.getElementById('sidenav');
-sidenav.style.display = "none";
 
 function changeFullscreen() {
   if (document.fullscreenElement) {
@@ -15,7 +13,6 @@ function changeFullscreen() {
   }
 }
 
-alert("afterthis");
 
 function openSidebar() {
   document.getElementById("sidebar").classList.add("open");
