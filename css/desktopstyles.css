@@ -21,7 +21,7 @@ body {
   width: 50vw;
   height: 100vh;
   border: 5px solid rgb(100, 150, 100);
-  border-radius: 10px;
+  border-radius: 11px;
   box-sizing: border-box;
   overflow: hidden;
   z-index: 0;
