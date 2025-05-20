@@ -121,6 +121,7 @@ div.content {
     bottom: 5%;
     left: 41%;
     transform: translateX(-41%);
+    cursor: pointer
 }
 
 * {
