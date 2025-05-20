@@ -95,11 +95,11 @@ function getValue() {
 function changeFullscreenButton() {
   if (document.fullscreenElement) {
     document.getElementById("fullscreen").src = "images/ui/exitfullscreen.png";
-    alert("ja")
+    alert("ja");
   } 
   else {
     document.getElementById("fullscreen").src = "images/ui/fullscreen.png";
-    alert("nein")
+    alert("nein");
   }
 
 }
