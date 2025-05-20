@@ -15,6 +15,8 @@ function changeFullscreen() {
   }
 }
 
+alert("afterthis");
+
 function openSidebar() {
   document.getElementById("sidebar").classList.add("open");
 }
@@ -58,7 +60,6 @@ async function detectCameras() {
     }
 }
 
-alert("afterthis");
 
 async function startCamera() {
     if (currentStream) {
