@@ -104,6 +104,8 @@ function changeFullscreenButton() {
 
 }
 
+alert("afterthis");
+
 function upload() {
     const fileInput = document.getElementById('fileInput'); 
     const canvas = document.getElementById('canvas');
