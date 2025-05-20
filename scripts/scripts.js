@@ -12,7 +12,6 @@ function changeFullscreen() {
     openFullscreen()
   }
 }
-alert("working");
 
 function openSidebar() {
   document.getElementById("sidebar").classList.add("open");
