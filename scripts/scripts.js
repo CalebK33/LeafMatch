@@ -58,6 +58,8 @@ async function detectCameras() {
     }
 }
 
+alert("afterthis");
+
 async function startCamera() {
     if (currentStream) {
         currentStream.getTracks().forEach(track => track.stop());
@@ -104,7 +106,7 @@ function changeFullscreenButton() {
 
 }
 
-alert("afterthis");
+
 
 function upload() {
     const fileInput = document.getElementById('fileInput'); 
