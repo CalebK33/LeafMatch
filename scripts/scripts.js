@@ -201,7 +201,7 @@ function flash() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    alert("runnin")
+    alert("runnin");
     startCamera();
     setInterval(changeFullscreenButton, 20);
 });
