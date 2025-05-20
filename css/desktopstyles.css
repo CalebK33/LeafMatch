@@ -43,6 +43,7 @@ video, .photo {
     bottom: 5%;
     left: 58%;
     transform: translateX(-58%);
+    cursor: pointer
 }
 
 .sidebar {
@@ -139,6 +140,7 @@ video, canvas, img.photo {
   bottom: 5%;
   left: 60%;
   transform: translateX(-60%);
+  cursor: pointer
 }
 
 .cross {
@@ -150,4 +152,5 @@ video, canvas, img.photo {
   bottom: 5%;
   left: 40%;
   transform: translateX(-40%);
+  cursor: pointer
 }
