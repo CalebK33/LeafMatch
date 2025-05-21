@@ -1,7 +1,7 @@
 .body {
   margin: 0;
   padding: 0;
-  background-color: rgba(200, 255, 200, 0.6);
+  background-color: rgba(200, 255, 200);
   overflow: hidden;
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
@@ -11,10 +11,18 @@
 
 .h1 {
   font-size: 40px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(110, 160, 100)
 }
 
 .p {
   font-size: 25px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(110, 160, 100)
 }
 
 .sidebarimg {
@@ -34,7 +42,7 @@
   left: -70%; 
   width: 70%;
   height: 100%;
-  background-color: rgb(200, 255, 200);
+  background-color: rgb(180, 235, 180);
   overflow: auto;
   transition: left 0.3s ease;
   z-index: 1000;
