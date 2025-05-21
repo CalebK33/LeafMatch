@@ -135,7 +135,6 @@ function upload() {
 }
 
 function takePhoto() {
-    alert("run");
     const video = document.getElementById('video');
     const canvas = document.getElementById('canvas');
     const photo = document.getElementById('photo');
@@ -158,12 +157,12 @@ function takePhoto() {
     const imageDataURL = canvas.toDataURL('image/png');
     photo.src = imageDataURL;
 
-    alert("aoj fkurehcgwkavn wci ");
     
     currentStream.getTracks().forEach(track => track.stop());
     currentStream = null;
     video.srcObject = null;
     video.style.display = 'none';
+    alert("runnin");
     button2.style.display = 'none';
     button3.style.display = 'none';
     photo.style.display = '';
@@ -191,8 +190,7 @@ function flash() {
       document.body.removeChild(flashDiv);
     }, 500);
   }, 100);
-    
-  acceptordeny()
+  acceptordeny();
 }
 
 
