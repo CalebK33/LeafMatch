@@ -3,6 +3,11 @@ let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
+const tick = document.getElementById('tick');
+const cross = document.getElementById('cross');
+
+tick.style.display = 'none';
+cross.style.display = 'none';
 
 function changeFullscreen() {
   if (document.fullscreenElement) {
