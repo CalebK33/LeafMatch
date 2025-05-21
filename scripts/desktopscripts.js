@@ -135,6 +135,7 @@ function upload() {
 }
 
 function takePhoto() {
+    alert("run");
     const video = document.getElementById('video');
     const canvas = document.getElementById('canvas');
     const photo = document.getElementById('photo');
