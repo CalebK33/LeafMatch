@@ -1,1 +1,83 @@
+.body {
+  margin: 0;
+  padding: 0;
+  background-color: rgba(200, 255, 200, 0.6);
+  overflow: hidden;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(110, 160, 100)
+}
 
+.h1 {
+  font-size: 40px;
+}
+
+.p {
+  font-size: 25px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -70%; 
+  width: 70%;
+  height: 100%;
+  background-color: rgb(200, 255, 200);
+  overflow: auto;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar a {
+  display: block;
+  color: rgb(120, 170, 120);
+  font-size: 35px;
+  padding: 16px;
+  text-decoration: none;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+}
+
+.sidebar a.active {
+  background-color: rgb(120, 170, 120);
+  color: rgb(200, 255, 200);
+}
+
+.sidebar input[type="text"],
+.sidebar input[type="search"] {
+  width: 100%;
+  margin: 10px auto;
+  padding: 8px 11px;
+  font-size: 28px;
+  border: none;
+  box-shadow: none;
+  border-radius: 0px;
+  background-color: rgba(120, 170, 120, 0.20);
+  color: rgb(110, 160, 110);
+  display: block;
+  outline: none;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+}
+
+.sidebar input[type="search"]::placeholder, 
+.sidebar input[type="text"]::placeholder {
+  color: rgb(120, 170, 120); 
+  opacity: 1; 
+  font-style: italic;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
