@@ -1,4 +1,4 @@
-.body {
+body {
   margin: 0;
   padding: 0;
   background-color: rgba(200, 255, 200);
@@ -9,7 +9,7 @@
   color: rgb(110, 160, 100)
 }
 
-.h1 {
+h1 {
   font-size: 40px;
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
@@ -17,7 +17,7 @@
   color: rgb(110, 160, 100)
 }
 
-.p {
+p {
   font-size: 25px;
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
