@@ -17,6 +17,17 @@
   font-size: 25px;
 }
 
+.sidebarimg {
+    max-width: 20%;
+    max-height: 20%;
+    position: fixed;
+    width: auto;
+    height: auto;
+    left: 5%;
+    transform: translateX(-5%);
+    top: 5%;
+}
+
 .sidebar {
   position: fixed;
   top: 0;
