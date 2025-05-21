@@ -191,10 +191,11 @@ function flash() {
       document.body.removeChild(flashDiv);
     }, 500);
   }, 100);
+  acceptordeny();
 }
 
 
-  acceptordeny();
+
 
 document.addEventListener('DOMContentLoaded', () => {
     startCamera();
