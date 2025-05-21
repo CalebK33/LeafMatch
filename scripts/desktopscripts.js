@@ -61,6 +61,7 @@ function getValue() {
 }
 
 function acceptordeny() {
+    alert('acceptordenied');
     tick = document.getElementById('tick');
     cross = document.getElementById('cross');
 
@@ -162,10 +163,10 @@ function takePhoto() {
     currentStream = null;
     video.srcObject = null;
     video.style.display = 'none';
-    alert("runnin");
     button2.style.display = 'none';
     button3.style.display = 'none';
     photo.style.display = '';
+    alert("runnin");
 }
 
 function flash() {
@@ -190,7 +191,6 @@ function flash() {
       document.body.removeChild(flashDiv);
     }, 500);
   }, 100);
-  acceptordeny();
 }
 
 
