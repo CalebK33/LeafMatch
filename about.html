@@ -1,1 +1,34 @@
+<!doctype html>
+<html lang = "en-nz">
+    <head> 
+        <script>
+            // if (!navigator.userAgent.match(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i)) {
+            // window.location.href = "/LeafMatch/desktop";
+            // }
+        </script>
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LeafMatch</title>
+        <link rel="stylesheet" href="css/pagestyles.css">
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    </head>
+    <body>
+        <div class="sidebar" id="sidebar">
+            <div class="row">
+                <img onclick="closeSidebar()" src="images/favicon.ico" style="width: 45%; top; 50%" alt="logo">
+                <a style="font-size: 50px" onclick="closeSidebar()">X</a>
+            </div>
+            <input type="search" placeholder="Search">
+            <a href="index.html">Scan</a>
+            <a href="database.html">Database</a>
+            <a href="help.html">Help</a>
+            <a class="active.html" onclick="closeSidebar()">About us</a>
+        </div>
 
+        <h1>Title</h1>
+        <p>This is a paragraph</p>
+
+        <img onclick="openSidebar()" id="toggleSidebar" class="sidebarimg" src="images/ui/sidebar.png" alt="Open Sidebar">
+        <script src="scripts/scripts.js"></script>
+    </body>
+</html>
