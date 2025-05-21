@@ -150,3 +150,28 @@ video, .photo {
   display: flex;
   justify-content: space-between;
 }
+
+
+.tick {
+  max-width: 20%;
+  max-height: 20%;
+  width: auto;
+  height: auto;
+  position: fixed;
+  bottom: 5%;
+  left: 60%;
+  transform: translateX(-60%);
+  cursor: pointer
+}
+
+.cross {
+  max-width: 20%;
+  max-height: 20%;
+  width: auto;
+  height: auto;
+  position: fixed;
+  bottom: 5%;
+  left: 40%;
+  transform: translateX(-40%);
+  cursor: pointer
+}
