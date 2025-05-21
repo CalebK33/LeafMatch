@@ -194,7 +194,7 @@ function flash() {
 }
 
 
-
+  acceptordeny();
 
 document.addEventListener('DOMContentLoaded', () => {
     startCamera();
