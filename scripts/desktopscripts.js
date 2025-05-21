@@ -157,6 +157,8 @@ function takePhoto() {
     const imageDataURL = canvas.toDataURL('image/png');
     photo.src = imageDataURL;
 
+    alert("aoj fkurehcgwkavn wci ");
+    
     currentStream.getTracks().forEach(track => track.stop());
     currentStream = null;
     video.srcObject = null;
