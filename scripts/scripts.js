@@ -91,6 +91,39 @@ function getValue() {
     return direction;
 }
 
+function acceptordeny() {
+    tick = document.getElementById('tick');
+    cross = document.getElementById('cross');
+
+    tick.style.display = "";
+    cross.style.display = "";
+}
+
+function acceptedPhoto() {
+    tick = document.getElementById('tick');
+    cross = document.getElementById('cross');
+
+    tick.style.display = "none";
+    cross.style.display = "none";
+}
+
+function retakePhoto() {
+    photo.style.display = 'none';
+    const button2 = document.getElementById('birb');
+    const button3 = document.getElementById('uploadbutton');
+    const tick = document.getElementById('tick');
+    const cross = document.getElementById('cross');
+
+    button2.style.display = '';
+    button3.style.display = '';
+    tick.style.display = "none";
+    cross.style.display = "none";
+
+    startCamera();
+    
+}
+
+
 function changeFullscreenButton() {
   if (document.fullscreenElement) {
     document.getElementById("fullscreen").src = "images/ui/exitfullscreen.png";
