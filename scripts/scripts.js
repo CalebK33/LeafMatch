@@ -113,7 +113,9 @@ function retakePhoto() {
     const button3 = document.getElementById('uploadbutton');
     const tick = document.getElementById('tick');
     const cross = document.getElementById('cross');
-
+    const button1 = document.getElementById('button1');
+  
+    button1.style.display = '';
     button2.style.display = '';
     button3.style.display = '';
     tick.style.display = "none";
