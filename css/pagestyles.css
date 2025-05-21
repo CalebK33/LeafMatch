@@ -31,8 +31,8 @@
     position: fixed;
     width: auto;
     height: auto;
-    left: 5%;
-    transform: translateX(-5%);
+    right: 25%;
+    transform: translateX(-75%);
     top: 5%;
 }
 
