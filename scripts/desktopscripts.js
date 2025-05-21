@@ -65,8 +65,8 @@ function acceptordeny() {
     tick = document.getElementById('tick');
     cross = document.getElementById('cross');
 
-    tick.style.display = "";
-    cross.style.display = "";
+    tick.style.display = '';
+    cross.style.display = '';
 }
 
 function acceptedPhoto() {
