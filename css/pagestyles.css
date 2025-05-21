@@ -39,8 +39,8 @@ p {
     position: fixed;
     width: auto;
     height: auto;
-    right: 25%;
-    transform: translateX(-75%);
+    right: 5%;
+    transform: translateX(-95%);
     top: 5%;
 }
 
