@@ -74,8 +74,6 @@ function retakePhoto() {
     photo.style.display = 'none';
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
-    const tick = document.getElementById('tick');
-    const cross = document.getElementById('cross');
 
     button2.style.display = '';
     button3.style.display = '';
