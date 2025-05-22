@@ -34,7 +34,7 @@
             <a href="about.html">About us</a>
         </div>
         
-        <img src="images/ui/takepicture.png" alt="Take photo" onclick="takePhoto();flash()" class="takephotoimage" id="birb">
+        <img draggable="false" src="images/ui/takepicture.png" alt="Take photo" onclick="takePhoto();flash()" class="takephotoimage" id="birb">
         <img src="images/ui/addfilesbutton.png" alt="Upload from gallery" onclick="document.getElementById('fileInput').click()" class="uploadimage" id="uploadbutton">
         <input type="file" id="fileInput" accept="image/*" style="display:none;" onchange="upload()">
 
