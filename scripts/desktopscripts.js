@@ -61,7 +61,6 @@ function getValue() {
 }
 
 function acceptordeny() {
-    alert('acceptordenied');
     tick.style.display = '';
     cross.style.display = '';
 }
