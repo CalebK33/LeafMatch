@@ -105,3 +105,9 @@ p {
   display: flex;
   justify-content: space-between;
 }
+
+.titlerow {
+  display: flex;
+  justify-content: space-between;
+  bottom-border: 8px solid rgb(110, 160, 110);
+}
