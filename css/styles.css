@@ -159,8 +159,8 @@ video, .photo {
   height: auto;
   position: fixed;
   bottom: 5%;
-  left: 60%;
-  transform: translateX(-60%);
+  left: 75%;
+  transform: translateX(-75%);
   cursor: pointer;
   z-index: 1500;
 }
@@ -172,8 +172,8 @@ video, .photo {
   height: auto;
   position: fixed;
   bottom: 5%;
-  left: 40%;
-  transform: translateX(-40%);
+  left: 25%;
+  transform: translateX(-25%);
   cursor: pointer;
   z-index: 1500;
 }
