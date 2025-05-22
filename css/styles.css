@@ -153,8 +153,8 @@ video, .photo {
 
 
 .tick {
-  max-width: 20%;
-  max-height: 20%;
+  max-width: 30%;
+  max-height: 30%;
   width: auto;
   height: auto;
   position: fixed;
@@ -166,8 +166,8 @@ video, .photo {
 }
 
 .cross {
-  max-width: 20%;
-  max-height: 20%;
+  max-width: 30%;
+  max-height: 30%;
   width: auto;
   height: auto;
   position: fixed;
