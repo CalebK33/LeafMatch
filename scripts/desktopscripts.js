@@ -153,6 +153,7 @@ function takePhoto() {
     currentStream.getTracks().forEach(track => track.stop());
     currentStream = null;
     video.srcObject = null;
+    photo.style.display = '';
     video.style.display = 'none';
     button2.style.display = 'none';
     button3.style.display = 'none';
