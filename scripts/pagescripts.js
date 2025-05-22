@@ -5,3 +5,7 @@ function openSidebar() {
 function closeSidebar() {
   document.getElementById("sidebar").classList.remove("open");
 }
+
+if (!navigator.userAgent.match(/Android|iPhone|iPod|BlackBerry|Windows Phone/i)) {
+
+}
