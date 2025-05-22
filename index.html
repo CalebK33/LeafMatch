@@ -14,8 +14,8 @@
     </head>
     <body>
 
-        <img onclick="acceptedPhoto()" src="images/ui/tick.png" alt="accept" class="tick" id="tick">
-        <img onclick="retakePhoto()" src="images/ui/cross.png" alt="retake" class="cross" id="cross">
+        <img draggable="false" onclick="acceptedPhoto()" src="images/ui/tick.png" alt="accept" class="tick" id="tick">
+        <img draggable="false" onclick="retakePhoto()" src="images/ui/cross.png" alt="retake" class="cross" id="cross">
         
         <div class="sidebar" id="sidebar">
             <div class="row">
@@ -33,15 +33,15 @@
             <video id="video" autoplay playsinline muted></video>
         </div>
 
-        <img onclick="changeFullscreen()" id="fullscreen" class="fullscreen" src="images/ui/fullscreen.png" alt="Fullscreen">
-        <img onclick="openSidebar()" id="toggleSidebar" class="sidebarimg" src="images/ui/sidebar.png" alt="Open Sidebar">
+        <img draggable="false" onclick="changeFullscreen()" id="fullscreen" class="fullscreen" src="images/ui/fullscreen.png" alt="Fullscreen">
+        <img draggable="false" onclick="openSidebar()" id="toggleSidebar" class="sidebarimg" src="images/ui/sidebar.png" alt="Open Sidebar">
         
-        <img src="images/ui/switchcamera.png" onclick="changeValue()" id="button1" class="switchcameraimage" alt="Switch camera">
+        <img draggable="false" src="images/ui/switchcamera.png" onclick="changeValue()" id="button1" class="switchcameraimage" alt="Switch camera">
         <img draggable="false" src="images/ui/takepicture.png" alt="Take photo" onclick="flash();takePhoto()" class="takephotoimage" id="birb">
-        <img src="images/ui/addfilesbutton.png" alt="Upload from gallery" onclick="document.getElementById('fileInput').click()" class="uploadimage" id="uploadbutton">
+        <img draggable="false" src="images/ui/addfilesbutton.png" alt="Upload from gallery" onclick="document.getElementById('fileInput').click()" class="uploadimage" id="uploadbutton">
         <input type="file" id="fileInput" accept="image/*" style="display:none;" onchange="upload()">
         
-        <img id="photo" class="photo">
+        <img draggable="false" id="photo" class="photo">
 
         <script src="scripts/scripts.js"></script>
     </body>
