@@ -4,8 +4,8 @@ let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
-let tick = document.getElementById('tick');
-let cross = document.getElementById('cross');
+const tick = document.getElementById('tick');
+const cross = document.getElementById('cross');
 
 tick.style.display = "none";
 cross.style.display = "none";
@@ -62,8 +62,8 @@ function getValue() {
 
 function acceptordeny() {
     alert('acceptordenied');
-    tick = document.getElementById('tick');
-    cross = document.getElementById('cross');
+    const tick = document.getElementById('tick');
+    const cross = document.getElementById('cross');
 
     tick.style.display = '';
     cross.style.display = '';
