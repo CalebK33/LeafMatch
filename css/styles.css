@@ -5,7 +5,11 @@
 }
 
 img {  
-  pointer-events: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;   
 }
 
 body {
