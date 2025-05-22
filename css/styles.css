@@ -4,6 +4,10 @@
   font-style: normal;
 }
 
+img {  
+  pointer-events: none;
+}
+
 body {
   margin: 0;
   padding: 0;
