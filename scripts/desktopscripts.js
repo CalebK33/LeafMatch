@@ -166,7 +166,6 @@ function takePhoto() {
     button2.style.display = 'none';
     button3.style.display = 'none';
     photo.style.display = '';
-    alert("runnin");
 }
 
 function flash() {
