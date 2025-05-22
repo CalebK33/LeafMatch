@@ -5,9 +5,7 @@
 }
 
 img {  
-   user-drag: none;  
-   user-select: none;
-   draggable: false;
+  pointer-events: none;
 }
 
 body {
