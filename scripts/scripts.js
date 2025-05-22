@@ -201,6 +201,7 @@ function takePhoto() {
     currentStream = null;
     video.srcObject = null;
     video.style.display = 'none';
+    photo.style.display = '';
     button1.style.display = 'none';
     button2.style.display = 'none';
     button3.style.display = 'none';
