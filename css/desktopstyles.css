@@ -141,7 +141,8 @@ video, canvas, img.photo {
   bottom: 5%;
   left: 60%;
   transform: translateX(-60%);
-  cursor: pointer
+  cursor: pointer;
+  z-index: 9999;
 }
 
 .cross {
@@ -153,5 +154,6 @@ video, canvas, img.photo {
   bottom: 5%;
   left: 40%;
   transform: translateX(-40%);
-  cursor: pointer
+  cursor: pointer;
+  z-index: 9999;
 }
