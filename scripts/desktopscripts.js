@@ -62,9 +62,6 @@ function getValue() {
 
 function acceptordeny() {
     alert('acceptordenied');
-    const tick = document.getElementById('tick');
-    const cross = document.getElementById('cross');
-
     tick.style.display = '';
     cross.style.display = '';
 }
