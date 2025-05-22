@@ -32,6 +32,8 @@ video, .photo {
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    position: absolute;
+    z-index: -1; 
 }
         
 .takephotoimage {
