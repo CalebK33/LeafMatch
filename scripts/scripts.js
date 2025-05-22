@@ -97,17 +97,11 @@ function getValue() {
 }
 
 function acceptordeny() {
-    tick = document.getElementById('tick');
-    cross = document.getElementById('cross');
-
     tick.style.display = "";
     cross.style.display = "";
 }
 
 function acceptedPhoto() {
-    tick = document.getElementById('tick');
-    cross = document.getElementById('cross');
-
     tick.style.display = "none";
     cross.style.display = "none";
 }
@@ -116,8 +110,6 @@ function retakePhoto() {
     photo.style.display = 'none';
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
-    const tick = document.getElementById('tick');
-    const cross = document.getElementById('cross');
     const button1 = document.getElementById('button1');
   
     button1.style.display = '';
