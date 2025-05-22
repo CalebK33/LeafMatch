@@ -156,7 +156,6 @@ function takePhoto() {
     video.style.display = 'none';
     button2.style.display = 'none';
     button3.style.display = 'none';
-    photo.style.display = '';
 }
 
 function flash() {
