@@ -39,6 +39,7 @@ p {
     position: fixed;
     width: auto;
     height: auto;
+    cursor: pointer;
 }
 
 .sidebar {
