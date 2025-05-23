@@ -66,6 +66,7 @@ p {
   text-decoration: none;
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .sidebar a.active {
