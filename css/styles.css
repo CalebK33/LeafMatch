@@ -186,3 +186,7 @@ video, .photo {
   cursor: pointer;
   z-index: 1500;
 }
+
+.hover {
+  cursor: pointer;
+}
