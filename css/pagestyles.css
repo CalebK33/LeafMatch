@@ -58,7 +58,7 @@ p {
   height: 100%;
   background-color: rgb(180, 235, 180);
   overflow: auto;
-  transition: left 0.3s ease;
+  transition: left 0.5s ease;
   z-index: 1000;
   padding: 0;
   margin: 0;
