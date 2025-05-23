@@ -17,8 +17,9 @@ body {
 h1 {
   font-size: 70px;
   font-family: "Playpen Sans", cursive;
-  font-weight: 300;
+  font-weight: 550;
   font-style: normal;
+  text-decoration: none;
   color: rgb(110, 160, 100)
 }
 
