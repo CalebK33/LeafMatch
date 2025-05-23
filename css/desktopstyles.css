@@ -100,7 +100,7 @@ video, .photo {
   outline: none;
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
-  font-style: italic;
+  font-style: normal;
   transition: background-color 0.3s ease;
 }
 
@@ -112,7 +112,7 @@ video, .photo {
 .sidebar input[type="search"]::placeholder, 
 .sidebar input[type="text"]::placeholder {
   color: rgb(120, 170, 120); 
-  font-style: normal;
+  font-style: italic;
   opacity: 1; 
 }
 
