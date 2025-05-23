@@ -28,8 +28,7 @@ h2 {
   font-weight: 900;
   font-style: normal;
   color: rgb(110, 160, 100);
-  left: 10px;
-  position: fixed;
+  padding: 10px;
 }
 
 p {
