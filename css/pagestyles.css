@@ -102,6 +102,11 @@ p {
   font-style: italic;
 }
 
+.sidebar a:hover:not(.active) {
+  background-color: rgba(120, 170, 120, 0.5);
+  color: rgb(120, 170, 120);
+}
+
 .row {
   display: flex;
   justify-content: space-between;
