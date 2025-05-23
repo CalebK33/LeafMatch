@@ -5,7 +5,6 @@
 }
 
 body {
-  padding: 0;
   background-color: rgba(200, 255, 200);
   overflow: hidden;
   font-family: "Ubuntu", sans-serif;
@@ -39,7 +38,7 @@ p {
   font-weight: 600;
   font-style: normal;
   color: rgb(110, 160, 100)
-  padding: 10px;
+  padding-left: 10px;
 }
 
 .sidebarimg {
