@@ -43,8 +43,8 @@ p {
 }
 
 .sidebarimg {
-    max-width: 90px;
-    max-height: 90px;
+    max-width: 80px;
+    max-height: 80px;
     width: auto;
     height: auto;
     cursor: pointer;
