@@ -18,7 +18,7 @@ h1 {
   font-weight: 700;
   font-style: normal;
   text-decoration: none;
-  color: rgb(110, 160, 100)
+  color: rgb(110, 160, 100);
 }
 
 
@@ -27,7 +27,7 @@ h2 {
   font-family: "Ubuntu", sans-serif;
   font-weight: 900;
   font-style: normal;
-  color: rgb(110, 160, 100)
+  color: rgb(110, 160, 100);
   left: 10px;
   position: fixed;
 }
@@ -37,7 +37,7 @@ p {
   font-family: "Ubuntu", sans-serif;
   font-weight: 600;
   font-style: normal;
-  color: rgb(110, 160, 100)
+  color: rgb(110, 160, 100);
   padding-left: 10px;
 }
 
