@@ -15,7 +15,7 @@ body {
 }
 
 h1 {
-  font-size: 50px;e
+  font-size: 50px;
   font-family: "Playpen Sans", cursive;
   font-weight: 700;
   font-style: normal;
@@ -23,9 +23,6 @@ h1 {
   color: rgb(110, 160, 100)
 }
 
-a:title {
-  text-decoration: none;
-}
 
 h2 {
   font-size: 55px;
