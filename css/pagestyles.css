@@ -55,6 +55,7 @@ p {
   width: 70%;
   height: 100%;
   background-color: rgb(180, 235, 180);
+  border-right: 15px solid rgb(110, 160, 110)
   overflow: auto;
   transition: left 0.5s ease;
   z-index: 1000;
