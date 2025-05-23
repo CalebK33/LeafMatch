@@ -117,7 +117,7 @@ p {
   display: flex;
   align-items: center; 
   gap: 10px;
-  bottom-border: 8px solid rgb(110, 160, 110);
+  border-bottom: 8px solid rgb(110, 160, 110);
 }
 
 .hover {
