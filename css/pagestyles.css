@@ -36,7 +36,6 @@ p {
 .sidebarimg {
     max-width: 20%;
     max-height: 20%;
-    position: fixed;
     width: auto;
     height: auto;
     cursor: pointer;
