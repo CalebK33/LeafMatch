@@ -108,6 +108,7 @@ p {
 
 .titlerow {
   display: flex;
-  justify-content: space-between;
+  align-items: center; 
+  gap: 10px
   bottom-border: 8px solid rgb(110, 160, 110);
 }
