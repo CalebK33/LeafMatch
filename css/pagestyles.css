@@ -126,8 +126,7 @@ p {
   display: flex;
   align-items: center; 
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
   background-color: rgb(180, 233, 180);
   gap: 20px;
   border-bottom: 8px solid rgb(110, 160, 110);
