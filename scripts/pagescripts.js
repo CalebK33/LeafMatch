@@ -7,5 +7,5 @@ function closeSidebar() {
 }
 
 if (!navigator.userAgent.match(/Android|iPhone|iPod|BlackBerry|Windows Phone/i)) {
-    document.getElementById("sidebar").style.width = "30%"
+    document.getElementById("sidebar").style.width = "33%"
 }
