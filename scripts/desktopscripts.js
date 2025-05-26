@@ -183,10 +183,3 @@ function flash() {
   }, 100);
   acceptordeny();
 }
-
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    startCamera();
-});
