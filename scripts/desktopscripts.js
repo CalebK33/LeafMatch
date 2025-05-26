@@ -187,3 +187,16 @@ function flash() {
 function startcam() {
     startCamera()
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('video');
+    const canvas = document.getElementById('canvas');
+    video.srcObject = null;
+    video.style.display = 'none';
+    const context = canvas.getContext('2d');
+    const image = new Image();
+    image.src = 'images/ui/nocamera.jpg'; 
+    image.onload = () => {
+        context.drawImage(image, 0, 0);
+    };
+});
