@@ -202,5 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
     image.src = 'images/ui/nocamera.jpg'; 
     image.onload = () => {
         context.drawImage(image, 0, 0, canvas.width, canvas.height);
+    alert('Page loaded (debug)')
     };
 });
