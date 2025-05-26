@@ -51,8 +51,8 @@ p {
 .sidebar {
   position: fixed;
   top: 0;
-  left: -70%; 
-  width: 70%;
+  left: -80%; 
+  width: 80%;
   height: 100%;
   background-color: rgb(160, 215, 160);
   overflow: auto;
