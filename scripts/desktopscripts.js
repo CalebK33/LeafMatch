@@ -191,12 +191,16 @@ function startcam() {
 document.addEventListener('DOMContentLoaded', () => {
     const video = document.getElementById('video');
     const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');
+    if (canvas.width === 0 || canvas.height === 0) {
+        canvas.width = 640;
+        canvas.height = 480;
+    }
     video.srcObject = null;
     video.style.display = 'none';
-    const context = canvas.getContext('2d');
     const image = new Image();
     image.src = 'images/ui/nocamera.jpg'; 
     image.onload = () => {
-        context.drawImage(image, 0, 0);
+        context.drawImage(image, 0, 0, canvas.width, canvas.height);
     };
 });
