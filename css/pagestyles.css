@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-.gloria-hallelujah-regular {
+.gloria {
   font-family: "Gloria Hallelujah", cursive;
   font-weight: 400;
   font-style: normal;
@@ -20,7 +20,7 @@ body {
 
 h1 {
   font-size: 50px;
-  font-family: "Playpen Sans", cursive;
+  font-family: "Gloria Hallelujah", cursive;
   font-weight: 700;
   font-style: normal;
   text-decoration: none;
