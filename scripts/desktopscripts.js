@@ -183,3 +183,7 @@ function flash() {
   }, 100);
   acceptordeny();
 }
+
+function startcam() {
+    startCamera()
+}
