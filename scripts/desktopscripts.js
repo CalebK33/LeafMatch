@@ -4,6 +4,12 @@ let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
+const denied = document.getElementById('denied');
+const prompt = document.getElementById('prompt');
+
+denied.style.display = "none";
+cross.style.display = "none";
+
 const tick = document.getElementById('tick');
 const cross = document.getElementById('cross');
 
@@ -37,24 +43,40 @@ async function startCamera() {
     }
 
     await detectCameras();
+    navigator.permissions.query({ name: 'camera' }).then((result) => {
+        if (result.state === 'granted') {
+            navigator.mediaDevices.getUserMedia({
+                video: { facingMode: direction }
+            })
+            .then(stream => {
+                currentStream = stream;
+                const video = document.getElementById('video');
+                video.srcObject = stream;
+        
+                const shouldFlip = direction === 'user' || onlyHasUserCamera;
+                video.style.transform = shouldFlip ? 'scaleX(-1)' : 'scaleX(1)';
+                video.style.display = 'block';
+            })
+            .catch(err => {
+                nocamera.style.display = '';
+            });
+      } else if (result.state === 'prompt') {
+            cameraprompt();
+      } else if (result.state === 'denied') {
+            nocamera.style.display = '';
+            cameradenied();
+      }
 
-    navigator.mediaDevices.getUserMedia({
-        video: { facingMode: direction }
-    })
-    .then(stream => {
-        currentStream = stream;
-        const video = document.getElementById('video');
-        video.srcObject = stream;
-
-        const shouldFlip = direction === 'user' || onlyHasUserCamera;
-        video.style.transform = shouldFlip ? 'scaleX(-1)' : 'scaleX(1)';
-        video.style.display = 'block';
-    })
-    .catch(err => {
-        nocamera.style.display = '';
-    });
 }
 
+function cameraprompt() {
+    prompt.style.display = '';
+}
+
+function cameradenied() {
+    denied.style.display = '';
+}
+                                                         
 function changeValue() {
     direction = (direction === 'environment') ? 'user' : 'environment';
     startCamera();
