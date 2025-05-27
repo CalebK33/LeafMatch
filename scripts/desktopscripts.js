@@ -131,36 +131,38 @@ function upload() {
 }
 
 function takePhoto() {
-    const video = document.getElementById('video');
-    const canvas = document.getElementById('canvas');
-    const photo = document.getElementById('photo');
-    const button2 = document.getElementById('birb');
-    const button3 = document.getElementById('uploadbutton');
-
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-
-    const context = canvas.getContext('2d');
-
-    const shouldFlip = direction === 'user' || onlyHasUserCamera;
-    if (shouldFlip) {
-        context.translate(canvas.width, 0);
-        context.scale(-1, 1);
-    }
-
-    context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-    const imageDataURL = canvas.toDataURL('image/png');
-    photo.src = imageDataURL;
-
+    if nocamera.style.display == "none" {
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const photo = document.getElementById('photo');
+        const button2 = document.getElementById('birb');
+        const button3 = document.getElementById('uploadbutton');
     
-    currentStream.getTracks().forEach(track => track.stop());
-    currentStream = null;
-    video.srcObject = null;
-    photo.style.display = '';
-    video.style.display = 'none';
-    button2.style.display = 'none';
-    button3.style.display = 'none';
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+    
+        const context = canvas.getContext('2d');
+    
+        const shouldFlip = direction === 'user' || onlyHasUserCamera;
+        if (shouldFlip) {
+            context.translate(canvas.width, 0);
+            context.scale(-1, 1);
+        }
+    
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+    
+        const imageDataURL = canvas.toDataURL('image/png');
+        photo.src = imageDataURL;
+    
+        
+        currentStream.getTracks().forEach(track => track.stop());
+        currentStream = null;
+        video.srcObject = null;
+        photo.style.display = '';
+        video.style.display = 'none';
+        button2.style.display = 'none';
+        button3.style.display = 'none';
+    }
 }
 
 function flash() {
