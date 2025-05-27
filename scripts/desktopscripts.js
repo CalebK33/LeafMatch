@@ -10,6 +10,10 @@ const cross = document.getElementById('cross');
 tick.style.display = "none";
 cross.style.display = "none";
 
+const nocamera = document.getElementById('nocamera');
+
+nocamera.style.display = "none";
+
 async function detectCameras() {
     const devices = await navigator.mediaDevices.enumerateDevices();
     const videoInputs = devices.filter(device => device.kind === 'videoinput');
@@ -19,7 +23,7 @@ async function detectCameras() {
         onlyHasUserCamera = true;
     } 
     else if (videoInputs.length === 0) {
-        alert("I think you need a camera for this...")
+        nocamera.style.display = '';
     }
     else {
         onlyHasUserCamera = false;
@@ -47,7 +51,7 @@ async function startCamera() {
         video.style.display = 'block';
     })
     .catch(err => {
-        alert("Please allow access to camera or use the upload files button")
+        nocamera.style.display = '';
     });
 }
 
