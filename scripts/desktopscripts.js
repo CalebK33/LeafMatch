@@ -67,7 +67,7 @@ async function startCamera() {
             cameradenied();
       }
 
-    }
+    });
 
 }
 
