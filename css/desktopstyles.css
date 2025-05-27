@@ -17,6 +17,7 @@ img {
   left: 25%;
   width: 50vw;
   height: 100vh;
+  position: fixed;
 }
 
 body {
