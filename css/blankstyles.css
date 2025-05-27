@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.gloria {
+  font-family: "Gloria Hallelujah", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.noselect {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+
+body {
+  background-color: rgba(200, 255, 200);
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(110, 160, 100)
+}
+
+h1 {
+  font-size: 50px;
+  font-family: "Gloria Hallelujah", cursive;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
+  color: rgb(110, 160, 100);
+}
+
+h2 {
+  font-size: 55px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color: rgb(110, 160, 100);
+  padding: 10px;
+}
+
+p {
+  font-size: 25px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: rgb(110, 160, 100);
+  padding-left: 10px;
+}
+
+.hover {
+  cursor: pointer;
+}
