@@ -56,8 +56,13 @@ a {
   position: static;
   left: 50;
   font-size: 40px;
-  text-style: none;
   border: 5px solid rgb(110, 160, 110)
+  font-size: 25px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: rgb(110, 160, 100);
+  padding: 10px;
 }
 
 .hover {
