@@ -12,6 +12,13 @@ img {
   -moz-user-select: none;   
 }
 
+.nocamera {
+  top: 0;
+  left: 25%;
+  width: 50vw;
+  height: 100vh;
+}
+
 body {
   margin: 0;
   padding: 0;
