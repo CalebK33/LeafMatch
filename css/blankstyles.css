@@ -53,7 +53,8 @@ p {
 }
 
 a {
-  text-align: center;
+  position: static;
+  left: 50;
   text-style: none;
   border: 10px solid rgb(110, 160, 110)
 }
