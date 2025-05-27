@@ -55,6 +55,7 @@ p {
 a {
   position: static;
   left: 50;
+  font-size: 40px;
   text-style: none;
   border: 5px solid rgb(110, 160, 110)
 }
