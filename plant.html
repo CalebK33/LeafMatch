@@ -25,8 +25,38 @@
             <img onclick="openSidebar()" id="toggleSidebar" class="sidebarimg noselect" src="images/ui/sidebar.png" alt="Open Sidebar">
             <a href="index.html" class="blank" style="text-decoration: none;"><h1 class="hover">Leafmatch</h1></a>
         </div>
-        <h2>Title</h2>
-        <p>This is a paragraph</p>
+        
+        <h2 id="title">Plant Name</h2>
+        <p id="description">Plant description</p>
+        <img src="images/plants/none.png">
+
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get("ID");
+        
+            const database = {
+              "1": {
+                title: "Plant one"
+                description: "Plant one is a really cool plant",
+                image: ""
+              },
+              "2": {
+                title: "Plant two",
+                description: "Plant two is a really ugly plant",
+                image: ""
+              }
+            };
+        
+            const entry = database[id];
+            if (entry) {
+              document.getElementById("title").textContent = entry.title;
+              document.getElementById("description").textContent = entry.description;
+              document.getElementById("image").src = entry.image;
+            } else {
+              document.getElementById("title").textContent = "Not Found";
+              document.getElementById("description").textContent = "No data available for ID: " + id;
+            }
+        </script>
         <script src="scripts/pagescripts.js"></script>
     </body>
 </html>
