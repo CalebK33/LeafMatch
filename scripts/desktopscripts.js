@@ -8,7 +8,7 @@ const denied = document.getElementById('denied');
 const prompt = document.getElementById('prompt');
 
 denied.style.display = "none";
-cross.style.display = "none";
+prompt.style.display = "none";
 
 const tick = document.getElementById('tick');
 const cross = document.getElementById('cross');
