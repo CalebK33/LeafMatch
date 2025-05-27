@@ -27,8 +27,11 @@
         </div>
         
         <h2 id="title">Plant Name</h2>
-        <p id="description">Plant description</p>
-        <img id="image" src="images/plants/none.png" style="border:10px solid rgb(110, 160, 110);border-radius:10px;position:fixed;">
+        <p id="name">Scientific name</p>
+        <div style="display: flex;">
+            <img id="image" src="images/plants/none.png" style="border:10px solid rgb(110, 160, 110);border-radius:10px;position:fixed;">
+            <p id="description">This is the placeholder text for a plants description.</p>
+        </div>
 
         <script>
             const urlParams = new URLSearchParams(window.location.search);
@@ -37,11 +40,13 @@
             const database = {
               "1": {
                 title: "Plant one",
+                name: "Fancy name",
                 description: "Plant one is a really cool plant",
                 image: "images/plants/plant1.png",
               },
               "2": {
                 title: "Plant two",
+                name: "Fancy name",
                 description: "Plant two is a really ugly plant",
                 image: "images/plants/plant2.png",
               }
@@ -50,6 +55,7 @@
             const entry = database[id];
             if (entry) {
               document.getElementById("title").textContent = entry.title;
+              document.getElementById("name").textContent = entry.name;
               document.getElementById("description").textContent = entry.description;
               document.getElementById("image").src = entry.image;
             } else {
