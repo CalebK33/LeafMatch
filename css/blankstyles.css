@@ -1,4 +1,4 @@
-* {
+e* {
   margin: 0;
   box-sizing: border-box;
 }
@@ -56,7 +56,7 @@ a {
   position: static;
   left: 50;
   text-style: none;
-  border: 10px solid rgb(110, 160, 110)
+  border: 5px solid rgb(110, 160, 110)
 }
 
 .hover {
