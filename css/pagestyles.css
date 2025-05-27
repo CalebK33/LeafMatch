@@ -9,6 +9,12 @@
   font-style: normal;
 }
 
+.noselect {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+
 body {
   background-color: rgba(200, 255, 200);
   overflow: hidden;
