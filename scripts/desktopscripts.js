@@ -67,6 +67,8 @@ async function startCamera() {
             cameradenied();
       }
 
+    }
+
 }
 
 function cameraprompt() {
