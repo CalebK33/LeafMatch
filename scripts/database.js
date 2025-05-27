@@ -13,6 +13,12 @@ const database = {
     name: "Fancy name",
     description: "Plant two is a really ugly plant",
     image: "images/plants/plant2.jpg",
+  },
+  "2": {
+    title: "Plant three",
+    name: "Fancy name",
+    description: "Plant two is a really weird plant",
+    image: "images/plants/plant2.jpg",
   }
 };
 
