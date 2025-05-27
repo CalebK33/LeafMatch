@@ -52,6 +52,12 @@ p {
   padding-left: 10px;
 }
 
+a {
+  text-align: center;
+  text-style: none;
+  border: 10px solid rgb(110, 160, 110)
+}
+
 .hover {
   cursor: pointer;
 }
