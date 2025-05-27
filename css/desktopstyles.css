@@ -21,6 +21,14 @@ img {
   position: fixed;
 }
 
+.prompt {
+  left: 30%;
+  top: 30%;
+  right: 30%;
+  bottom: 30%;
+  position: fixed;
+}
+
 body {
   margin: 0;
   padding: 0;
