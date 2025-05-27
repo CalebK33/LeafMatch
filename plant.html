@@ -28,7 +28,7 @@
         
         <h2 id="title">Plant Name</h2>
         <p id="description">Plant description</p>
-        <img src="images/plants/none.png">
+        <img id="image" src="images/plants/none.png">
 
         <script>
             const urlParams = new URLSearchParams(window.location.search);
@@ -36,14 +36,14 @@
         
             const database = {
               "1": {
-                title: "Plant one"
+                title: "Plant one",
                 description: "Plant one is a really cool plant",
-                image: ""
+                image: "",
               },
               "2": {
                 title: "Plant two",
                 description: "Plant two is a really ugly plant",
-                image: ""
+                image: "",
               }
             };
         
