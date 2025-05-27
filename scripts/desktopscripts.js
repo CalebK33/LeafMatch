@@ -131,7 +131,7 @@ function upload() {
 }
 
 function takePhoto() {
-    if nocamera.style.display == "none" {
+    if nocamera.style.display === "none" {
         const video = document.getElementById('video');
         const canvas = document.getElementById('canvas');
         const photo = document.getElementById('photo');
