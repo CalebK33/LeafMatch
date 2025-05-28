@@ -3,7 +3,7 @@
 <head> 
   <meta charset="UTF-8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LeafMatch Database</title>
+  <title>LeafMatch</title>
   <link rel="stylesheet" href="css/pagestyles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <style>
@@ -29,6 +29,31 @@
     .plant-link:hover {
       background-color: rgb(160, 225, 160);
     }
+
+    .database-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    #plantSearch {
+      flex: 1;
+      max-width: 300px;
+      font-size: 20px;
+      padding: 10px;
+      border: 2px solid rgb(110, 160, 110);
+      border-radius: 5px;
+      background-color: rgba(120, 170, 120, 0.20);
+      color: rgb(110, 160, 110);
+      font-family: "Ubuntu", sans-serif;
+    }
+
+    #plantSearch::placeholder {
+      color: rgb(120, 170, 120); 
+      font-style: italic;
+    }
   </style>
 </head>
 <body>
@@ -50,24 +75,40 @@
     <a href="index.html" class="blank" style="text-decoration: none;"><h1 class="hover">Leafmatch</h1></a>
   </div>
   
-  <h2>Plant Database</h2>
+  <div class="database-header">
+    <h2>Plant Database</h2>
+    <input type="text" id="plantSearch" placeholder="Search plants...">
+  </div>
+
   <div id="plant-list"></div>
 
   <script src="scripts/database.js"></script>
   <script src="scripts/pagescripts.js"></script>
   <script>
-    const container = document.getElementById("plant-list");
+    const plantList = document.getElementById("plant-list");
+    const searchInput = document.getElementById("plantSearch");
 
-    let index = 0;
-    for (const id in database) {
-      const plant = database[id];
-      const link = document.createElement("a");
-      link.href = `plant.html?ID=${id}`;
-      link.textContent = plant.title;
-      link.className = "plant-link";
-      container.appendChild(link);
-      index++;
+    function renderPlants(filter = "") {
+      plantList.innerHTML = "";
+
+      const filteredEntries = Object.entries(database).filter(([id, plant]) =>
+        plant.title.toLowerCase().includes(filter.toLowerCase())
+      );
+
+      for (const [id, plant] of filteredEntries) {
+        const link = document.createElement("a");
+        link.href = `plant.html?ID=${id}`;
+        link.textContent = plant.title;
+        link.className = "plant-link";
+        plantList.appendChild(link);
+      }
     }
+
+    searchInput.addEventListener("input", () => {
+      renderPlants(searchInput.value);
+    });
+
+    renderPlants();
   </script>
 </body>
 </html>
