@@ -16,7 +16,7 @@
 }
 
 body {
-  background-color: rgba(200, 255, 200);
+  background-color: rgb(200, 255, 200);
   overflow-x: hidden;
   overflow-y: auto;
   font-family: "Ubuntu", sans-serif;
