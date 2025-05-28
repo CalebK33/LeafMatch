@@ -36,6 +36,24 @@ async function detectCameras() {
     }
 }
 
+function promptAccepted() {
+    navigator.mediaDevices.getUserMedia({
+    video: { facingMode: direction }
+    })
+    .then(stream => {
+        currentStream = stream;
+        const video = document.getElementById('video');
+        video.srcObject = stream;
+
+        const shouldFlip = direction === 'user' || onlyHasUserCamera;
+        video.style.transform = shouldFlip ? 'scaleX(-1)' : 'scaleX(1)';
+        video.style.display = 'block';
+    })
+    .catch(err => {
+        nocamera.style.display = '';
+    });
+}
+
 async function startCamera() {
     if (currentStream) {
         currentStream.getTracks().forEach(track => track.stop());
@@ -61,23 +79,16 @@ async function startCamera() {
                 nocamera.style.display = '';
             });
       } else if (result.state === 'prompt') {
-            cameraprompt();
+            prompt.style.display = '';
       } else if (result.state === 'denied') {
             nocamera.style.display = '';
-            cameradenied();
+            denied.style.display = '';
       }
 
     });
 
 }
 
-function cameraprompt() {
-    prompt.style.display = '';
-}
-
-function cameradenied() {
-    denied.style.display = '';
-}
                                                          
 function changeValue() {
     direction = (direction === 'environment') ? 'user' : 'environment';
