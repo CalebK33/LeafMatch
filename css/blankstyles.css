@@ -57,14 +57,15 @@ a {
   left: 40%;
   width: 20%;
   text-align: center;
+  text-decoration: none;
   font-size: 40px;
   border: 5px solid rgb(110, 160, 110);
+  border-radius: 3px;
   font-size: 25px;
   font-family: "Ubuntu", sans-serif;
   font-weight: 600;
   font-style: normal;
-  color: rgb(200, 255, 200)
-  background-color: rgb(110, 160, 100);
+  color: rgb(110, 160, 100);
   padding: 10px;
 }
 
