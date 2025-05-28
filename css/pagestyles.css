@@ -67,7 +67,7 @@ p {
   left: -80%; 
   width: 80%;
   height: 100%;
-  background-color: rgb(160, 215, 160);
+  background-color: rgb(175, 230, 175);
   overflow: auto;
   transition: left 0.5s ease;
   z-index: 1000;
@@ -92,7 +92,7 @@ p {
 
 .sidebar a.active {
   background-color: rgb(120, 170, 120);
-  color: rgb(200, 255, 200);
+  color: rgb(175, 230, 175);
 }
 
 .sidebar input[type="text"],
