@@ -31,6 +31,10 @@ img {
   text-align: center;
 }
 
+.acceptPrompt {
+  z-index: 99999;
+}
+
 body {
   margin: 0;
   padding: 0;
