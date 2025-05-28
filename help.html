@@ -1,33 +1,44 @@
 <!doctype html>
 <html lang="en-nz">
-    <head> 
-        <meta charset="UTF-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>LeafMatch</title>
-        <link rel="stylesheet" href="css/pagestyles.css">
-        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    </head>
-    <body>
-        <div class="sidebar" id="sidebar">
-            <div class="row">
-                <a href="index" class="blank"><img class="hover" src="images/favicon.ico" style="width: 180px" alt="logo"></a>
-                <a class="hover blank noselect" style="font-size: 85px" onclick="closeSidebar()">&times;</a>
-            </div>
-            <input type="search" placeholder="Search">
-            <a href="index.html">Scan</a>
-            <a href="database">Database</a>
-            <a href="download">Download</a>
-            <a class="active" onclick="closeSidebar()">Help</a>
-            <a href="about">About us</a>
-        </div>
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeafMatch</title>
+  <link rel="stylesheet" href="css/pagestyles.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <div class="row">
+      <a href="index" class="blank"><img class="hover" src="images/favicon.ico" style="width: 180px" alt="logo"></a>
+      <a class="hover blank noselect" style="font-size: 85px" onclick="closeSidebar()">&times;</a>
+    </div>
+    <input type="search" id="sidebarSearch" placeholder="Search">
+    <a href="index.html">Scan</a>
+    <a href="database">Database</a>
+    <a href="download">Download</a>
+    <a class="active" onclick="closeSidebar()">Help</a>
+    <a href="about">About us</a>
+  </div>
 
-        <div class="titlerow">
-            <img onclick="openSidebar()" id="toggleSidebar" class="sidebarimg noselect" src="images/ui/sidebar.png" alt="Open Sidebar">
-            <a href="index.html" class="blank" style="text-decoration: none;"><h1 class="hover">Leafmatch</h1></a>
-        </div>
-        <h2>Title</h2>
-        <p>This is a paragraph</p>
+  <div class="titlerow">
+    <img onclick="openSidebar()" id="toggleSidebar" class="sidebarimg noselect" src="images/ui/sidebar.png" alt="Open Sidebar">
+    <a href="index.html" class="blank" style="text-decoration: none;"><h1 class="hover">Leafmatch</h1></a>
+  </div>
 
-        <script src="scripts/pagescripts.js"></script>
-    </body>
+  <h2>Title</h2>
+  <p>This is a paragraph</p>
+
+  <script src="scripts/pagescripts.js"></script>
+  <script>
+    document.getElementById("sidebarSearch").addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        const query = e.target.value.trim();
+        if (query) {
+          window.location.href = `database.html?q=${encodeURIComponent(query)}`;
+        }
+      }
+    });
+  </script>
+</body>
 </html>
