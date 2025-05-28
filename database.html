@@ -6,6 +6,30 @@
   <title>LeafMatch</title>
   <link rel="stylesheet" href="css/pagestyles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <style>
+    .plant-link {
+      display: block;
+      padding: 20px;
+      font-size: 28px;
+      text-decoration: none;
+      color: rgb(110, 160, 100);
+      font-weight: 700;
+      font-family: "Ubuntu", sans-serif;
+      transition: background-color 0.3s;
+    }
+
+    .plant-link:nth-child(even) {
+      background-color: rgb(200, 255, 200);
+    }
+
+    .plant-link:nth-child(odd) {
+      background-color: rgb(180, 240, 180);
+    }
+
+    .plant-link:hover {
+      background-color: rgb(160, 225, 160);
+    }
+  </style>
 </head>
 <body>
   <div class="sidebar" id="sidebar">
@@ -27,25 +51,22 @@
   </div>
   
   <h2>Plant Database</h2>
-  <div id="plant-list" style="padding: 20px; font-size: 24px;"></div>
+  <div id="plant-list"></div>
 
   <script src="scripts/database.js"></script>
   <script src="scripts/pagescripts.js"></script>
   <script>
     const container = document.getElementById("plant-list");
 
+    let index = 0;
     for (const id in database) {
       const plant = database[id];
       const link = document.createElement("a");
       link.href = `plant.html?ID=${id}`;
       link.textContent = plant.title;
-      link.style.display = "block";
-      link.style.marginBottom = "10px";
-      link.style.color = "rgb(110, 160, 100)";
-      link.style.textDecoration = "none";
-      link.classList.add("hover");
-
+      link.className = "plant-link";
       container.appendChild(link);
+      index++;
     }
   </script>
 </body>
