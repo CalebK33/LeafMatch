@@ -1,38 +1,43 @@
 <!doctype html>
 <html lang="en-nz">
-    <head> 
-        <meta charset="UTF-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>LeafMatch</title>
-        <link rel="stylesheet" href="css/pagestyles.css">
-        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    </head>
-    <body>
-        <div class="sidebar" id="sidebar">
-            <div class="row">
-                <a href="index" class="blank"><img class="hover" src="images/favicon.ico" style="width: 180px" alt="logo"></a>
-                <a class="hover blank noselect" style="font-size: 85px" onclick="closeSidebar()">&times;</a>
-            </div>
-            <input type="search" placeholder="Search">
-            <a href="index.html">Scan</a>
-            <a href="database">Database</a>
-            <a href="download">Download</a>
-            <a href="help">Help</a>
-            <a class="active" onclick="closeSidebar()">About us</a>
-        </div>
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeafMatch</title>
+  <link rel="stylesheet" href="css/pagestyles.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+  <div class="sidebar" id="sidebar">
+    <div class="row">
+      <a href="index" class="blank"><img class="hover" src="images/favicon.ico" style="width: 180px" alt="logo"></a>
+      <a class="hover blank noselect" style="font-size: 85px" onclick="closeSidebar()">&times;</a>
+    </div>
+    <input type="search" id="sidebarSearch" placeholder="Search">
+    <a href="index.html">Scan</a>
+    <a href="database">Database</a>
+    <a href="download">Download</a>
+    <a href="help">Help</a>
+    <a class="active" onclick="closeSidebar()">About us</a>
+  </div>
 
-        <div class="titlerow">
-            <img onclick="openSidebar()" id="toggleSidebar" class="sidebarimg noselect" src="images/ui/sidebar.png" alt="Open Sidebar">
-            <a href="index.html" class="blank" style="text-decoration: none;"><h1 class="hover">Leafmatch</h1></a>
-        </div>
-        
-        <h2>About Us</h2>
-        <p>We are a group of New Zealand students who are part of Paraparaumu College's Robotics Club. As our project for this year we decided to create an app to be used in IM Garden Mart plant nursery in Singapore. We chose this project because it was interesting to us and we wanted to put our skills to the test.</p>     
-        <br>
-        <p>Our team at LeafMatch consists of four people; Caleb, Hayley, Isobella and James. We are all students at Paraparaumu College. We created and coded the website ourselves, and we also made the graphics and logo using our design skills.</p>
-        <br>
-        <p>Our app uses PyTorch AI to train the image scanner to recognise plants around the nursery. This is to make work at the nursery more streamlined. Because the garden mart has so many different plants, our app will make it easier to quickly recognise plants in the nursery.</p>
+  <div class="titlerow">
+    <img onclick="openSidebar()" id="toggleSidebar" class="sidebarimg noselect" src="images/ui/sidebar.png" alt="Open Sidebar">
+    <a href="index.html" class="blank" style="text-decoration: none;"><h1 class="hover">Leafmatch</h1></a>
+  </div>
+  
+  <h2>About Us</h2>
 
-        <script src="scripts/pagescripts.js"></script>
-    </body>
+  <script src="scripts/pagescripts.js"></script>
+  <script>
+    document.getElementById("sidebarSearch").addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        const query = e.target.value.trim();
+        if (query) {
+          window.location.href = `database.html?q=${encodeURIComponent(query)}`;
+        }
+      }
+    });
+  </script>
+</body>
 </html>
