@@ -17,7 +17,7 @@ const database = {
   "3": {
     title: "Plant three",
     name: "Fancy name",
-    description: "Plant two is a really weird plant",
+    description: "Plant three is a really weird plant",
     image: "images/plants/plant2.jpg",
   }
 };
