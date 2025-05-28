@@ -69,6 +69,11 @@ a {
   padding: 10px;
 }
 
+a:hover {
+  color: rbg(200, 255, 200);
+  background-color: rgb(110, 160, 110);
+}
+
 .hover {
   cursor: pointer;
 }
