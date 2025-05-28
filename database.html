@@ -8,55 +8,68 @@
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <style>
     body {
+      margin: 0;
       overflow-x: hidden;
+      font-family: sans-serif;
     }
 
     .database-container {
-      padding: 20px;
-      max-width: 100%;
+      margin-top: 20px;
     }
 
     .search-title-row {
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
-      padding: 0 10px;
+      flex-wrap: wrap;
+      padding: 0 20px;
+      margin-bottom: 20px;
+    }
+
+    .search-title-row h2 {
+      margin: 0;
+      font-size: 32px;
+      color: rgb(60, 100, 60);
     }
 
     .database-search {
-      padding: 10px;
-      font-size: 20px;
-      border: 2px solid rgb(110, 160, 110);
-      border-radius: 10px;
-      flex: 1;
-      max-width: 300px;
+      padding: 8px 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 20px;
+      background: #e4f4e4;
+      box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
+      width: 280px;
+      max-width: 100%;
     }
 
     .plant-entry {
-      width: 100%;
-      padding: 20px;
-      font-size: 24px;
-      border-bottom: 2px solid rgba(110, 160, 110, 0.2);
-      text-decoration: none;
-      color: rgb(110, 160, 110);
       display: block;
+      width: 100vw;
+      padding: 20px;
+      font-size: 22px;
+      color: rgb(40, 70, 40);
+      text-decoration: none;
       box-sizing: border-box;
     }
 
-    .plant-entry:nth-child(even) {
-      background-color: rgba(180, 233, 180, 0.3);
+    .plant-entry:nth-child(odd) {
+      background-color: rgb(230, 255, 230);
     }
 
-    .plant-entry:nth-child(odd) {
-      background-color: rgba(200, 255, 200, 0.3);
+    .plant-entry:nth-child(even) {
+      background-color: rgb(210, 240, 210);
     }
 
     @media (max-width: 600px) {
       .search-title-row {
         flex-direction: column;
-        align-items: stretch;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .database-search {
+        width: 100%;
       }
     }
   </style>
@@ -88,7 +101,6 @@
     <div id="plantList"></div>
   </div>
 
-  <!-- Use your actual scripts -->
   <script src="scripts/database.js"></script>
   <script src="scripts/pagescripts.js"></script>
   <script>
@@ -109,7 +121,6 @@
       }
     }
 
-    // Use URL param for initial search
     const urlQuery = new URLSearchParams(window.location.search).get("q");
     if (urlQuery) searchInput.value = urlQuery;
     renderList(searchInput.value || "");
@@ -118,7 +129,6 @@
       renderList(searchInput.value);
     });
 
-    // Sidebar search triggers redirect
     document.getElementById("sidebarSearch").addEventListener("keypress", (e) => {
       if (e.key === "Enter") {
         const query = e.target.value.trim();
