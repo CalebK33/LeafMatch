@@ -7,52 +7,57 @@
   <link rel="stylesheet" href="css/pagestyles.css">
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <style>
-    .plant-link {
-      display: block;
+    body {
+      overflow-x: hidden;
+    }
+
+    .database-container {
       padding: 20px;
-      font-size: 28px;
-      text-decoration: none;
-      color: rgb(110, 160, 100);
-      font-weight: 700;
-      font-family: "Ubuntu", sans-serif;
-      transition: background-color 0.3s;
+      max-width: 100%;
     }
 
-    .plant-link:nth-child(even) {
-      background-color: rgb(200, 255, 200);
-    }
-
-    .plant-link:nth-child(odd) {
-      background-color: rgb(180, 240, 180);
-    }
-
-    .plant-link:hover {
-      background-color: rgb(160, 225, 160);
-    }
-
-    .database-header {
+    .search-title-row {
       display: flex;
-      align-items: center;
+      flex-wrap: wrap;
       justify-content: space-between;
-      padding: 20px;
+      align-items: center;
       gap: 20px;
+      padding: 0 10px;
     }
 
-    #plantSearch {
+    .database-search {
+      padding: 10px;
+      font-size: 20px;
+      border: 2px solid rgb(110, 160, 110);
+      border-radius: 10px;
       flex: 1;
       max-width: 300px;
-      font-size: 20px;
-      padding: 10px;
-      border: 2px solid rgb(110, 160, 110);
-      border-radius: 5px;
-      background-color: rgba(120, 170, 120, 0.20);
-      color: rgb(110, 160, 110);
-      font-family: "Ubuntu", sans-serif;
     }
 
-    #plantSearch::placeholder {
-      color: rgb(120, 170, 120); 
-      font-style: italic;
+    .plant-entry {
+      width: 100%;
+      padding: 20px;
+      font-size: 24px;
+      border-bottom: 2px solid rgba(110, 160, 110, 0.2);
+      text-decoration: none;
+      color: rgb(110, 160, 110);
+      display: block;
+      box-sizing: border-box;
+    }
+
+    .plant-entry:nth-child(even) {
+      background-color: rgba(180, 233, 180, 0.3);
+    }
+
+    .plant-entry:nth-child(odd) {
+      background-color: rgba(200, 255, 200, 0.3);
+    }
+
+    @media (max-width: 600px) {
+      .search-title-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
     }
   </style>
 </head>
@@ -62,7 +67,7 @@
       <a href="index" class="blank"><img class="hover" src="images/favicon.ico" style="width: 180px" alt="logo"></a>
       <a class="hover blank noselect" style="font-size: 85px" onclick="closeSidebar()">&times;</a>
     </div>
-    <input type="search" placeholder="Search">
+    <input type="search" id="sidebarSearch" placeholder="Search">
     <a href="index.html">Scan</a>
     <a class="active" onclick="closeSidebar()">Database</a>
     <a href="download">Download</a>
@@ -74,41 +79,52 @@
     <img onclick="openSidebar()" id="toggleSidebar" class="sidebarimg noselect" src="images/ui/sidebar.png" alt="Open Sidebar">
     <a href="index.html" class="blank" style="text-decoration: none;"><h1 class="hover">Leafmatch</h1></a>
   </div>
-  
-  <div class="database-header">
-    <h2>Plant Database</h2>
-    <input type="text" id="plantSearch" placeholder="Search plants...">
+
+  <div class="database-container">
+    <div class="search-title-row">
+      <h2>Database</h2>
+      <input type="search" id="pageSearch" class="database-search" placeholder="Search database...">
+    </div>
+    <div id="plantList"></div>
   </div>
 
-  <div id="plant-list"></div>
-
+  <!-- Use your actual scripts -->
   <script src="scripts/database.js"></script>
   <script src="scripts/pagescripts.js"></script>
   <script>
-    const plantList = document.getElementById("plant-list");
-    const searchInput = document.getElementById("plantSearch");
+    const plantList = document.getElementById("plantList");
+    const searchInput = document.getElementById("pageSearch");
 
-    function renderPlants(filter = "") {
+    function renderList(filter = "") {
       plantList.innerHTML = "";
-
-      const filteredEntries = Object.entries(database).filter(([id, plant]) =>
-        plant.title.toLowerCase().includes(filter.toLowerCase())
+      const entries = Object.entries(database).filter(([id, entry]) =>
+        entry.title.toLowerCase().includes(filter.toLowerCase())
       );
-
-      for (const [id, plant] of filteredEntries) {
+      for (const [id, entry] of entries) {
         const link = document.createElement("a");
         link.href = `plant.html?ID=${id}`;
-        link.textContent = plant.title;
-        link.className = "plant-link";
+        link.className = "plant-entry";
+        link.textContent = entry.title;
         plantList.appendChild(link);
       }
     }
 
+    // Use URL param for initial search
+    const urlQuery = new URLSearchParams(window.location.search).get("q");
+    if (urlQuery) searchInput.value = urlQuery;
+    renderList(searchInput.value || "");
+
     searchInput.addEventListener("input", () => {
-      renderPlants(searchInput.value);
+      renderList(searchInput.value);
     });
 
-    renderPlants();
+    // Sidebar search triggers redirect
+    document.getElementById("sidebarSearch").addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        const query = e.target.value.trim();
+        if (query) window.location.href = `database.html?q=${encodeURIComponent(query)}`;
+      }
+    });
   </script>
 </body>
 </html>
