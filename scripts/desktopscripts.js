@@ -37,7 +37,7 @@ async function detectCameras() {
 }
 
 function promptAccepted() {
-    alert("running");
+    prompt.style.display = 'none';
     navigator.mediaDevices.getUserMedia({
     video: { facingMode: direction }
     })
