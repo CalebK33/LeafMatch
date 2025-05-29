@@ -38,10 +38,12 @@ async function detectCameras() {
 
 function promptAccepted() {
     prompt.style.display = 'none';
+    alert('nocrash');
     navigator.mediaDevices.getUserMedia({
     video: { facingMode: direction }
     })
     .then(stream => {
+        alert('accepted');
         currentStream = stream;
         const video = document.getElementById('video');
         video.srcObject = stream;
@@ -51,6 +53,7 @@ function promptAccepted() {
         video.style.display = 'block';
     })
     .catch(err => {
+        alert('denied');
         nocamera.style.display = '';
     });
 }
