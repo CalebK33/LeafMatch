@@ -4,6 +4,7 @@ let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
+let run = 0;
 let blocked = 0;
 
 const denied = document.getElementById('denied');
@@ -78,12 +79,14 @@ async function startCamera() {
                     currentStream = stream;
                     const video = document.getElementById('video');
                     video.srcObject = stream;
+                    run = 1;
             
                     const shouldFlip = direction === 'user' || onlyHasUserCamera;
                     video.style.transform = shouldFlip ? 'scaleX(-1)' : 'scaleX(1)';
                     video.style.display = 'block';
                 }
                 else {
+                    run = 1;
                     nocamera.style.display = '';
                 }
             })
@@ -91,11 +94,13 @@ async function startCamera() {
                 nocamera.style.display = '';
             });
       } else if (result.state === 'prompt') {
-            if (camerasavailable == 1) {
+            if (camerasavailable == 1 && run == 0) {
+                run = 1;
                 prompt.style.display = '';
             }
-      } else if (result.state === 'denied') {
+      } else if (result.state === 'denied' && run == 0) {
             nocamera.style.display = '';
+            run = 1;
             denied.style.display = '';
             blocked = 1;
       }
