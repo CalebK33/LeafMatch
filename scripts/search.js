@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (e.key === "Enter") {
                 const query = e.target.value.trim();
                 if (query) {
-                    window.location.href = `database.html?q=${encodeURIComponent(query)}`;
+                    window.location.href = `database?q=${encodeURIComponent(query)}`;
                 }
             }
         });
