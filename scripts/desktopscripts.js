@@ -173,7 +173,7 @@ function upload() {
 }
 
 function takePhoto() {
-    if (nocamera.style.display === "none") {
+    if (camerasavailable == 1) {
         const video = document.getElementById('video');
         const canvas = document.getElementById('canvas');
         const photo = document.getElementById('photo');
@@ -208,28 +208,30 @@ function takePhoto() {
 }
 
 function flash() {
-  const flashDiv = document.createElement('div');
-  flashDiv.style.cssText = `
-    position: fixed;
-    top: 0;
-    left: 25%;
-    width: 50vw;
-    height: 100vh;
-    background-color: white;
-    opacity: 1;
-    z-index: 9999;
-    pointer-events: none;
-    transition: opacity 0.5s;
-  `;
-  document.body.appendChild(flashDiv);
-
-  setTimeout(() => {
-    flashDiv.style.opacity = 0;
-    setTimeout(() => {
-      document.body.removeChild(flashDiv);
-    }, 500);
-  }, 100);
-  acceptordeny();
+  if (camerasavailable == 1) {
+      const flashDiv = document.createElement('div');
+      flashDiv.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 25%;
+        width: 50vw;
+        height: 100vh;
+        background-color: white;
+        opacity: 1;
+        z-index: 9999;
+        pointer-events: none;
+        transition: opacity 0.5s;
+      `;
+      document.body.appendChild(flashDiv);
+    
+      setTimeout(() => {
+        flashDiv.style.opacity = 0;
+        setTimeout(() => {
+          document.body.removeChild(flashDiv);
+        }, 500);
+      }, 100);
+      acceptordeny();
+  }
 }
 
 function startcam() {
