@@ -155,10 +155,10 @@ function upload() {
 
                 photo.src = canvas.toDataURL('image/png');
 
-                alert('1');
-                currentStream.getTracks().forEach(track => track.stop());
-                alert('2');
-                currentStream = null;
+                if (camerasavailable == 1) {
+                    currentStream.getTracks().forEach(track => track.stop());
+                    currentStream = null;
+                }
                 alert('3');
                 video.srcObject = null;
                 alert('4');
