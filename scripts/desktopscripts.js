@@ -140,6 +140,10 @@ function retakePhoto() {
     tick.style.display = "none";
     cross.style.display = "none";
 
+    if (camerasavailable == 0 || blocked == 1) {
+        nocamera.style.display = '';
+    }
+    
     startCamera();
     
 }
