@@ -6,7 +6,7 @@
 @font-face {
   font-family: 'Leaf Script';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 800;
   src: local(''),
     url('/css/titlefont.ttf') format('truetype');
 }
@@ -37,7 +37,7 @@ h1 {
   font-size: 50px;
   font-family: 'Leaf Script';
   font-style: normal;
-  font-weight: 600;
+  font-weight: 800;
   text-decoration: none;
   color: rgb(110, 160, 100);
   
