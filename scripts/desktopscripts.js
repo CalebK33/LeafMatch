@@ -94,7 +94,7 @@ async function startCamera() {
                 nocamera.style.display = '';
             });
       } else if (result.state === 'prompt') {
-            if (camerasavailable == 1 && run == 0) {
+            if (camerasavailable == 1) {
                 run = 1;
                 prompt.style.display = '';
             }
