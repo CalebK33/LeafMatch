@@ -8,7 +8,7 @@
   font-style: normal;
   font-weight: 600;
   src: local(''),
-    url('/css/titlefont.ttf') format('tff');
+    url('/css/titlefont.ttf') format('truetype');
 }
 
 .gloria {
