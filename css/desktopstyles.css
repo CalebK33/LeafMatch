@@ -29,11 +29,9 @@ img {
   bottom: 30%;
   position: fixed;
   text-align: center;
-}
-
-.acceptPrompt {
   z-index: 99999;
 }
+
 
 body {
   margin: 0;
