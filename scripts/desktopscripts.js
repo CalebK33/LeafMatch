@@ -165,7 +165,7 @@ function upload() {
 
                 photo.src = canvas.toDataURL('image/png');
 
-                if (camerasavailable == 1) {
+                if (camerasavailable == 1 && blocked == 0) {
                     currentStream.getTracks().forEach(track => track.stop());
                     currentStream = null;
                 }
