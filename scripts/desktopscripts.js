@@ -259,6 +259,4 @@ function flash() {
   }
 }
 
-function startcam() {
-    startCamera()
-}
+startCamera()
