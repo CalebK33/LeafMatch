@@ -137,6 +137,7 @@ function upload() {
     const photo = document.getElementById('photo');
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
+    
 
     if (fileInput.files.length > 0) {
         const file = fileInput.files[0];
@@ -159,15 +160,14 @@ function upload() {
                     currentStream.getTracks().forEach(track => track.stop());
                     currentStream = null;
                 }
-                alert('3');
+
                 video.srcObject = null;
-                alert('4');
+
+                nocamera.style.display = "none";
+                
                 video.style.display = 'none';
-                alert('5');
                 button2.style.display = 'none';
-                alert('6');
                 button3.style.display = 'none';
-                alert('7');
                 
                 photo.style.display = '';
                     
