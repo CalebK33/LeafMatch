@@ -40,7 +40,7 @@ function promptAccepted() {
     prompt.style.display = 'none';
     alert('nocrash');
     navigator.mediaDevices.getUserMedia({
-    video: { facingMode: direction }
+        video: { facingMode: direction }
     })
     .then(stream => {
         alert('accepted');
