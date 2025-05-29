@@ -7,6 +7,8 @@ var elem = document.documentElement;
 const denied = document.getElementById('denied');
 const prompt = document.getElementById('prompt');
 
+let camerasavailable = 1;
+
 denied.style.display = "none";
 prompt.style.display = "none";
 
@@ -30,6 +32,7 @@ async function detectCameras() {
     } 
     else if (videoInputs.length === 0) {
         nocamera.style.display = '';
+        camerasavailable = 0;
     }
     else {
         onlyHasUserCamera = false;
@@ -83,7 +86,9 @@ async function startCamera() {
                 nocamera.style.display = '';
             });
       } else if (result.state === 'prompt') {
-            prompt.style.display = '';
+            if (camerasavailable == 1) {
+                prompt.style.display = '';
+            }
       } else if (result.state === 'denied') {
             nocamera.style.display = '';
             denied.style.display = '';
