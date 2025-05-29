@@ -155,12 +155,19 @@ function upload() {
 
                 photo.src = canvas.toDataURL('image/png');
 
+                alert('1');
                 currentStream.getTracks().forEach(track => track.stop());
+                alert('2');
                 currentStream = null;
+                alert('3');
                 video.srcObject = null;
+                alert('4');
                 video.style.display = 'none';
+                alert('5');
                 button2.style.display = 'none';
+                alert('6');
                 button3.style.display = 'none';
+                alert('7');
                 
                 photo.style.display = '';
                     
