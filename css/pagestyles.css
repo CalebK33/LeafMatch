@@ -3,6 +3,14 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Leaf Script';
+  font-style: normal;
+  font-weight: 600;
+  src: local(''),
+    url('/css/titlefont.ttf') format('tff');
+}
+
 .gloria {
   font-family: "Gloria Hallelujah", cursive;
   font-weight: 400;
@@ -27,11 +35,12 @@ body {
 
 h1 {
   font-size: 50px;
-  font-family: "Gloria Hallelujah", cursive;
-  font-weight: 700;
+  font-family: 'Leaf Script';
   font-style: normal;
+  font-weight: 600;
   text-decoration: none;
   color: rgb(110, 160, 100);
+  
 }
 
 
