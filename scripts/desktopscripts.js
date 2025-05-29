@@ -4,6 +4,8 @@ let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
+let blocked = 0;
+
 const denied = document.getElementById('denied');
 const prompt = document.getElementById('prompt');
 
@@ -55,6 +57,7 @@ function promptAccepted() {
     })
     .catch(err => {
         nocamera.style.display = '';
+        blocked = 1;
     });
 }
 
@@ -94,6 +97,7 @@ async function startCamera() {
       } else if (result.state === 'denied') {
             nocamera.style.display = '';
             denied.style.display = '';
+            blocked = 1;
       }
 
     });
@@ -185,7 +189,7 @@ function upload() {
 }
 
 function takePhoto() {
-    if (camerasavailable == 1) {
+    if (camerasavailable == 1 && blocked == 0) {
         const video = document.getElementById('video');
         const canvas = document.getElementById('canvas');
         const photo = document.getElementById('photo');
@@ -220,7 +224,7 @@ function takePhoto() {
 }
 
 function flash() {
-  if (camerasavailable == 1) {
+  if (camerasavailable == 1 && blocked == 0) {
       const flashDiv = document.createElement('div');
       flashDiv.style.cssText = `
         position: fixed;
