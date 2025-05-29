@@ -71,13 +71,18 @@ async function startCamera() {
                 video: { facingMode: direction }
             })
             .then(stream => {
-                currentStream = stream;
-                const video = document.getElementById('video');
-                video.srcObject = stream;
-        
-                const shouldFlip = direction === 'user' || onlyHasUserCamera;
-                video.style.transform = shouldFlip ? 'scaleX(-1)' : 'scaleX(1)';
-                video.style.display = 'block';
+                if (camerasavailable == 1) {
+                    currentStream = stream;
+                    const video = document.getElementById('video');
+                    video.srcObject = stream;
+            
+                    const shouldFlip = direction === 'user' || onlyHasUserCamera;
+                    video.style.transform = shouldFlip ? 'scaleX(-1)' : 'scaleX(1)';
+                    video.style.display = 'block';
+                }
+                else {
+                    nocamera.style.display = '';
+                }
             })
             .catch(err => {
                 nocamera.style.display = '';
