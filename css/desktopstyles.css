@@ -22,7 +22,8 @@ img {
 }
 
 .prompt {
-  background-color: rgb(100, 150, 100);
+  background-color: rgb(180, 240, 180);
+  box-shadow: 5px 10px rgba(10, 10, 10, 0.3)
   left: 30%;
   top: 30%;
   right: 30%;
@@ -32,6 +33,14 @@ img {
   z-index: 99999;
 }
 
+.prompt h1 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+  color: rgb(100, 150, 100)
+  
+}
 
 body {
   margin: 0;
