@@ -23,11 +23,12 @@ img {
 
 .prompt {
   background-color: rgb(180, 240, 180);
-  box-shadow: 5px 10px rgba(10, 10, 10, 0.3)
-  left: 30%;
+  box-shadow: 5px 10px rgba(10, 10, 10, 0.7);
+  left: 35%;
   top: 30%;
-  right: 30%;
+  right: 35%;
   bottom: 30%;
+  padding: 10px;
   position: fixed;
   text-align: center;
   z-index: 99999;
@@ -47,7 +48,7 @@ img {
   font-weight: 600;
   font-style: normal;
   font-size: 15px;
-  color: rgb(200, 255, 200)
+  color: rgb(100, 150, 100)
   
 }
 
