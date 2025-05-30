@@ -42,6 +42,15 @@ img {
   
 }
 
+.prompt p {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 15px;
+  color: rgb(200, 255, 200)
+  
+}
+
 body {
   margin: 0;
   padding: 0;
