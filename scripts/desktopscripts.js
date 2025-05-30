@@ -62,6 +62,10 @@ function promptAccepted() {
     });
 }
 
+function promptClose() {
+    prompt.style.display = 'none';
+}
+
 async function startCamera() {
     if (currentStream) {
         currentStream.getTracks().forEach(track => track.stop());
