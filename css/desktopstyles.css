@@ -23,7 +23,6 @@ img {
 
 .prompt {
   background-color: rgb(180, 240, 180);
-  border: 3px solid rbg(130, 170, 130);
   box-shadow: 5px 12px rgba(10, 10, 10, 0.5);
   left: 35%;
   top: 30%;
@@ -40,8 +39,7 @@ img {
   font-weight: 600;
   font-style: normal;
   font-size: 20px;
-  color: rgb(100, 150, 100)
-  
+  color: rgb(100, 150, 100);
 }
 
 .prompt p {
@@ -49,8 +47,17 @@ img {
   font-weight: 600;
   font-style: normal;
   font-size: 15px;
-  color: rgb(100, 150, 100)
-  
+  color: rgb(100, 150, 100);
+}
+
+.prompt button {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: rgb(100, 150, 100);
+  background-color: rgb(130, 170, 130);
+  border: 0px solid white;
+  border-radius: 0px;
 }
 
 body {
