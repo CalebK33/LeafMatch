@@ -54,12 +54,14 @@ img {
   font-family: "Ubuntu", sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 25px;
+  font-size: 20px;
   color: rgb(100, 150, 100);
   background-color: rgba(200, 250, 200, 0);
   border: 4px solid rgb(100, 150, 100);
   margin: 10px;
+  padding: 3px;
   border-radius: 0px;
+  cursor: pointer;
 }
 
 body {
@@ -182,7 +184,7 @@ div.content {
     bottom: 5%;
     left: 41%;
     transform: translateX(-41%);
-    cursor: pointer
+    cursor: pointer;
 }
 
 * {
