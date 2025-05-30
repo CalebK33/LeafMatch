@@ -18,8 +18,11 @@
         <img draggable="false" onclick="retakePhoto()" src="images/ui/cross.png" alt="retake" class="cross" id="cross">
 
         <div id="prompt" class="prompt">
-            <p>Please give us access to your camera</p>
+            <h1>We need your camera for this!</h1>
+            <p>In order to use Leafmatch, we need access to using your camera. 
+            <br>If you do not have a camera on this device, you can use the upload button to upload an image for scanning</p>
             <button onclick="promptAccepted()" class="acceptPrompt">Give access</button>
+            <button onclick"none" class="acceptPrompt">No thanks</button>
         </div>
         
         <div id="denied" class="prompt">
