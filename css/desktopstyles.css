@@ -38,7 +38,7 @@ img {
   font-family: "Ubuntu", sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 20px;
+  font-size: 25px;
   color: rgb(100, 150, 100);
 }
 
@@ -46,7 +46,7 @@ img {
   font-family: "Ubuntu", sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 15px;
+  font-size: 17px;
   color: rgb(100, 150, 100);
 }
 
@@ -54,8 +54,9 @@ img {
   font-family: "Ubuntu", sans-serif;
   font-weight: 600;
   font-style: normal;
+  font-size: 25px;
   color: rgb(100, 150, 100);
-  background-color: rgb(130, 170, 130);
+  background-color: rgb(200, 250, 200);
   border: 0px solid white;
   border-radius: 0px;
 }
