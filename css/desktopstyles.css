@@ -25,14 +25,17 @@ img {
   background-color: rgb(190, 250, 190);
   box-shadow: 5px 12px rgba(10, 20, 10, 0.25);
   border: 3px solid rgb(110, 150, 110);
-  left: 35%;
-  top: 30%;
-  right: 35%;
-  bottom: 30%;
   padding: 10px;
   position: fixed;
   text-align: center;
   z-index: 99999;
+  width: 60%;
+  max-width: 400px;
+  min-width: 250px;
+  left: 50%;
+  top: 30%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
 }
 
 .prompt h1 {
