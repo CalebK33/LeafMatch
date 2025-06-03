@@ -22,6 +22,7 @@ tick.style.display = "none";
 cross.style.display = "none";
 
 const nocamera = document.getElementById('nocamera');
+nocamera.style.display = '';
 
 nocamera.style.display = "none";
 
@@ -55,6 +56,7 @@ function promptAccepted() {
         const shouldFlip = direction === 'user' || onlyHasUserCamera;
         video.style.transform = shouldFlip ? 'scaleX(-1)' : 'scaleX(1)';
         video.style.display = 'block';
+        nocamera.style.display = 'none';
     })
     .catch(err => {
         nocamera.style.display = '';
