@@ -24,8 +24,6 @@ cross.style.display = "none";
 const nocamera = document.getElementById('nocamera');
 nocamera.style.display = '';
 
-nocamera.style.display = "none";
-
 async function detectCameras() {
     const devices = await navigator.mediaDevices.enumerateDevices();
     const videoInputs = devices.filter(device => device.kind === 'videoinput');
