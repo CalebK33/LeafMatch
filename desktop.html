@@ -21,15 +21,15 @@
             <h1>We need your camera for this!</h1>
             <p>In order for LeafMatch to properly work, we need access to your camera. 
             <br>If choose not to allow camera access, you can use the upload button to upload an image for scanning.</p>
-            <button onclick="promptAccepted()" class="acceptPrompt">Give access</button>
-            <button onclick="promptClose()" class="acceptPrompt">No thanks</button>
+            <button onclick="promptAccepted()">Give access</button>
+            <button onclick="promptClose()">No thanks</button>
         </div>
         
         <div id="denied" class="prompt">
             <h1>Camera Blocked :(</h1>
             <p>You have camera access disabled for this site. To take pictures for scanning, please allow access or use the upload files button.
             <br>You may need to reload the page for permission changes to take effect</p>
-            <button onclick="promptClose()" class="acceptPrompt">Okay</button>
+            <button onclick="promptClose()">Okay</button>
         </div>
         
         <img id="nocamera" class="nocamera" src="images/ui/nocamera.jpg" alt="nocamera">
