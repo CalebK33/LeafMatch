@@ -55,6 +55,7 @@ p {
 img {
   border: 5px solid green;
   border-radius: 5px;
+  position: static;
   width: 30%;
   left: 35%;
 }
