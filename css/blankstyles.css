@@ -59,8 +59,7 @@ p {
 img {
   border: 10px solid rgb(100, 160, 100);
   border-radius: 10px;
-  position: fixed;
-  width: 20%;
+  width: 10%;
   margin-top: 30px;
   display: block;
   margin-left: auto;
