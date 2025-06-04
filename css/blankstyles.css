@@ -52,6 +52,11 @@ p {
   padding-left: 10px;
 }
 
+img {
+  border: 5px solid green;
+  border-radius: 5px;
+}
+
 a {
   position: fixed;
   left: 40%;
