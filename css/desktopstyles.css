@@ -7,17 +7,17 @@
   100% { -webkit-transform: rotate(360deg); }
 }
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 @font-face {
   font-family: 'Leaf Script';
   font-style: normal;
   font-weight: 800;
   src: local(''),
     url('/css/titlefont.ttf') format('truetype');
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 body {
@@ -50,7 +50,7 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 999999;
+  z-index: 100;
   background-color: rgb(175, 230, 175);
 }
 
@@ -70,6 +70,7 @@ img {
   width: 50vw;
   height: 100vh;
   border-radius: 5px;
+  z-index: 10;
 }
 
 .prompt {
@@ -85,31 +86,28 @@ img {
   border: 3px solid rgb(110, 150, 110);
   box-shadow: 5px 12px rgba(10, 20, 10, 0.25);
   text-align: center;
-  z-index: 99999;
+  z-index: 90;
 }
 
-.prompt h1 {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 25px;
-  color: rgb(100, 150, 100);
-}
-
-.prompt p {
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  font-size: 17px;
-  color: rgb(100, 150, 100);
-}
-
+.prompt h1,
+.prompt p,
 .prompt button {
   font-family: "Ubuntu", sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 20px;
   color: rgb(100, 150, 100);
+}
+
+.prompt h1 {
+  font-size: 25px;
+}
+
+.prompt p {
+  font-size: 17px;
+}
+
+.prompt button {
+  font-size: 20px;
   background-color: rgba(200, 250, 200, 0);
   border: 4px solid rgb(100, 150, 100);
   margin: 10px;
@@ -209,54 +207,40 @@ div.content {
   height: 1000px;
 }
 
-.uploadimage {
+.uploadimage,
+.takephotoimage,
+.tick,
+.cross {
   max-width: 22%;
   max-height: 22%;
   width: auto;
   height: auto;
   position: fixed;
   bottom: 5%;
+  cursor: pointer;
+  z-index: 80;
+}
+
+.uploadimage {
   left: 41%;
   transform: translateX(-41%);
-  cursor: pointer;
-  z-index: 9999;
 }
 
 .takephotoimage {
-  max-width: 22%;
-  max-height: 22%;
-  width: auto;
-  height: auto;
-  position: fixed;
-  bottom: 5%;
   left: 58%;
   transform: translateX(-58%);
-  cursor: pointer;
-  z-index: 9999;
 }
 
 .tick {
   max-width: 20%;
   max-height: 20%;
-  width: auto;
-  height: auto;
-  position: fixed;
-  bottom: 5%;
   left: 60%;
   transform: translateX(-60%);
-  cursor: pointer;
-  z-index: 9999;
 }
 
 .cross {
   max-width: 20%;
   max-height: 20%;
-  width: auto;
-  height: auto;
-  position: fixed;
-  bottom: 5%;
   left: 40%;
   transform: translateX(-40%);
-  cursor: pointer;
-  z-index: 9999;
 }
