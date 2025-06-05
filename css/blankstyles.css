@@ -66,8 +66,8 @@ img {
 
 a {
   position: fixed;
-  left: 40%;
-  width: 20%;
+  left: 768px;
+  width: 384px;
   text-align: center;
   text-decoration: none;
   font-size: 40px;
