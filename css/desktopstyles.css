@@ -54,15 +54,6 @@ img {
   background-color: rgb(175, 230, 175);
 }
 
-.loadingscreen h1 {
-  text-align: center;
-  position: relative;
-  top: 70%;
-  font-family: 'Leaf Script';
-  font-style: normal;
-  font-weight: 800;
-}
-
 .loader {
   position: relative;
   width: 20%;
