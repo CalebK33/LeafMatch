@@ -52,7 +52,7 @@ img {
   right: 0;
   z-index: 100;
   background-color: rgb(175, 230, 175);
-  transition: opacity 0.5s;
+  transition: opacity 0.25s;
 }
 
 .loader {
