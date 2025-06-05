@@ -30,5 +30,6 @@ if (entry) {
   document.getElementById("image").src = entry.image;
 } else {
   document.getElementById("title").textContent = "Not Found";
+  document.getElementById("title").textContent = "This plant does't seem to exist...";
   document.getElementById("description").textContent = "No data available for ID: " + id;
 }
