@@ -76,7 +76,9 @@ function loadingScreen() {
 
 function endLoadingScreen() {
     if (minimum == true) {
-        loadingscreen.style.display = 'none';
+            setTimeout(() => {
+                loadingscreen.style.opacity = 0;
+            }, 100);
     }
     else {
         setTimeout(endLoadingScreen, 100)
