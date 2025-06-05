@@ -7,6 +7,8 @@
   height: 120px;
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
+  left: 50%
+  transform: translateX(-50%);
 }
 
 @-webkit-keyframes spin {
