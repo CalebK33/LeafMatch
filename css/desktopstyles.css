@@ -50,7 +50,7 @@ img {
   left: 0;
   right: 0;
   z-index: 999999;
-  background-color: black;
+  background-color: rgb(175, 230, 175);
 }
 
 .nocamera {
