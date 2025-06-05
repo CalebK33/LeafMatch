@@ -5,19 +5,19 @@ const database = {
   "1": {
     title: "Plant one",
     name: "Fancy name",
-    description: "Plant one is a really cool plant",
+    description: "Plant one is a really cool plant for now...",
     image: "images/plants/plant1.jpg",
   },
   "2": {
     title: "Plant two",
     name: "Fancy name",
-    description: "Plant two is a really ugly plant",
+    description: "Plant two is a really fantastic and interesting plant :)",
     image: "images/plants/plant2.jpg",
   },
   "3": {
     title: "Plant three",
     name: "Fancy name",
-    description: "Plant three is a really weird plant",
+    description: "Plant three is exactly the same as plant two! It is not a different plant",
     image: "images/plants/plant2.jpg",
   }
 };
