@@ -47,10 +47,10 @@ img {
 }
 
 .loader {
-  position: fixed;
+  position: relative;
   width: 20%;
-  height: 20%;
   left: 40%;
+  top: 30%;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
