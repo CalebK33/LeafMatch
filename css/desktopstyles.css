@@ -65,7 +65,10 @@ img {
 
 .loadingtext {
   text-align: center;
-  top: 60%;
+  top: 80%;
+  font-family: 'Leaf Script';
+  font-style: normal;
+  font-weight: 800;
 }
 
 .nocamera {
