@@ -73,11 +73,11 @@ function deniedClose() {
 }
 
 function loadingScreen() {
-    loadingscreen.style.display = '';
+    loadingscreen.style.display = 'none';
 }
 
 function endLoadingScreen() {
-    loadingscreen.style.display = 'none';
+    loadingscreen.style.display = '';
 }
 
 async function startCamera() {
