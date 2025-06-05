@@ -18,6 +18,8 @@ prompt.style.display = "none";
 const tick = document.getElementById('tick');
 const cross = document.getElementById('cross');
 
+const loadingscreen = document.getElementById('loadingscreen');
+
 tick.style.display = "none";
 cross.style.display = "none";
 
@@ -64,6 +66,18 @@ function promptAccepted() {
 
 function promptClose() {
     prompt.style.display = 'none';
+}
+
+function deniedClose() {
+    denied.style.display = 'none';
+}
+
+function loadingScreen() {
+    loadingscreen.style.display = '';
+}
+
+function endLoadingScreen() {
+    loadingscreen.style.display = 'none';
 }
 
 async function startCamera() {
@@ -263,4 +277,5 @@ function flash() {
   }
 }
 
-startCamera()
+startCamera();
+loadingScreen();
