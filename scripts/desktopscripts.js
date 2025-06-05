@@ -283,4 +283,4 @@ function flash() {
 
 startCamera();
 loadingScreen();
-setTimeout(timed, 500)
+setTimeout(timed, 400)
