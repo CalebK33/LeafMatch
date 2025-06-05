@@ -7,6 +7,14 @@
   100% { -webkit-transform: rotate(360deg); }
 }
 
+@font-face {
+  font-family: 'Leaf Script';
+  font-style: normal;
+  font-weight: 800;
+  src: local(''),
+    url('/css/titlefont.ttf') format('truetype');
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
