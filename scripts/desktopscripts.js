@@ -4,6 +4,8 @@ let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
+let minimum = false;
+
 let run = 0;
 let blocked = 0;
 
@@ -73,7 +75,12 @@ function loadingScreen() {
 }
 
 function endLoadingScreen() {
-    loadingscreen.style.display = 'none';
+    if (minimum == true) {
+        loadingscreen.style.display = 'none';
+    }
+    else {
+        setTimeout(endLoadingScreen, 100)
+    }
 }
 
 async function startCamera() {
@@ -241,6 +248,10 @@ function takePhoto() {
     }
 }
 
+function timed() {
+    minimum = true;
+}
+
 function flash() {
     if (camerasavailable === 1 && blocked === 0) {
         const flashDiv = document.createElement('div');
@@ -270,3 +281,4 @@ function flash() {
 
 startCamera();
 loadingScreen();
+setTimeout(timed, 500)
