@@ -49,7 +49,6 @@ img {
 .loader {
   position: fixed;
   width: 200px;
-  height: 200px;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
   display: block;
