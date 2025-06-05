@@ -58,7 +58,7 @@ img {
   position: relative;
   width: 20%;
   left: 40%;
-  top: 10%;
+  top: 40%;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
