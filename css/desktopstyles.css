@@ -58,13 +58,14 @@ img {
   position: relative;
   width: 20%;
   left: 40%;
-  top: 30%;
+  top: 20%;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
 
 .loadingtext {
   text-align: center;
+  top: 60%;
 }
 
 .nocamera {
