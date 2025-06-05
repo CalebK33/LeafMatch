@@ -2,17 +2,6 @@
   box-sizing: border-box;
 }
 
-.loader {
-  position: fixed;
-  width: 200px;
-  height: 200px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 50%;
-}
-
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }
@@ -55,6 +44,17 @@ img {
   right: 0;
   z-index: 999999;
   background-color: rgb(175, 230, 175);
+}
+
+.loader {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  display: block;
+  margin: auto;
+  transform: translateX(-50%);
 }
 
 .nocamera {
