@@ -78,6 +78,9 @@ function endLoadingScreen() {
     if (minimum == true) {
             setTimeout(() => {
                 loadingscreen.style.opacity = 0;
+                setTimeout(() => {
+                    loadingscreen.style.display = '';
+                }, 100);
             }, 100);
     }
     else {
