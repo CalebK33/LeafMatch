@@ -74,6 +74,7 @@ function deniedClose() {
 
 function loadingScreen() {
     loadingscreen.style.display = '';
+    loadingscreen.style.opacity = 1;
 }
 
 function endLoadingScreen() {
@@ -82,6 +83,7 @@ function endLoadingScreen() {
             loadingscreen.style.opacity = 0;
             loadingscreen.addEventListener('transitionend', () => {
                 loadingscreen.style.display = 'none';
+                loadingscreen.style.opacity = 1; // reset for future uses
             }, { once: true });
         }, 100);
     } else {
@@ -154,7 +156,12 @@ function acceptordeny() {
 function acceptedPhoto() {
     tick.style.display = "none";
     cross.style.display = "none";
-    runAIFromPhoto();
+
+    loadingScreen();     
+    minimum = false;     
+    setTimeout(timed, 400); 
+
+    runAIFromPhoto();   
 }
 
 function retakePhoto() {
