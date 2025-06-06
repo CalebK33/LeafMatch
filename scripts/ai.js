@@ -15,11 +15,11 @@ async function runAIFromPhoto() {
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
 
-  alert("decision made")
   const inputSize = 224;
   canvas.width = inputSize;
   canvas.height = inputSize;
   ctx.drawImage(photo, 0, 0, inputSize, inputSize);
+  alert("decision made")
 
   const imageData = ctx.getImageData(0, 0, inputSize, inputSize);
   const inputTensor = preprocessImage(imageData);
