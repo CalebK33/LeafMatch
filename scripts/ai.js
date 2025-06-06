@@ -12,9 +12,8 @@ window.addEventListener('DOMContentLoaded', async () => {
 });
 
 async function runAIFromPhoto() {
-  if (!aiSession) {
-    alert("AI model not loaded yet.");
-    return;
+  while (!aiSession) {
+    await new Promise(resolve => setTimeout(resolve, 100));
   }
 
   const photo = document.getElementById('photo');
@@ -30,13 +29,11 @@ async function runAIFromPhoto() {
   const inputTensor = preprocessImage(imageData);
 
   try {
-    const inputName = aiSession.inputNames[0];  // safer than hardcoding "input"
+    const inputName = aiSession.inputNames[0]; // safer than hardcoding "input"
     const outputMap = await aiSession.run({ [inputName]: inputTensor });
-    
+
     const output = outputMap[Object.keys(outputMap)[0]];
-    const prediction = postprocess(output.data);
-    
-    alert("Prediction complete");
+    postprocess(output.data);
   } catch (err) {
     alert("Error during inference: " + err.message);
     console.error("Inference error:", err);
@@ -47,9 +44,9 @@ function preprocessImage(imageData) {
   const { data, width, height } = imageData;
   const floatData = new Float32Array(width * height * 3);
   for (let i = 0; i < width * height; i++) {
-    floatData[i] = data[i * 4] / 255;                       // R
-    floatData[i + width * height] = data[i * 4 + 1] / 255;  // G
-    floatData[i + 2 * width * height] = data[i * 4 + 2] / 255; // B
+    floatData[i] = data[i * 4] / 255;                      
+    floatData[i + width * height] = data[i * 4 + 1] / 255; 
+    floatData[i + 2 * width * height] = data[i * 4 + 2] / 255; 
   }
   return new ort.Tensor('float32', floatData, [1, 3, height, width]);
 }
