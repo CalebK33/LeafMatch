@@ -152,6 +152,7 @@ function acceptordeny() {
 function acceptedPhoto() {
     tick.style.display = "none";
     cross.style.display = "none";
+    runAIFromPhoto();
 }
 
 function retakePhoto() {
