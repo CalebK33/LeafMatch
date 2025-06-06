@@ -155,7 +155,6 @@ function acceptedPhoto() {
     tick.style.display = "none";
     cross.style.display = "none";
     runAIFromPhoto();
-    alert("AI is thinking...");
 }
 
 function retakePhoto() {
