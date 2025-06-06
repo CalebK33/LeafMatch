@@ -22,9 +22,9 @@ async function runAIFromPhoto() {
 
   const imageData = ctx.getImageData(0, 0, inputSize, inputSize);
   const inputTensor = preprocessImage(imageData);
-  alert("decision made")
 
   const outputMap = await aiSession.run({ input: inputTensor });
+  alert("decision made")
   const output = outputMap[Object.keys(outputMap)[0]];
   const prediction = postprocess(output.data);
 }
