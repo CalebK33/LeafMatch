@@ -75,16 +75,15 @@ function loadingScreen() {
 }
 
 function endLoadingScreen() {
-    if (minimum == true) {
-            setTimeout(() => {
-                loadingscreen.style.opacity = 0;
-                setTimeout(() => {
-                    loadingscreen.style.display = '';
-                }, 250);
-            }, 100);
-    }
-    else {
-        setTimeout(endLoadingScreen, 100)
+    if (minimum === true) {
+        setTimeout(() => {
+            loadingscreen.style.opacity = 0;
+            loadingscreen.addEventListener('transitionend', () => {
+                loadingscreen.style.display = 'none';
+            }, { once: true });
+        }, 100);
+    } else {
+        setTimeout(endLoadingScreen, 100);
     }
 }
 
