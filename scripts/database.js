@@ -3,20 +3,20 @@ const id = urlParams.get("ID");
         
 const database = {
   "1": {
-    title: "Plant one",
-    name: "Fancy name",
+    title: "John Doe",
+    name: "Ioannes Doe",
     description: "Plant one is a really cool plant for now...",
     image: "images/plants/plant1.jpg",
   },
   "2": {
-    title: "Plant two",
-    name: "Fancy name",
+    title: "Jane Doe",
+    name: "Ioanna Doe",
     description: "Plant two is a really fantastic and interesting plant :)",
     image: "images/plants/plant2.jpg",
   },
   "3": {
-    title: "Plant three",
-    name: "Fancy name",
+    title: "Unidentified Individual",
+    name: "Incognita Singula",
     description: "Plant three is exactly the same as plant two! It is not a different plant",
     image: "images/plants/plant2.jpg",
   },
