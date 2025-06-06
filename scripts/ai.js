@@ -4,7 +4,7 @@ const modelPath = '/plant_model.onnx';
 window.addEventListener('DOMContentLoaded', async () => {
   try {
     aiSession = await ort.InferenceSession.create(modelPath);
-    alert("ONNX model loaded.");
+    // alert("ONNX model loaded.");
   } catch (err) {
     alert("Failed to load ONNX model:", err);
   }
@@ -25,6 +25,7 @@ async function runAIFromPhoto() {
 
   const outputMap = await aiSession.run({ input: inputTensor });
   const output = outputMap[Object.keys(outputMap)[0]];
+  alert("decision made")
   const prediction = postprocess(output.data);
 }
 
