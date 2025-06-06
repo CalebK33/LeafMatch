@@ -19,13 +19,13 @@ const database = {
     name: "Fancy name",
     description: "Plant three is exactly the same as plant two! It is not a different plant",
     image: "images/plants/plant2.jpg",
-  }
+  },
   "test": {
     title: "Plant three",
     name: "Fancy name",
     description: "Plant three is exactly the same as plant two! It is not a different plant",
     image: "images/plants/plant2.jpg",
-  }
+  },
 };
 
 const entry = database[id];
