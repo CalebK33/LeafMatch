@@ -1,0 +1,54 @@
+let aiSession = null;
+const modelPath = '/plant-model.onnx'; 
+
+window.addEventListener('DOMContentLoaded', async () => {
+  try {
+    aiSession = await ort.InferenceSession.create(modelPath);
+    console.log("ONNX model loaded.");
+  } catch (err) {
+    console.error("Failed to load ONNX model:", err);
+  }
+});
+
+async function runAIFromPhoto() {
+  const photo = document.getElementById('photo');
+  const canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+
+  const inputSize = 224;
+  canvas.width = inputSize;
+  canvas.height = inputSize;
+  ctx.drawImage(photo, 0, 0, inputSize, inputSize);
+
+  const imageData = ctx.getImageData(0, 0, inputSize, inputSize);
+  const inputTensor = preprocessImage(imageData);
+
+  const outputMap = await aiSession.run({ input: inputTensor });
+  const output = outputMap[Object.keys(outputMap)[0]];
+  const prediction = postprocess(output.data);
+
+  showPrediction(prediction);
+}
+
+function preprocessImage(imageData) {
+  const { data, width, height } = imageData;
+  const floatData = new Float32Array(width * height * 3);
+  for (let i = 0; i < width * height; i++) {
+    floatData[i] = data[i * 4] / 255;           
+    floatData[i + width * height] = data[i * 4 + 1] / 255; 
+    floatData[i + 2 * width * height] = data[i * 4 + 2] / 255; 
+  }
+  return new ort.Tensor('float32', floatData, [1, 3, height, width]);
+}
+
+function postprocess(data) {
+  const maxIndex = data.indexOf(Math.max(...data));
+  return `Class ${maxIndex}`;
+}
+
+function showPrediction(text) {
+  const output = document.getElementById('result') || document.createElement('div');
+  output.id = 'result';
+  output.textContent = `AI says: ${text}`;
+  if (!document.getElementById('result')) document.body.appendChild(output);
+}
