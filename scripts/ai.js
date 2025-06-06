@@ -1,5 +1,5 @@
 let aiSession = null;
-const modelPath = '/plant-model.onnx'; 
+const modelPath = '/plant_model.onnx'; 
 
 window.addEventListener('DOMContentLoaded', async () => {
   try {
