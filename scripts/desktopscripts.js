@@ -80,7 +80,7 @@ function endLoadingScreen() {
                 loadingscreen.style.opacity = 0;
                 setTimeout(() => {
                     loadingscreen.style.display = '';
-                }, 100);
+                }, 250);
             }, 100);
     }
     else {
