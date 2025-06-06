@@ -4,9 +4,9 @@ const modelPath = '/plant_model.onnx';
 window.addEventListener('DOMContentLoaded', async () => {
   try {
     aiSession = await ort.InferenceSession.create(modelPath);
-    console.log("ONNX model loaded.");
+    alert("ONNX model loaded.");
   } catch (err) {
-    console.error("Failed to load ONNX model:", err);
+    alert("Failed to load ONNX model:", err);
   }
 });
 
