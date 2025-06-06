@@ -8,6 +8,7 @@ let minimum = false;
 
 let run = 0;
 let blocked = 0;
+let uploadfix = 0;
 
 const denied = document.getElementById('denied');
 const prompt = document.getElementById('prompt');
@@ -64,6 +65,7 @@ function promptAccepted() {
 function promptClose() {
     prompt.style.display = 'none';
     nocamera.style.display = '';
+    uploadfix = 1;
 }
 
 function deniedClose() {
@@ -198,7 +200,7 @@ function upload() {
 
                 photo.src = canvas.toDataURL('image/png');
 
-                if (camerasavailable === 1 && blocked === 0) {
+                if (camerasavailable === 1 && blocked === 0 && uploadfix === 0) {
                     currentStream.getTracks().forEach(track => track.stop());
                     currentStream = null;
                 }
