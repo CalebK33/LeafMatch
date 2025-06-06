@@ -26,8 +26,6 @@ async function runAIFromPhoto() {
   const outputMap = await aiSession.run({ input: inputTensor });
   const output = outputMap[Object.keys(outputMap)[0]];
   const prediction = postprocess(output.data);
-
-  showPrediction(prediction);
 }
 
 function preprocessImage(imageData) {
@@ -43,12 +41,5 @@ function preprocessImage(imageData) {
 
 function postprocess(data) {
   const maxIndex = data.indexOf(Math.max(...data));
-  return `Class ${maxIndex}`;
-}
-
-function showPrediction(text) {
-  const output = document.getElementById('result') || document.createElement('div');
-  output.id = 'result';
-  output.textContent = `AI says: ${text}`;
-  if (!document.getElementById('result')) document.body.appendChild(output);
+  window.location.href = `/plant?ID=${maxIndex + 1}`;
 }
