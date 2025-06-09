@@ -33,7 +33,8 @@ async function runAIFromPhoto() {
     const outputMap = await aiSession.run({ [inputName]: inputTensor });
 
     const output = outputMap[Object.keys(outputMap)[0]];
-    postprocess(output.data);
+    alert(output)
+    //postprocess(output.data);
   } catch (err) {
     console.error("Inference error:", err);
   }
@@ -52,6 +53,5 @@ function preprocessImage(imageData) {
 
 function postprocess(data) {
   const maxIndex = data.indexOf(Math.max(...data));
-  alert(data)
-  //window.location.href = `/plant?ID=${maxIndex + 1}`;
+  window.location.href = `/plant?ID=${maxIndex + 1}`;
 }
