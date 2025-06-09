@@ -4,7 +4,6 @@ const modelPath = '/plant_model.onnx';
 window.addEventListener('DOMContentLoaded', async () => {
   try {
     aiSession = await ort.InferenceSession.create(modelPath);
-    // alert("ONNX model loaded.");
   } catch (err) {
     alert("Failed to load ONNX model: " + err.message);
     console.error("ONNX load error:", err);
@@ -33,8 +32,15 @@ async function runAIFromPhoto() {
     const outputMap = await aiSession.run({ [inputName]: inputTensor });
 
     const output = outputMap[Object.keys(outputMap)[0]];
-    alert(output)
-    //postprocess(output.data);
+    const scores = output.data;
+    const maxScore = Math.max(...scores);
+    const predictedIndex = scores.indexOf(maxScore);
+
+    const expScores = scores.map(x => Math.exp(x));
+    const sumExp = expScores.reduce((a, b) => a + b, 0);
+    const confidence = (Math.exp(scores[predictedIndex]) / sumExp) * 100;
+    postprocess(scores, confidence);
+    
   } catch (err) {
     console.error("Inference error:", err);
   }
@@ -51,7 +57,8 @@ function preprocessImage(imageData) {
   return new ort.Tensor('float32', floatData, [1, 3, height, width]);
 }
 
-function postprocess(data) {
+function postprocess(data, conf) {
   const maxIndex = data.indexOf(Math.max(...data));
-  window.location.href = `/plant?ID=${maxIndex + 1}`;
+  alert(conf)
+  //window.location.href = `/plant?ID=${maxIndex + 1}`;
 }
