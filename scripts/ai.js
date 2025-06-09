@@ -35,7 +35,6 @@ async function runAIFromPhoto() {
     const output = outputMap[Object.keys(outputMap)[0]];
     postprocess(output.data);
   } catch (err) {
-    alert("Error during inference: " + err.message);
     console.error("Inference error:", err);
   }
 }
