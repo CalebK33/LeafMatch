@@ -29,7 +29,7 @@ async function runAIFromPhoto() {
   const inputTensor = preprocessImage(imageData);
 
   try {
-    const inputName = aiSession.inputNames[0]; // safer than hardcoding "input"
+    const inputName = aiSession.inputNames[0]; 
     const outputMap = await aiSession.run({ [inputName]: inputTensor });
 
     const output = outputMap[Object.keys(outputMap)[0]];
@@ -52,5 +52,6 @@ function preprocessImage(imageData) {
 
 function postprocess(data) {
   const maxIndex = data.indexOf(Math.max(...data));
-  window.location.href = `/plant?ID=${maxIndex + 1}`;
+  alert(data)
+  //window.location.href = `/plant?ID=${maxIndex + 1}`;
 }
