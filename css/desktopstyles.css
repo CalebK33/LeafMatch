@@ -61,7 +61,7 @@ img {
   left: 40%;
   top: 20%;
   -webkit-animation: spin 2s linear infinite;
-  animation: spin 0.5s linear infinite;
+  animation: spin 0.1s linear infinite;
 }
 
 .nocamera {
