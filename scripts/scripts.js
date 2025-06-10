@@ -4,6 +4,7 @@ let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
 let minimum = false;
+alert("Debug");
 
 let run = 0;
 let blocked = 0;
