@@ -193,6 +193,12 @@ function acceptordeny() {
 function acceptedPhoto() {
     tick.style.display = "none";
     cross.style.display = "none";
+
+    loadingScreen();     
+    minimum = false;     
+    setTimeout(timed, 400); 
+
+    runAIFromPhoto();
 }
 
 function retakePhoto() {
