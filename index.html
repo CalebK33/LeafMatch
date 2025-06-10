@@ -30,6 +30,24 @@
         <img draggable="false" onclick="acceptedPhoto()" src="images/ui/tick.png" alt="accept" class="tick" id="tick">
         <img draggable="false" onclick="retakePhoto()" src="images/ui/cross.png" alt="retake" class="cross" id="cross">
         
+        <div id="prompt" class="prompt">
+            <h1>We need your camera for this!</h1>
+            <p>In order for LeafMatch to properly work, we need access to your camera. 
+            <br>If choose not to allow camera access, you can use the upload button to upload an image for scanning.</p>
+            <button onclick="promptAccepted()">Give access</button>
+            <button onclick="promptClose()">No thanks</button>
+        </div>
+        
+        <div id="denied" class="prompt">
+            <h1>Camera Blocked :(</h1>
+            <p>You have camera access disabled for this site. To take pictures for scanning, please allow access or use the upload files button.
+            <br>You may need to reload the page for permission changes to take effect</p>
+            <button onclick="deniedClose()">Okay</button>
+        </div>
+        
+        <img id="nocamera" class="nocamera" src="images/ui/nocamera.jpg" alt="nocamera">
+
+        
         <div class="sidebar" id="sidebar">
             <div class="row">
                 <img class="hover" onclick="closeSidebar()" src="images/favicon.ico" style="width: 45%; top; 50%" alt="logo">
