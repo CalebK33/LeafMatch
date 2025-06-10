@@ -1,4 +1,3 @@
-alert("Debug");
 let direction = 'environment';
 let currentStream = null;
 let onlyHasUserCamera = false;
