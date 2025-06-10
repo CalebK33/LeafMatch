@@ -17,7 +17,7 @@ const loadingscreen = document.getElementById('loadingscreen');
 const nocamera = document.getElementById('nocamera');
 
 denied.style.display = "none";
-prompt.style.display = "";
+prompt.style.display = "none";
 tick.style.display = "none";
 cross.style.display = "none";
 nocamera.style.display = '';
@@ -340,3 +340,4 @@ function flash() {
 loadingScreen();
 setInterval(changeFullscreenButton, 20);
 setTimeout(timed, 400)
+startCamera()
