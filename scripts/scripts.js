@@ -22,6 +22,8 @@ tick.style.display = "none";
 cross.style.display = "none";
 nocamera.style.display = '';
 
+let camerasavailable = 1;
+
 function changeFullscreen() {
   if (document.fullscreenElement) {
     closeFullscreen()
@@ -65,14 +67,14 @@ async function detectCameras() {
     if (videoInputs.length === 1) {
         direction = 'user';
         onlyHasUserCamera = true;
-    } 
-    else if (videoInputs.length === 0) {
-        alert("I think you need a camera for this...")
-    }
-    else {
+    } else if (videoInputs.length === 0) {
+        camerasavailable = 0;
+        nocamera.style.display = '';
+    } else {
         onlyHasUserCamera = false;
     }
 }
+
 
 function promptAccepted() {
     prompt.style.display = 'none';
@@ -194,19 +196,21 @@ function acceptedPhoto() {
 }
 
 function retakePhoto() {
+    const photo = document.getElementById('photo');
     photo.style.display = 'none';
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
-    const button1 = document.getElementById('button1');
-  
-    button1.style.display = '';
+
     button2.style.display = '';
     button3.style.display = '';
     tick.style.display = "none";
     cross.style.display = "none";
 
+    if (camerasavailable === 0 || blocked === 1) {
+        nocamera.style.display = '';
+    }
+
     startCamera();
-    
 }
 
 
@@ -223,42 +227,44 @@ function changeFullscreenButton() {
 
 
 function upload() {
-    const fileInput = document.getElementById('fileInput'); 
-    const canvas = document.getElementById('canvas');
-    const photo = document.getElementById('photo');
-    const button1 = document.getElementById('button1');
-    const button2 = document.getElementById('birb');
-    const button3 = document.getElementById('uploadbutton');
+    if (camerasavailable === 1 && blocked === 0) {
+      const fileInput = document.getElementById('fileInput'); 
+      const canvas = document.getElementById('canvas');
+      const photo = document.getElementById('photo');
+      const button1 = document.getElementById('button1');
+      const button2 = document.getElementById('birb');
+      const button3 = document.getElementById('uploadbutton');
+    
+      if (fileInput.files.length > 0) {
+          const file = fileInput.files[0];
+          const reader = new FileReader();
   
-    if (fileInput.files.length > 0) {
-        const file = fileInput.files[0];
-        const reader = new FileReader();
-
-        reader.onload = function(event) {
-            const img = new Image();
-            img.src = event.target.result;
-
-            img.onload = function() {
-                canvas.width = img.width;
-                canvas.height = img.height;
-
-                const context = canvas.getContext('2d');
-                context.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-                photo.src = canvas.toDataURL('image/png');
-                currentStream.getTracks().forEach(track => track.stop());
-                currentStream = null;
-                video.srcObject = null;
-                video.style.display = 'none';
-                button1.style.display = 'none';
-                button2.style.display = 'none';
-                button3.style.display = 'none';
-                acceptordeny();
-            };
-        };
-
-        reader.readAsDataURL(file);
-    }
+          reader.onload = function(event) {
+              const img = new Image();
+              img.src = event.target.result;
+  
+              img.onload = function() {
+                  canvas.width = img.width;
+                  canvas.height = img.height;
+  
+                  const context = canvas.getContext('2d');
+                  context.drawImage(img, 0, 0, canvas.width, canvas.height);
+  
+                  photo.src = canvas.toDataURL('image/png');
+                  currentStream.getTracks().forEach(track => track.stop());
+                  currentStream = null;
+                  video.srcObject = null;
+                  video.style.display = 'none';
+                  button1.style.display = 'none';
+                  button2.style.display = 'none';
+                  button3.style.display = 'none';
+                  acceptordeny();
+              };
+          };
+  
+          reader.readAsDataURL(file);
+      }
+  }
 }
 
 function takePhoto() {
@@ -300,28 +306,30 @@ function timed() {
 }
 
 function flash() {
-  const flashDiv = document.createElement('div');
-  flashDiv.style.cssText = `
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    opacity: 1;
-    z-index: 9999;
-    pointer-events: none;
-    transition: opacity 0.5s;
-  `;
-  document.body.appendChild(flashDiv);
+    if (camerasavailable === 1 && blocked === 0) {
+        const flashDiv = document.createElement('div');
+        flashDiv.style.cssText = `
+            position: fixed;
+            top: 0;
+            left: 25%;
+            width: 50vw;
+            height: 100vh;
+            background-color: white;
+            opacity: 1;
+            z-index: 9999;
+            pointer-events: none;
+            transition: opacity 0.5s;
+        `;
+        document.body.appendChild(flashDiv);
 
-  setTimeout(() => {
-    flashDiv.style.opacity = 0;
-    setTimeout(() => {
-      document.body.removeChild(flashDiv);
-    }, 500);
-  }, 100);
-  acceptordeny();
+        setTimeout(() => {
+            flashDiv.style.opacity = 0;
+            setTimeout(() => {
+                document.body.removeChild(flashDiv);
+            }, 500);
+        }, 100);
+        acceptordeny();
+    }
 }
 
 
