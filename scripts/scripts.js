@@ -338,6 +338,5 @@ function flash() {
 
 
 loadingScreen();
-startCamera();
 setInterval(changeFullscreenButton, 20);
 setTimeout(timed, 400)
