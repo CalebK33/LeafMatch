@@ -17,7 +17,7 @@ const loadingscreen = document.getElementById('loadingscreen');
 const nocamera = document.getElementById('nocamera');
 
 denied.style.display = "none";
-alert("Debug")
+alert("Debug");
 prompt.style.display = "none";
 tick.style.display = "none";
 cross.style.display = "none";
