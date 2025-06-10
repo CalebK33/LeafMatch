@@ -200,7 +200,9 @@ function retakePhoto() {
     photo.style.display = 'none';
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
+    const button1 = document.getElementById('button1');
 
+    button1.style.display = '';
     button2.style.display = '';
     button3.style.display = '';
     tick.style.display = "none";
@@ -209,7 +211,6 @@ function retakePhoto() {
     if (camerasavailable === 0 || blocked === 1) {
         nocamera.style.display = '';
     }
-
     startCamera();
 }
 
