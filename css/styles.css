@@ -35,8 +35,7 @@ img {
 .nocamera {
   position: fixed;
   top: 0;
-  left: 25%;
-  width: 50vw;
+  width: 100vw;
   height: 100vh;
   border-radius: 5px;
   border: 5px solid rgb(100, 160, 100)
