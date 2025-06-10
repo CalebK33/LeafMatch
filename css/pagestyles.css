@@ -86,8 +86,10 @@ p {
 .content {
   padding: 0 18px;
   display: none;
+  background-color: rgb(190, 240, 190);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
   overflow: hidden;
-  background-color: rgb(195, 250, 195);
 }
 
 .sidebarimg {
