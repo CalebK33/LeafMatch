@@ -59,6 +59,6 @@ function preprocessImage(imageData) {
 
 function postprocess(data, conf) {
   const maxIndex = data.indexOf(Math.max(...data));
-  alert(conf)
-  //window.location.href = `/plant?ID=${maxIndex + 1}`;
+  //alert(conf)
+  window.location.href = `/plant?ID=${maxIndex + 1}`;
 }
