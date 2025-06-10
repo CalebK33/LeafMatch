@@ -307,9 +307,9 @@ function flash() {
         flashDiv.style.cssText = `
             position: fixed;
             top: 0;
-            left: 0%;
-            width: 100vw;
-            height: 100vw;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-color: white;
             opacity: 1;
             z-index: 9999;
