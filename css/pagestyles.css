@@ -43,7 +43,6 @@ h1 {
   
 }
 
-
 h2 {
   font-size: 55px;
   font-family: "Ubuntu", sans-serif;
@@ -73,6 +72,7 @@ p {
   font-style: notrmal;
   padding-left: 10px;
   width: 100%;
+  margin: 13px;
   border: none;
   text-align: left;
   outline: none;
