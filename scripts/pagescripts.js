@@ -17,20 +17,15 @@ for (let i = 0; i < coll.length; i++) {
     this.classList.toggle("active");
 
     var content = this.nextElementSibling;
-    var icon = this.querySelector("i");
+    var caret = this.querySelector(".caret-icon");
 
-    if (content.style.display === "block") {
-      content.style.display = "none";
-      if (icon) {
-        icon.classList.remove("fa-caret-down");
-        icon.classList.add("fa-caret-right");
-      }
+    if (content.classList.contains("open")) {
+      content.classList.remove("open");
+      content.style.maxHeight = null;
     } else {
-      content.style.display = "block";
-      if (icon) {
-        icon.classList.remove("fa-caret-right");
-        icon.classList.add("fa-caret-down");
-      }
+      content.classList.add("open");
+      content.style.maxHeight = content.scrollHeight + "px";
     }
+
   });
 }
