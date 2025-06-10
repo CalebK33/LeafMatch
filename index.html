@@ -25,8 +25,12 @@
         <link rel="stylesheet" href="css/styles.css">
         <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     </head>
-    <body>
+    <body onload="endLoadingScreen()">
+        <div id="loadingscreen" class="loadingscreen">
+            <img src="images/ui/loading.png" id="loader" class="loader" alt="loading.png">
+        </div>
 
+        
         <img draggable="false" onclick="acceptedPhoto()" src="images/ui/tick.png" alt="accept" class="tick" id="tick">
         <img draggable="false" onclick="retakePhoto()" src="images/ui/cross.png" alt="retake" class="cross" id="cross">
         
