@@ -30,7 +30,7 @@ body {
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: rgb(110, 160, 100)
+  color: rgb(110, 160, 100);
 }
 
 h1 {
@@ -67,11 +67,15 @@ p {
   color: rgb(90, 120, 90);
   cursor: pointer;
   padding: 18px;
+  font-size: 33px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+  font-style: notrmal;
+  padding-left: 10px;
   width: 100%;
   border: none;
   text-align: left;
   outline: none;
-  font-size: 15px;
   border-radius(15px);
 }
 
