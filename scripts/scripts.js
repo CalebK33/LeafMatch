@@ -299,7 +299,7 @@ function flash() {
 
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  startCamera();
-  setInterval(changeFullscreenButton, 20);
-});
+loadingScreen();
+startCamera();
+setInterval(changeFullscreenButton, 20);
+setTimeout(timed, 400)
