@@ -60,10 +60,11 @@ img {
 }
 
 .loader {
-  position: relative;
+  display: block;
+  margin: auto;
   width: 20%;
-  left: 40%;
-  top: 20%;
+/*   left: 40%;
+  top: 20%; */
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
