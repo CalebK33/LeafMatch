@@ -74,6 +74,57 @@ async function detectCameras() {
     }
 }
 
+function promptAccepted() {
+    prompt.style.display = 'none';
+
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: direction } })
+        .then(stream => {
+            currentStream = stream;
+            const video = document.getElementById('video');
+            video.srcObject = stream;
+
+            const shouldFlip = direction === 'user' || onlyHasUserCamera;
+            video.style.transform = shouldFlip ? 'scaleX(-1)' : 'scaleX(1)';
+            video.style.display = 'block';
+            nocamera.style.display = 'none';
+            blocked = 0;
+        })
+        .catch(() => {
+            blocked = 1;
+            nocamera.style.display = '';
+            denied.style.display = '';
+        });
+}
+
+function promptClose() {
+    prompt.style.display = 'none';
+    nocamera.style.display = '';
+    uploadfix = 1;
+}
+
+function deniedClose() {
+    denied.style.display = 'none';
+}
+
+function loadingScreen() {
+    loadingscreen.style.display = '';
+    loadingscreen.style.opacity = 1;
+}
+
+function endLoadingScreen() {
+    if (minimum === true) {
+        setTimeout(() => {
+            loadingscreen.style.opacity = 0;
+            loadingscreen.addEventListener('transitionend', () => {
+                loadingscreen.style.display = 'none';
+                loadingscreen.style.opacity = 1; // reset for future uses
+            }, { once: true });
+        }, 100);
+    } else {
+        setTimeout(endLoadingScreen, 100);
+    }
+}
+
 
 async function startCamera() {
     if (currentStream) {
