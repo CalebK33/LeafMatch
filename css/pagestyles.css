@@ -79,8 +79,9 @@ p {
   border-radius: 15px;
 }
 
-.active, .collapsible:hover {
-  background-color: rgb(190, 240, 190);
+.active {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .content {
