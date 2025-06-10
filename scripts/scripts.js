@@ -17,7 +17,7 @@ const loadingscreen = document.getElementById('loadingscreen');
 const nocamera = document.getElementById('nocamera');
 
 denied.style.display = "none";
-prompt.style.display = "none";
+prompt.style.display = "";
 tick.style.display = "none";
 cross.style.display = "none";
 nocamera.style.display = '';
@@ -119,7 +119,7 @@ function endLoadingScreen() {
             loadingscreen.style.opacity = 0;
             loadingscreen.addEventListener('transitionend', () => {
                 loadingscreen.style.display = 'none';
-                loadingscreen.style.opacity = 1; // reset for future uses
+                loadingscreen.style.opacity = 1; 
             }, { once: true });
         }, 100);
     } else {
