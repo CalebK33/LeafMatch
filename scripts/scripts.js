@@ -4,7 +4,6 @@ let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
 let minimum = false;
-alert("Debug");
 
 let run = 0;
 let blocked = 0;
@@ -308,9 +307,9 @@ function flash() {
         flashDiv.style.cssText = `
             position: fixed;
             top: 0;
-            left: 25%;
-            width: 50vw;
-            height: 100vh;
+            left: 0%;
+            width: 100vw;
+            height: 100vw;
             background-color: white;
             opacity: 1;
             z-index: 9999;
