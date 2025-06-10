@@ -13,9 +13,10 @@
   0% { background-colour: rgb(200, 255, 200); }
   50% { transform: rotate(360deg); }
   50% { width: 40%; }
+  50% { background-colour: blue; }
   100% { transform: rotate(0deg); }
   100% { width: 20%; }
-  100% { background-colour: blue; }
+  100% { background-colour: rgb(200, 255, 200); }
 }
 
 @font-face {
