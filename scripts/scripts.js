@@ -21,7 +21,7 @@ prompt.style.display = "none";
 tick.style.display = "none";
 cross.style.display = "none";
 nocamera.style.display = '';
-alert("Debug message")
+alert("Debug message");
 
 let camerasavailable = 1;
 
