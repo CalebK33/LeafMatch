@@ -272,6 +272,10 @@ function takePhoto() {
     button3.style.display = 'none';
 }
 
+function timed() {
+    minimum = true;
+}
+
 function flash() {
   const flashDiv = document.createElement('div');
   flashDiv.style.cssText = `
