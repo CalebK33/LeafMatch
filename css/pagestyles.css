@@ -61,6 +61,14 @@ p {
   padding-left: 10px;
 }
 
+.caret-icon {
+  transition: transform 0.3s ease;
+}
+
+.collapsible.active .caret-icon {
+  transform: rotate(90deg);
+}
+
 .collapsible {
   background-color: rgb(190, 240, 190);
   color: rgb(110, 160, 100);
@@ -91,6 +99,14 @@ p {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   overflow: hidden;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+
+.content.open {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .sidebarimg {
