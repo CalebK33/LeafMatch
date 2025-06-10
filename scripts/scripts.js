@@ -134,20 +134,43 @@ async function startCamera() {
 
     await detectCameras();
 
-    navigator.mediaDevices.getUserMedia({
-        video: { facingMode: direction }
-    })
-    .then(stream => {
-        currentStream = stream;
-        const video = document.getElementById('video');
-        video.srcObject = stream;
+    if (camerasavailable === 0) {
+        nocamera.style.display = '';
+        return;
+    }
 
-        const shouldFlip = direction === 'user' || onlyHasUserCamera;
-        video.style.transform = shouldFlip ? 'scaleX(-1)' : 'scaleX(1)';
-        video.style.display = 'block';
-    })
-    .catch(err => {
-        alert("Please allow access to camera or use the upload files button")
+    navigator.permissions.query({ name: 'camera' }).then(result => {
+        if (result.state === 'granted') {
+            navigator.mediaDevices.getUserMedia({ video: { facingMode: direction } })
+                .then(stream => {
+                    currentStream = stream;
+                    const video = document.getElementById('video');
+                    video.srcObject = stream;
+                    run = 1;
+
+                    const shouldFlip = direction === 'user' || onlyHasUserCamera;
+                    video.style.transform = shouldFlip ? 'scaleX(-1)' : 'scaleX(1)';
+                    video.style.display = 'block';
+                    nocamera.style.display = 'none';
+                    blocked = 0;
+                })
+                .catch(() => {
+                    blocked = 1;
+                    nocamera.style.display = '';
+                    denied.style.display = '';
+                });
+
+        } else if (result.state === 'prompt') {
+            run = 1;
+            prompt.style.display = '';
+            nocamera.style.display = '';
+
+        } else if (result.state === 'denied') {
+            run = 1;
+            blocked = 1;
+            denied.style.display = '';
+            nocamera.style.display = '';
+        }
     });
 }
 
