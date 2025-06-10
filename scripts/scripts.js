@@ -17,11 +17,11 @@ const loadingscreen = document.getElementById('loadingscreen');
 const nocamera = document.getElementById('nocamera');
 
 denied.style.display = "none";
+alert("Debug")
 prompt.style.display = "none";
 tick.style.display = "none";
 cross.style.display = "none";
 nocamera.style.display = '';
-alert("Debug message");
 
 let camerasavailable = 1;
 
