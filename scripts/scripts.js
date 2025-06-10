@@ -231,8 +231,6 @@ function changeFullscreenButton() {
 
 }
 
-
-
 function upload() {
     const fileInput = document.getElementById('fileInput');
     const canvas = document.getElementById('canvas');
@@ -240,6 +238,7 @@ function upload() {
     const button1 = document.getElementById('button1');
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
+    const video = document.getElementById('video');
 
     if (fileInput.files.length > 0) {
         const file = fileInput.files[0];
@@ -257,17 +256,24 @@ function upload() {
                 context.drawImage(img, 0, 0, canvas.width, canvas.height);
 
                 photo.src = canvas.toDataURL('image/png');
-                currentStream.getTracks().forEach(track => track.stop());
-                currentStream = null;
+                photo.style.display = '';
+                
+                if (currentStream) {
+                    currentStream.getTracks().forEach(track => track.stop());
+                    currentStream = null;
+                }
+
                 video.srcObject = null;
                 video.style.display = 'none';
                 button1.style.display = 'none';
                 button2.style.display = 'none';
                 button3.style.display = 'none';
+
                 acceptordeny();
             };
         };
-    };
+        reader.readAsDataURL(file); 
+    }
 }
 
 function takePhoto() {
