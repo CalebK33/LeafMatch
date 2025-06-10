@@ -3,11 +3,24 @@ let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
+let minimum = false;
+
+let run = 0;
+let blocked = 0;
+let uploadfix = 0;
+
+const denied = document.getElementById('denied');
+const prompt = document.getElementById('prompt');
 const tick = document.getElementById('tick');
 const cross = document.getElementById('cross');
+const loadingscreen = document.getElementById('loadingscreen');
+const nocamera = document.getElementById('nocamera');
 
-tick.style.display = 'none';
-cross.style.display = 'none';
+denied.style.display = "none";
+prompt.style.display = "none";
+tick.style.display = "none";
+cross.style.display = "none";
+nocamera.style.display = '';
 
 function changeFullscreen() {
   if (document.fullscreenElement) {
