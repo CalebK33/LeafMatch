@@ -260,6 +260,8 @@ function upload() {
                 acceptordeny();
             };
         };
+    };
+}
 
 function takePhoto() {
     const video = document.getElementById('video');
