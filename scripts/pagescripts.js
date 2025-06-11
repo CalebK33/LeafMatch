@@ -18,29 +18,17 @@ for (let i = 0; i < coll.length; i++) {
     const content = this.nextElementSibling;
 
     if (content.classList.contains("open")) {
-      // Collapse
-      content.style.height = content.scrollHeight + "px"; // Set to current height first
-      requestAnimationFrame(() => {
-        content.style.height = "0px";
+      content.style.opacity = "0";
+      setTimeout(() => {
         content.classList.remove("open");
-      });
+        content.style.display = "none";
+      }, 400);
     } else {
-      // Expand
-      content.classList.add("open");
-      content.style.height = "auto"; // Reset first in case it's stuck
-      const height = content.scrollHeight + "px";
-      content.style.height = "0px"; // Force it to start collapsed
-      requestAnimationFrame(() => {
-        content.style.height = height;
-      });
-
-      // Clean up inline height after animation
-      content.addEventListener("transitionend", function handler() {
-        if (content.classList.contains("open")) {
-          content.style.height = "auto";
-        }
-        content.removeEventListener("transitionend", handler);
-      });
+      content.style.display = "block";
+      setTimeout(() => {
+        content.classList.add("open");
+      }, 10); 
     }
   });
 }
+
