@@ -229,7 +229,7 @@ function upload() {
 }
 
 function takePhoto() {
-    if (camerasavailable === 1 && blocked === 0) {
+    if (camerasavailable === 1 && blocked === 0 && nocamera.style.display == '';) {
         const video = document.getElementById('video');
         const canvas = document.getElementById('canvas');
         const photo = document.getElementById('photo');
@@ -259,6 +259,9 @@ function takePhoto() {
         video.style.display = 'none';
         button2.style.display = 'none';
         button3.style.display = 'none';
+    }
+    else {
+        prompt.style.display = '';
     }
 }
 
