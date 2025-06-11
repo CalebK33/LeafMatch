@@ -78,7 +78,6 @@ p {
   border-bottom-right-radius: 0;
 }
 
-/* Caret animation only */
 .caret-icon {
   transition: transform 0.3s ease;
 }
@@ -87,7 +86,6 @@ p {
   transform: rotate(90deg);
 }
 
-/* Content visible/hidden without animation */
 .content {
   display: none;
   padding: 0 18px;
