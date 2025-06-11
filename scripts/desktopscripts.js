@@ -270,7 +270,7 @@ function timed() {
 }
 
 function flash() {
-    if (camerasavailable === 1 && blocked === 0) {
+    if (camerasavailable === 1 && blocked === 0 && nocamera.style.display == 'none') {
         const flashDiv = document.createElement('div');
         flashDiv.style.cssText = `
             position: fixed;
