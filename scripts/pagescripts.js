@@ -10,22 +10,20 @@ if (!navigator.userAgent.match(/Android|iPhone|iPod|BlackBerry|Windows Phone/i))
   document.getElementById("sidebar").style.width = "33%";
 }
 
-var coll = document.getElementsByClassName("collapsible");
+const coll = document.getElementsByClassName("collapsible");
 
 for (let i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function () {
     this.classList.toggle("active");
-
-    var content = this.nextElementSibling;
-    var caret = this.querySelector(".caret-icon");
+    const content = this.nextElementSibling;
 
     if (content.classList.contains("open")) {
-      content.classList.remove("open");
       content.style.maxHeight = null;
+      content.classList.remove("open");
     } else {
       content.classList.add("open");
       content.style.maxHeight = content.scrollHeight + "px";
     }
-
   });
 }
+
