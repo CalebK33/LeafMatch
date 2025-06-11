@@ -36,18 +36,15 @@ body {
 h1 {
   font-size: 50px;
   font-family: 'Leaf Script';
-  font-style: normal;
   font-weight: 800;
-  text-decoration: none;
   color: rgb(110, 160, 100);
-  
+  text-decoration: none;
 }
 
 h2 {
   font-size: 55px;
   font-family: "Ubuntu", sans-serif;
   font-weight: 900;
-  font-style: normal;
   color: rgb(110, 160, 100);
   padding: 10px;
 }
@@ -56,17 +53,8 @@ p {
   font-size: 25px;
   font-family: "Ubuntu", sans-serif;
   font-weight: 600;
-  font-style: normal;
   color: rgb(110, 160, 100);
   padding-left: 10px;
-}
-
-.caret-icon {
-  transition: transform 0.3s ease;
-}
-
-.collapsible.active .caret-icon {
-  transform: rotate(90deg);
 }
 
 .collapsible {
@@ -83,7 +71,6 @@ p {
   text-align: left;
   outline: none;
   border-radius: 15px;
-  transition: background-color 0.3s ease;
 }
 
 .collapsible.active {
@@ -91,6 +78,7 @@ p {
   border-bottom-right-radius: 0;
 }
 
+/* Caret animation only */
 .caret-icon {
   transition: transform 0.3s ease;
 }
@@ -99,37 +87,33 @@ p {
   transform: rotate(90deg);
 }
 
+/* Content visible/hidden without animation */
 .content {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  max-height: 0;
-  overflow: hidden;
+  display: none;
   padding: 0 18px;
   background-color: rgb(195, 250, 195);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  display: none;
 }
 
 .content.visible {
   display: block;
-  opacity: 1;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
 .sidebarimg {
-    max-width: 80px;
-    max-height: 80px;
-    width: auto;
-    height: auto;
-    cursor: pointer;
+  max-width: 80px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  cursor: pointer;
 }
 
 .sidebar {
   position: fixed;
   top: 0;
-  left: -80%; 
+  left: -80%;
   width: 80%;
   height: 140%;
   background-color: rgb(175, 230, 175);
@@ -168,22 +152,19 @@ p {
   font-size: 28px;
   border: none;
   box-shadow: none;
-  border-radius: 0px;
+  border-radius: 0;
   background-color: rgba(120, 170, 120, 0.20);
   color: rgb(110, 160, 110);
   display: block;
   outline: none;
   font-family: "Ubuntu", sans-serif;
   font-weight: 400;
-  font-style: normal;
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 400;
 }
 
-.sidebar input[type="search"]::placeholder, 
+.sidebar input[type="search"]::placeholder,
 .sidebar input[type="text"]::placeholder {
-  color: rgb(120, 170, 120); 
-  opacity: 1; 
+  color: rgb(120, 170, 120);
+  opacity: 1;
   font-style: italic;
 }
 
@@ -195,12 +176,12 @@ p {
 .row {
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
 }
 
 .titlerow {
   display: flex;
-  align-items: center; 
+  align-items: center;
   width: 100%;
   padding: 10px;
   background-color: rgb(180, 233, 180);
