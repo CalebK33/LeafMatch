@@ -83,7 +83,7 @@ p {
 }
 
 .collapsible.active .caret-icon {
-  transform: rotate(90deg);
+  transform: rotate(-90deg);
 }
 
 .content {
