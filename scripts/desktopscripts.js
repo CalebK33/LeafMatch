@@ -229,7 +229,7 @@ function upload() {
 }
 
 function takePhoto() {
-    if (camerasavailable === 1 && blocked === 0 && nocamera.style.display == '';) {
+    if (camerasavailable === 1 && blocked === 0 && nocamera.style.display == 'none';) {
         const video = document.getElementById('video');
         const canvas = document.getElementById('canvas');
         const photo = document.getElementById('photo');
