@@ -75,6 +75,17 @@ img {
   z-index: 10;
   object-fit: cover;
 }
+.nocameraback {
+  position: fixed;
+  top: 0;
+  left: 25%;
+  width: 50vw;
+  height: 100vh;
+  border-radius: 5px;
+  border: 5px solid rgb(100, 160, 100)
+  z-index: -10;
+  object-fit: cover;
+}
 
 .prompt {
   position: fixed;
