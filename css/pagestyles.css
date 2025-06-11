@@ -101,7 +101,7 @@ p {
 
 .content {
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s ease;
   max-height: 0;
   overflow: hidden;
   padding: 0 18px;
@@ -113,8 +113,9 @@ p {
 
 .content.open {
   display: block;
+  transition: opacity 0.3s ease;
   opacity: 1;
-  max-height: none; /* allow natural height */
+  max-height: none; 
   padding-top: 10px;
   padding-bottom: 10px;
 }
