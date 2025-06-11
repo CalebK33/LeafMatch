@@ -9,6 +9,7 @@ function closeSidebar() {
 if (!navigator.userAgent.match(/Android|iPhone|iPod|BlackBerry|Windows Phone/i)) {
   document.getElementById("sidebar").style.width = "33%";
 }
+
 const coll = document.getElementsByClassName("collapsible");
 
 for (let i = 0; i < coll.length; i++) {
@@ -17,21 +18,28 @@ for (let i = 0; i < coll.length; i++) {
     const content = this.nextElementSibling;
 
     if (content.classList.contains("open")) {
-      content.style.height = content.scrollHeight + 'px'; 
+      // Collapse
+      content.style.height = content.scrollHeight + "px"; // Set to current height first
       requestAnimationFrame(() => {
-        content.style.height = '0';
+        content.style.height = "0px";
+        content.classList.remove("open");
       });
-      content.classList.remove("open");
     } else {
+      // Expand
       content.classList.add("open");
-      const fullHeight = content.scrollHeight + 'px';
-      content.style.height = fullHeight;
+      content.style.height = "auto"; // Reset first in case it's stuck
+      const height = content.scrollHeight + "px";
+      content.style.height = "0px"; // Force it to start collapsed
+      requestAnimationFrame(() => {
+        content.style.height = height;
+      });
 
-      content.addEventListener("transitionend", function clearHeight() {
+      // Clean up inline height after animation
+      content.addEventListener("transitionend", function handler() {
         if (content.classList.contains("open")) {
-          content.style.height = 'auto';
+          content.style.height = "auto";
         }
-        content.removeEventListener("transitionend", clearHeight);
+        content.removeEventListener("transitionend", handler);
       });
     }
   });
