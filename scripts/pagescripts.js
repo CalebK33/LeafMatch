@@ -6,6 +6,7 @@ function closeSidebar() {
   document.getElementById("sidebar").classList.remove("open");
 }
 
+// Resize sidebar on desktop
 if (!navigator.userAgent.match(/Android|iPhone|iPod|BlackBerry|Windows Phone/i)) {
   document.getElementById("sidebar").style.width = "33%";
 }
@@ -18,21 +19,11 @@ for (let i = 0; i < coll.length; i++) {
     const content = this.nextElementSibling;
 
     if (content.classList.contains("visible")) {
-      // Fade out
-      content.classList.remove("fading-in");
-      content.classList.add("fading-out");
-      setTimeout(() => {
-        content.classList.remove("visible", "fading-out");
-        content.style.display = "none";
-      }, 400); // Match the fade duration
+      content.classList.remove("visible");
+      content.style.display = "none";
     } else {
-      // Fade in
       content.style.display = "block";
       content.classList.add("visible");
-      setTimeout(() => {
-        content.classList.add("fading-in");
-      }, 10); // Delay to trigger transition
     }
   });
 }
-
