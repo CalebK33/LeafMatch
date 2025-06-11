@@ -5,7 +5,6 @@ window.addEventListener('DOMContentLoaded', async () => {
   try {
     aiSession = await ort.InferenceSession.create(modelPath);
   } catch (err) {
-    alert("Failed to load ONNX model: " + err.message);
     console.error("ONNX load error:", err);
   }
 });
