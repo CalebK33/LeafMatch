@@ -39,7 +39,8 @@ h2 {
   font-weight: 900;
   font-style: normal;
   color: rgb(110, 160, 100);
-  padding: 10px;
+  left: 20%;
+  right: 20%;
 }
 
 p {
@@ -48,10 +49,9 @@ p {
   font-weight: 600;
   font-style: normal;
   color: rgb(110, 160, 100);
-  padding-left: 10px;
-  max-width: 400px;
   position: relative;
   left: 30%;
+  right: 30%;
   text-align: center;
 }
 
