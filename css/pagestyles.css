@@ -100,19 +100,25 @@ p {
 }
 
 .content {
-  background-color: rgb(195, 250, 195);
-  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.4s ease;
   max-height: 0;
+  overflow: hidden;
   padding: 0 18px;
+  background-color: rgb(195, 250, 195);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  transition: max-height 0.4s ease, padding 0.4s ease;
+  display: none;
 }
 
 .content.open {
+  display: block;
+  opacity: 1;
+  max-height: none; /* allow natural height */
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
 
 .sidebarimg {
     max-width: 80px;
