@@ -25,7 +25,6 @@ for (let i = 0; i < coll.length; i++) {
       }, 400);
     } else {
       content.style.display = "block";
-      content.style.opacity = "100";
       setTimeout(() => {
         content.classList.add("open");
       }, 10); 
