@@ -113,21 +113,10 @@ p {
 
 .content.visible {
   display: block;
-}
-
-.content.fading-in {
   opacity: 1;
   padding-top: 10px;
   padding-bottom: 10px;
 }
-
-.content.fading-out {
-  opacity: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-
 
 .sidebarimg {
     max-width: 80px;
