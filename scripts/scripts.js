@@ -278,37 +278,39 @@ function upload() {
 }
 
 function takePhoto() {
-    const video = document.getElementById('video');
-    const canvas = document.getElementById('canvas');
-    const photo = document.getElementById('photo');
-    const button1 = document.getElementById('button1');
-    const button2 = document.getElementById('birb');
-    const button3 = document.getElementById('uploadbutton');
-
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-
-    const context = canvas.getContext('2d');
-
-    const shouldFlip = direction === 'user' || onlyHasUserCamera;
-    if (shouldFlip) {
-        context.translate(canvas.width, 0);
-        context.scale(-1, 1);
+    if (nocamera.style.display == 'none') {
+      const video = document.getElementById('video');
+      const canvas = document.getElementById('canvas');
+      const photo = document.getElementById('photo');
+      const button1 = document.getElementById('button1');
+      const button2 = document.getElementById('birb');
+      const button3 = document.getElementById('uploadbutton');
+  
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+  
+      const context = canvas.getContext('2d');
+  
+      const shouldFlip = direction === 'user' || onlyHasUserCamera;
+      if (shouldFlip) {
+          context.translate(canvas.width, 0);
+          context.scale(-1, 1);
+      }
+  
+      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+  
+      const imageDataURL = canvas.toDataURL('image/png');
+      photo.src = imageDataURL;
+  
+      currentStream.getTracks().forEach(track => track.stop());
+      currentStream = null;
+      video.srcObject = null;
+      video.style.display = 'none';
+      photo.style.display = '';
+      button1.style.display = 'none';
+      button2.style.display = 'none';
+      button3.style.display = 'none';
     }
-
-    context.drawImage(video, 0, 0, canvas.width, canvas.height);
-
-    const imageDataURL = canvas.toDataURL('image/png');
-    photo.src = imageDataURL;
-
-    currentStream.getTracks().forEach(track => track.stop());
-    currentStream = null;
-    video.srcObject = null;
-    video.style.display = 'none';
-    photo.style.display = '';
-    button1.style.display = 'none';
-    button2.style.display = 'none';
-    button3.style.display = 'none';
 }
 
 function timed() {
@@ -316,7 +318,7 @@ function timed() {
 }
 
 function flash() {
-    if (camerasavailable === 1 && blocked === 0) {
+    if (camerasavailable === 1 && blocked === 0 && nocamera.style.display = 'none';) {
         const flashDiv = document.createElement('div');
         flashDiv.style.cssText = `
             position: fixed;
