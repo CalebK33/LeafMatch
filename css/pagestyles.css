@@ -73,35 +73,40 @@ p {
   background-color: rgb(190, 240, 190);
   color: rgb(110, 160, 100);
   cursor: pointer;
-  padding: 18px;
+  padding: 18px 18px 18px 10px;
   font-size: 33px;
   font-family: "Ubuntu", sans-serif;
   font-weight: 600;
-  font-style: notrmal;
-  padding-left: 10px;
   width: 100%;
   margin-top: 13px;
   border: none;
   text-align: left;
   outline: none;
   border-radius: 15px;
+  transition: background-color 0.3s ease;
 }
 
-.active {
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+.collapsible.active {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.caret-icon {
+  transition: transform 0.3s ease;
+}
+
+.collapsible.active .caret-icon {
+  transform: rotate(90deg);
 }
 
 .content {
+  background-color: rgb(195, 250, 195);
+  overflow: hidden;
+  max-height: 0;
   padding: 0 18px;
-  background-color: rgb(190, 240, 190);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
-  max-height: 0;
-  overflow: hidden;
   transition: max-height 0.4s ease, padding 0.4s ease;
-  background-color: rgb(195, 250, 195);
-  padding: 0 18px;
 }
 
 .content.open {
