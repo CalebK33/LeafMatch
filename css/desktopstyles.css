@@ -262,22 +262,22 @@ div.content {
 .leafimage {
   width: 17%;
   position: fixed;
-  right: 10%;
+  right: 7%;
   rotate: 40deg;
 }
 
 .leafimage1 {
   width: 14%;
   position: fixed;
-  right: 2%;
+  right: 1%;
   top: 30%;
   rotate: -70deg;
 }
 
 .leafimage2 {
-  width: 18%;
+  width: 16%;
   position: fixed;
-  right: 8%;
+  right: 5%;
   top: 60%;
-  rotate: 100deg;
+  rotate: 170deg;
 }
