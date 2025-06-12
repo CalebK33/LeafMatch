@@ -10,6 +10,15 @@ if (!navigator.userAgent.match(/Android|iPhone|iPod|BlackBerry|Windows Phone/i))
   document.getElementById("sidebar").style.width = "33%";
 }
 
+$(document).ready(function() {
+  $('.content').hide();
+
+  $('.collapsible').click(function() {
+    $(this).toggleClass('active');
+    $(this).next('.content').stop(true, false).slideToggle(400);
+  });
+});
+
 const coll = document.getElementsByClassName("collapsible");
 
 for (let i = 0; i < coll.length; i++) {
