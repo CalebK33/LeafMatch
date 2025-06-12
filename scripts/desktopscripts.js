@@ -43,6 +43,7 @@ async function detectCameras() {
 
 function promptAccepted() {
     prompt.style.display = 'none';
+    prompton = 0;
 
     navigator.mediaDevices.getUserMedia({ video: { facingMode: direction } })
         .then(stream => {
@@ -64,12 +65,14 @@ function promptAccepted() {
 }
 
 function promptClose() {
+    prompton = 0;
     prompt.style.display = 'none';
     nocamera.style.display = '';
     uploadfix = 1;
 }
 
 function deniedClose() {
+    prompton = 0;
     denied.style.display = 'none';
 }
 
@@ -131,6 +134,7 @@ async function startCamera() {
             prompt.style.display = '';
             nocamera.style.display = '';
             prompton = 1;
+            alert(prompton);
 
         } else if (result.state === 'denied') {
             run = 1;
@@ -138,6 +142,7 @@ async function startCamera() {
             denied.style.display = '';
             nocamera.style.display = '';
             prompton = 1;
+            alert(prompton);
         }
     });
 }
