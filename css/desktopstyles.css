@@ -258,3 +258,9 @@ div.content {
   left: 40%;
   transform: translateX(-40%);
 }
+
+.leafimage {
+  width: 25%;
+  position: fixed;
+  right: 5%;
+}
