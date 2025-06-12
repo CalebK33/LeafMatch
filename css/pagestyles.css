@@ -192,6 +192,8 @@ p {
   text-align: center;
   margin: auto;
   max-width: 400px;
+  border:10px solid rgb(110, 160, 110);
+  border-radius:10px;
 }
 
 .titlerow {
