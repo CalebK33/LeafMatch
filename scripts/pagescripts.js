@@ -26,12 +26,3 @@ for (let i = 0; i < coll.length; i++) {
     }
   });
 }
-
-$(document).ready(function() {
-  $('.content').hide();
-
-  $('.collapsible').click(function() {
-    $(this).toggleClass('active');
-    $(this).next('.content').stop(true, false).slideToggle(400);
-  });
-});
