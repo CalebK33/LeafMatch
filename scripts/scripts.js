@@ -3,6 +3,7 @@ let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
+let prompton = 0;
 let minimum = false;
 
 let run = 0;
@@ -78,6 +79,7 @@ async function detectCameras() {
 
 function promptAccepted() {
     prompt.style.display = 'none';
+    prompton = 0;
 
     navigator.mediaDevices.getUserMedia({ video: { facingMode: direction } })
         .then(stream => {
@@ -102,10 +104,12 @@ function promptClose() {
     prompt.style.display = 'none';
     nocamera.style.display = '';
     uploadfix = 1;
+    prompton = 0;
 }
 
 function deniedClose() {
     denied.style.display = 'none';
+    prompton = 0;
 }
 
 function loadingScreen() {
@@ -164,11 +168,13 @@ async function startCamera() {
 
         } else if (result.state === 'prompt') {
             run = 1;
+            prompton = 1;
             prompt.style.display = '';
             nocamera.style.display = '';
 
         } else if (result.state === 'denied') {
             run = 1;
+            prompton = 1;
             blocked = 1;
             denied.style.display = '';
             nocamera.style.display = '';
@@ -177,8 +183,10 @@ async function startCamera() {
 }
 
 function changeValue() {
-    direction = (direction === 'environment') ? 'user' : 'environment';
-    startCamera();
+    if (prompton == 0) {
+      direction = (direction === 'environment') ? 'user' : 'environment';
+      startCamera();
+    }
 }
 
 function getValue() {
@@ -234,53 +242,55 @@ function changeFullscreenButton() {
 }
 
 function upload() {
-    const fileInput = document.getElementById('fileInput');
-    const canvas = document.getElementById('canvas');
-    const photo = document.getElementById('photo');
-    const button1 = document.getElementById('button1');
-    const button2 = document.getElementById('birb');
-    const button3 = document.getElementById('uploadbutton');
-    const video = document.getElementById('video');
-
-    if (fileInput.files.length > 0) {
-        const file = fileInput.files[0];
-        const reader = new FileReader();
-
-        reader.onload = function(event) {
-            const img = new Image();
-            img.src = event.target.result;
-
-            img.onload = function() {
-                canvas.width = img.width;
-                canvas.height = img.height;
-
-                const context = canvas.getContext('2d');
-                context.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-                photo.src = canvas.toDataURL('image/png');
-                photo.style.display = '';
+    if (prompton == 0) {
+      const fileInput = document.getElementById('fileInput');
+      const canvas = document.getElementById('canvas');
+      const photo = document.getElementById('photo');
+      const button1 = document.getElementById('button1');
+      const button2 = document.getElementById('birb');
+      const button3 = document.getElementById('uploadbutton');
+      const video = document.getElementById('video');
+  
+      if (fileInput.files.length > 0) {
+          const file = fileInput.files[0];
+          const reader = new FileReader();
+  
+          reader.onload = function(event) {
+              const img = new Image();
+              img.src = event.target.result;
+  
+              img.onload = function() {
+                  canvas.width = img.width;
+                  canvas.height = img.height;
+  
+                  const context = canvas.getContext('2d');
+                  context.drawImage(img, 0, 0, canvas.width, canvas.height);
+  
+                  photo.src = canvas.toDataURL('image/png');
+                  photo.style.display = '';
+                  
+                  if (currentStream) {
+                      currentStream.getTracks().forEach(track => track.stop());
+                      currentStream = null;
+                  }
+  
+                  video.srcObject = null;
+                  video.style.display = 'none';
+                  button1.style.display = 'none';
+                  button2.style.display = 'none';
+                  button3.style.display = 'none';
+                  nocamera.style.display = 'none';
                 
-                if (currentStream) {
-                    currentStream.getTracks().forEach(track => track.stop());
-                    currentStream = null;
-                }
-
-                video.srcObject = null;
-                video.style.display = 'none';
-                button1.style.display = 'none';
-                button2.style.display = 'none';
-                button3.style.display = 'none';
-                nocamera.style.display = 'none';
-              
-                acceptordeny();
-            };
-        };
-        reader.readAsDataURL(file); 
+                  acceptordeny();
+              };
+          };
+          reader.readAsDataURL(file); 
+      }
     }
 }
 
 function takePhoto() {
-    if (nocamera.style.display == 'none') {
+    if (nocamera.style.display == 'none' && prompton == 0) {
       const video = document.getElementById('video');
       const canvas = document.getElementById('canvas');
       const photo = document.getElementById('photo');
