@@ -260,14 +260,14 @@ div.content {
 }
 
 .leafimage {
-  width: 15%;
+  width: 17%;
   position: fixed;
   right: 10%;
   rotate: 40deg;
 }
 
 .leafimage1 {
-  width: 15%;
+  width: 14%;
   position: fixed;
   right: 2%;
   top: 30%;
@@ -275,7 +275,7 @@ div.content {
 }
 
 .leafimage2 {
-  width: 15%;
+  width: 18%;
   position: fixed;
   right: 8%;
   top: 60%;
