@@ -268,21 +268,21 @@ div.content {
 
 }
 
-.leafimage {
+.leafimage1 {
   width: 15%;
   position: fixed;
   right: 5%;
-  top: 4%; 
+  top: 45%; 
   rotate: -40deg;
 }
 
 }
 
 .leafimage2 {
-  width: 17%;
+  width: 15%;
   position: fixed;
-  right: 7%;
+  right: 5%;
   top: 34%; 
-  rotate: 60deg;
+  rotate: 40deg;
   transform: scaleY(-1);
 }
