@@ -241,6 +241,12 @@ function changeFullscreenButton() {
 
 }
 
+function uploadstart() {
+  if (prompton == 0) {
+    document.getElementById('fileInput').click()
+  }
+}
+
 function upload() {
     if (prompton == 0) {
       const fileInput = document.getElementById('fileInput');
