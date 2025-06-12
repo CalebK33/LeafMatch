@@ -264,7 +264,7 @@ div.content {
   position: fixed;
   right: 7%;
   rotate: 40deg;
-  opacity: 0.6;
+  opacity: 0.4;
 }
 
 .leafimage1 {
@@ -282,5 +282,5 @@ div.content {
   right: 8%;
   top: 60%;
   rotate: 170deg;
-  opacity: 0.5;
+  opacity: 0.4;
 }
