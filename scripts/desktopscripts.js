@@ -4,6 +4,7 @@ let currentStream = null;
 let onlyHasUserCamera = false;
 var elem = document.documentElement;
 
+let prompton = 0;
 let minimum = false;
 
 let run = 0;
@@ -129,12 +130,14 @@ async function startCamera() {
             run = 1;
             prompt.style.display = '';
             nocamera.style.display = '';
+            prompton = 1;
 
         } else if (result.state === 'denied') {
             run = 1;
             blocked = 1;
             denied.style.display = '';
             nocamera.style.display = '';
+            prompton = 1;
         }
     });
 }
@@ -185,53 +188,55 @@ function retakePhoto() {
 }
 
 function upload() {
-    const video = document.getElementById('video');
-    const fileInput = document.getElementById('fileInput');
-    const canvas = document.getElementById('canvas');
-    const photo = document.getElementById('photo');
-    const button2 = document.getElementById('birb');
-    const button3 = document.getElementById('uploadbutton');
-
-    if (fileInput.files.length > 0) {
-        const file = fileInput.files[0];
-        const reader = new FileReader();
-
-        reader.onload = function (event) {
-            const img = new Image();
-            img.src = event.target.result;
-
-            img.onload = function () {
-                canvas.width = img.width;
-                canvas.height = img.height;
-
-                const context = canvas.getContext('2d');
-                context.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-                photo.src = canvas.toDataURL('image/png');
-
-                if (camerasavailable === 1 && blocked === 0 && uploadfix === 0) {
-                    currentStream.getTracks().forEach(track => track.stop());
-                    currentStream = null;
-                }
-
-                video.srcObject = null;
-
-                nocamera.style.display = "none";
-                video.style.display = 'none';
-                button2.style.display = 'none';
-                button3.style.display = 'none';
-
-                photo.style.display = '';
-                acceptordeny();
+    if (prompton == 0) {
+        const video = document.getElementById('video');
+        const fileInput = document.getElementById('fileInput');
+        const canvas = document.getElementById('canvas');
+        const photo = document.getElementById('photo');
+        const button2 = document.getElementById('birb');
+        const button3 = document.getElementById('uploadbutton');
+    
+        if (fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+    
+            reader.onload = function (event) {
+                const img = new Image();
+                img.src = event.target.result;
+    
+                img.onload = function () {
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+    
+                    const context = canvas.getContext('2d');
+                    context.drawImage(img, 0, 0, canvas.width, canvas.height);
+    
+                    photo.src = canvas.toDataURL('image/png');
+    
+                    if (camerasavailable === 1 && blocked === 0 && uploadfix === 0) {
+                        currentStream.getTracks().forEach(track => track.stop());
+                        currentStream = null;
+                    }
+    
+                    video.srcObject = null;
+    
+                    nocamera.style.display = "none";
+                    video.style.display = 'none';
+                    button2.style.display = 'none';
+                    button3.style.display = 'none';
+    
+                    photo.style.display = '';
+                    acceptordeny();
+                };
             };
-        };
-
-        reader.readAsDataURL(file);
+    
+            reader.readAsDataURL(file);
+        }
     }
 }
 
 function takePhoto() {
-    if (camerasavailable === 1 && blocked === 0 && nocamera.style.display == 'none') {
+    if (camerasavailable === 1 && blocked === 0 && nocamera.style.display == 'none' && prompton == 0) {
         const video = document.getElementById('video');
         const canvas = document.getElementById('canvas');
         const photo = document.getElementById('photo');
