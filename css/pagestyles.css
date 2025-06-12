@@ -187,6 +187,12 @@ p {
   margin: auto;
 }
 
+.pimage {
+  text-align: center;
+  margin: auto;
+  max-width: 400px;
+}
+
 .titlerow {
   display: flex;
   align-items: center;
