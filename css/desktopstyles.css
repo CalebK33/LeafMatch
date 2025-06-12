@@ -263,12 +263,13 @@ div.content {
   width: 15%;
   position: fixed;
   right: 5%;
-  rotate: 40deg
+  rotate: 40deg;
 }
 
 .leafimage2 {
   width: 15%;
   position: fixed;
   right: 5%;
-  rotate: 40deg
+  top: 30%;
+  rotate: 40deg;
 }
