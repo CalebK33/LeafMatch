@@ -270,14 +270,14 @@ div.content {
   width: 15%;
   position: fixed;
   right: 5%;
-  top: 20%;
-  rotate: 40deg;
+  top: 30%;
+  rotate: -70deg;
 }
 
 .leafimage2 {
   width: 15%;
   position: fixed;
-  right: 5%;
-  top: 30%;
-  rotate: 40deg;
+  right: 8%;
+  top: 60%;
+  rotate: 120deg;
 }
