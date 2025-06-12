@@ -194,6 +194,7 @@ function retakePhoto() {
 
 function upload() {
     if (prompton == 0) {
+        alert(prompton)
         const video = document.getElementById('video');
         const fileInput = document.getElementById('fileInput');
         const canvas = document.getElementById('canvas');
