@@ -272,6 +272,15 @@ div.content {
   width: 15%;
   position: fixed;
   right: 5%;
-  rotate: 40deg
+  rotate: -40deg
   transform: scaleY(-1);
+}
+
+}
+
+.leafimage {
+  width: 15%;
+  position: fixed;
+  right: 5%;
+  rotate: 40deg
 }
