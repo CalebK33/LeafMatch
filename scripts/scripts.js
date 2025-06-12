@@ -214,6 +214,8 @@ function retakePhoto() {
     tick.style.display = "none";
     cross.style.display = "none";
 
+    document.getElementById('fileInput').value = '';
+
     if (camerasavailable === 0 || blocked === 1) {
         nocamera.style.display = '';
     }
