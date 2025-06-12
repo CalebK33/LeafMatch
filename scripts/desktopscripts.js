@@ -192,8 +192,13 @@ function retakePhoto() {
     startCamera();
 }
 
+function uploadstart() {
+    if (prompton == 0) {
+        document.getElementById('fileInput').click()
+    }
+}
+
 function upload() {
-    alert(prompton);
     if (prompton == 0) {
         const video = document.getElementById('video');
         const fileInput = document.getElementById('fileInput');
