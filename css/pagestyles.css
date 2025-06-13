@@ -190,10 +190,12 @@ p {
 
 .pimage {
   text-align: center;
-  margin: auto;
+  display: block;
   max-width: 400px;
-  border:10px solid rgb(110, 160, 110);
-  border-radius:10px;
+  border: 10px solid rgb(110, 160, 110);
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .titlerow {
