@@ -30,19 +30,25 @@ for (let i = 0; i < coll.length; i++) {
 let deferredPrompt;
 const installBtn = document.getElementById('installBtn');
 
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installBtn.style.display = 'inline-block';
-
-  installBtn.addEventListener('click', () => {
-    alert("download button pressed")
+installBtn.addEventListener('click', () => {
+  if (deferredPrompt) {
+    alert("Download button pressed");
     deferredPrompt.prompt();
     deferredPrompt.userChoice.then(choice => {
       if (choice.outcome === 'accepted') {
         console.log('App installed');
+      } else {
+        console.log('User dismissed install');
       }
       deferredPrompt = null;
     });
-  });
+  } else {
+    alert("Install not available yet");
+  }
+});
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault(); // Stop auto-prompt
+  deferredPrompt = e;
+  installBtn.style.display = 'inline-block'; 
 });
