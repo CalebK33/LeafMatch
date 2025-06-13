@@ -73,7 +73,9 @@ button {
   font-weight: 600;
   font-style: normal;
   color: rgb(110, 160, 100);
+  background-color: rgb(200, 255, 200);
   padding: 10px;
+  margin: 10px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
