@@ -32,7 +32,6 @@ const installBtn = document.getElementById('installBtn');
 
 installBtn.addEventListener('click', () => {
   if (deferredPrompt) {
-    alert("Download button pressed");
     deferredPrompt.prompt();
     deferredPrompt.userChoice.then(choice => {
       if (choice.outcome === 'accepted') {
@@ -48,7 +47,7 @@ installBtn.addEventListener('click', () => {
 });
 
 window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault(); // Stop auto-prompt
+  e.preventDefault(); 
   deferredPrompt = e;
   installBtn.style.display = 'inline-block'; 
 });
