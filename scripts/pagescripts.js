@@ -51,7 +51,7 @@ installBtn.addEventListener('click', () => {
       deferredPrompt = null;
     });
   } else {
-    alert("Install not available yet");
+    promptOpen();
   }
 });
 
@@ -61,4 +61,4 @@ window.addEventListener('beforeinstallprompt', (e) => {
   installBtn.style.display = 'inline-block'; 
 });
 
-promptClose()
+promptClose();
