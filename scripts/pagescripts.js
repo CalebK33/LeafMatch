@@ -36,6 +36,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
   installBtn.style.display = 'inline-block';
 
   installBtn.addEventListener('click', () => {
+    alert("download button pressed")
     deferredPrompt.prompt();
     deferredPrompt.userChoice.then(choice => {
       if (choice.outcome === 'accepted') {
