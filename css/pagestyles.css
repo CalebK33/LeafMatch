@@ -62,7 +62,7 @@ p {
   text-decouration: none;
 }
 
-button {
+.abutton {
   text-align: center;
   text-decoration: none;
   font-size: 40px;
@@ -79,7 +79,7 @@ button {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-button:hover {
+.abutton:hover {
   color: rgb(200, 255, 200);
   background-color: rgb(110, 160, 110);
   transition: background-color 0.3s ease, color 0.3s ease;
