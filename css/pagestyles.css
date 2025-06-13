@@ -79,6 +79,12 @@ button {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+button:hover {
+  color: rgb(200, 255, 200);
+  background-color: rgb(110, 160, 110);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .collapsible {
   background-color: rgb(190, 240, 190);
   color: rgb(110, 160, 100);
