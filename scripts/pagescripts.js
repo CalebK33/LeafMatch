@@ -1,9 +1,18 @@
+
 function openSidebar() {
   document.getElementById("sidebar").classList.add("open");
 }
 
 function closeSidebar() {
   document.getElementById("sidebar").classList.remove("open");
+}
+
+function promptClose() {
+    document.getElementById("ready").style.display = 'none';
+}
+
+function promptOpen() {
+  document.getElementById("ready").style.display = ''
 }
 
 if (!navigator.userAgent.match(/Android|iPhone|iPod|BlackBerry|Windows Phone/i)) {
