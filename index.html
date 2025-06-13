@@ -10,6 +10,22 @@
             }
         </script>
         <script>
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.register('/service-worker.js')
+                .then(reg => {
+                  console.log('Service Worker registered:', reg);
+    
+                  reg.onupdatefound = () => {
+                    const newSW = reg.installing;
+                    newSW.onstatechange = () => {
+                      if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+                        alert('A new version is available. Refresh to update.');
+                      }
+                    };
+                  };
+                });
+            }
+
             if (!navigator.userAgent.match(/Android|iPhone|iPod|BlackBerry|Windows Phone/i)) {
             window.location.href = "desktop";
             }
