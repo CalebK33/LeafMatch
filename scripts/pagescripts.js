@@ -60,3 +60,5 @@ window.addEventListener('beforeinstallprompt', (e) => {
   deferredPrompt = e;
   installBtn.style.display = 'inline-block'; 
 });
+
+promptClose()
