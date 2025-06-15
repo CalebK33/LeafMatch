@@ -38,6 +38,28 @@ for (let i = 0; i < coll.length; i++) {
 
 let deferredPrompt;
 const installBtn = document.getElementById('installBtn');
+const fallbackPrompt = document.getElementById('installPrompt'); // Make sure you have this in HTML
+
+// Utility functions
+function isIOS() {
+  return /iPhone|iPad|iPod/.test(navigator.userAgent);
+}
+
+function isAndroid() {
+  return /Android/.test(navigator.userAgent);
+}
+
+function isSupportedPWAInstallBrowser() {
+  return /Chrome|Edg|SamsungBrowser|Brave|OPR/.test(navigator.userAgent);
+}
+
+function isInStandaloneMode() {
+  return (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone);
+}
+
+function shouldShowCustomInstallPrompt() {
+  return isIOS() || (!deferredPrompt && isAndroid() && !isInStandaloneMode());
+}
 
 installBtn.addEventListener('click', () => {
   if (deferredPrompt) {
@@ -50,8 +72,10 @@ installBtn.addEventListener('click', () => {
       }
       deferredPrompt = null;
     });
-  } else {
+  } else if (shouldShowCustomInstallPrompt()) {
     promptOpen();
+  } else {
+    alert("Installation either isn't supported in your browser or the app is already installed. Read the FAQ for more info.");
   }
 });
 
