@@ -65,7 +65,7 @@ img {
 }
 
 .smallloader {
-  position: relative;
+  position: fixed;
   width: 10%;
   top: 45%;
   left: 45%;
