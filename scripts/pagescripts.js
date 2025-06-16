@@ -38,9 +38,6 @@ for (let i = 0; i < coll.length; i++) {
 
 let deferredPrompt;
 const installBtn = document.getElementById('installBtn');
-const fallbackPrompt = document.getElementById('installPrompt'); // Make sure you have this in HTML
-
-// Utility functions
 function isIOS() {
   return /iPhone|iPad|iPod/.test(navigator.userAgent);
 }
@@ -74,8 +71,10 @@ installBtn.addEventListener('click', () => {
     });
   } else if (shouldShowCustomInstallPrompt()) {
     promptOpen();
+  } else if (isSupportedPWAInstallBrowser()){
+    alert("Installation isn't supported in your current browser. Read the FAQ for more info.");
   } else {
-    alert("Installation either isn't supported in your browser or the app is already installed. Read the FAQ for more info.");
+    alert("Unable to install LeafMatch, try again in a second. Is the app already installed?")
   }
 });
 
