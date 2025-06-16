@@ -61,6 +61,7 @@ function postprocess(data) {
   const loader = document.querySelector('.loader');
 
   if (loader) {
+    alert('test')
     loader.style.transition = 'opacity 0.3s';
     loader.style.opacity = '0';
 
