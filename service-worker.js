@@ -6,12 +6,12 @@ const FILES_TO_CACHE = [
   '/desktop.html',
   '/about.html',
   '/database.html',
-  '/desktop.html',
   '/download.html',
   '/help.html',
   '/plant.html',
   '/404.html',
   '/unsupported.html',
+  '/offline.html',
   '/css/styles.css',
   '/css/desktopstyles.css',
   '/css/pagestyles.css',
@@ -35,33 +35,53 @@ const FILES_TO_CACHE = [
   '/images/ui/sidebar.png',
   '/images/ui/switchcamera.png',
   '/images/ui/takepicture.png',
-  '/images/plants/',
+  'images/plants/placeholder.jpg'
 ];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => cache.addAll(FILES_TO_CACHE))
   );
-  self.skipWaiting(); // activate immediately
+  self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then(keyList =>
+    caches.keys().then(keys =>
       Promise.all(
-        keyList.map(key => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key);
-          }
+        keys.map(key => {
+          if (key !== CACHE_NAME) return caches.delete(key);
         })
       )
     )
   );
-  self.clients.claim(); // control all pages immediately
+  self.clients.claim();
 });
 
 self.addEventListener('fetch', (event) => {
+  // Only handle GET requests
+  if (event.request.method !== 'GET') return;
+
   event.respondWith(
-    caches.match(event.request).then(response => response || fetch(event.request))
+    caches.match(event.request).then(cached => {
+      if (cached) return cached;
+
+      return fetch(event.request).then(response => {
+        const cloned = response.clone();
+        if (
+          event.request.url.startsWith(self.location.origin) &&
+          response.status === 200
+        ) {
+          caches.open(CACHE_NAME).then(cache => {
+            cache.put(event.request, cloned);
+          });
+        }
+        return response;
+      }).catch(() => {
+        if (event.request.destination === 'document') {
+          return caches.match('/offline.html');
+        }
+      });
+    })
   );
 });
