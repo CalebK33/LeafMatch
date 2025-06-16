@@ -25,16 +25,22 @@ async function loadDatabase() {
 
 loadDatabase().then(database => {
   const entry = database[id];
+  const img = document.getElementById("image");
 
   if (entry) {
     document.getElementById("title").textContent = entry.title;
     document.getElementById("name").textContent = entry.name;
     document.getElementById("description").textContent = entry.description;
-    document.getElementById("image").src = "images/plants/plant" + id + ".jpg";
+
+    img.onerror = () => {
+      img.src = "images/plants/placeholder.jpg";
+    };
+    img.src = "images/plants/plant" + id + ".jpg";
+
   } else {
     document.getElementById("title").textContent = "Not Found";
     document.getElementById("name").textContent = "This plant doesn't seem to exist...";
     document.getElementById("description").textContent = "No data available for ID: " + id;
-    document.getElementById("image").src = "images/plants/placeholder.jpg";
+    img.src = "images/plants/placeholder.jpg";
   }
 });
