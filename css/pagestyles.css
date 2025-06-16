@@ -75,14 +75,12 @@ p {
   color: rgb(110, 160, 100);
   background-color: rgb(200, 255, 200);
   padding: 10px;
-  margin: 10px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .abutton:hover {
   color: rgb(200, 255, 200);
   background-color: rgb(110, 160, 110);
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .collapsible {
