@@ -62,14 +62,14 @@ function postprocess(data) {
   const loadingscreen = document.querySelector('.loadingscreen');
 
   if (loader && loadingscreen) {
-    loader.style.transition = 'opacity 0.3s';
+    loader.style.transition = 'opacity 0.35s';
     loader.style.opacity = '0';
-    loadingscreen.style.transition = 'background-color 0.3s';
+    loadingscreen.style.transition = 'background-color 0.5s';
     loadingscreen.style.backgroundColor = 'rgb(200, 255, 200)';
 
     setTimeout(() => {
       window.location.href = `/plant?ID=${maxIndex + 1}`;
-    }, 450); 
+    }, 550); 
   } else {
     window.location.href = `/plant?ID=${maxIndex + 1}`;
   }
