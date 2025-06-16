@@ -29,4 +29,5 @@ if (entry) {
   document.getElementById("title").textContent = "Not Found";
   document.getElementById("title").textContent = "This plant does't seem to exist...";
   document.getElementById("description").textContent = "No data available for ID: " + id;
+  document.getElementById("image").src = "images/plants/placeholder.jpg";
 }
