@@ -59,15 +59,17 @@ function preprocessImage(imageData) {
 function postprocess(data) {
   const maxIndex = data.indexOf(Math.max(...data));
   const loader = document.querySelector('.loader');
+  const loadingscreen = document.querySelector('.loadingscreen');
 
-  if (loader) {
-    alert('test')
+  if (loader && loadingscreen) {
     loader.style.transition = 'opacity 0.3s';
     loader.style.opacity = '0';
+    loadingscreen.style.transition = 'background-color 0.3s';
+    loadingscreen.style.backgroundColor = 'rgb(200, 255, 200)';
 
     setTimeout(() => {
       window.location.href = `/plant?ID=${maxIndex + 1}`;
-    }, 333); 
+    }, 450); 
   } else {
     window.location.href = `/plant?ID=${maxIndex + 1}`;
   }
