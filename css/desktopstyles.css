@@ -72,6 +72,7 @@ img {
   top: 10%;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
+  z-index: 9999999999999;
 }
 
 .nocamera {
