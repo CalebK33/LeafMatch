@@ -71,7 +71,7 @@ installBtn.addEventListener('click', () => {
     });
   } else if (shouldShowCustomInstallPrompt()) {
     promptOpen();
-  } else if (isSupportedPWAInstallBrowser()){
+  } else if (!isSupportedPWAInstallBrowser()){
     alert("Installation isn't supported in your current browser. Read the FAQ for more info.");
   } else {
     alert("Unable to install LeafMatch, try again in a second. Is the app already installed?")
