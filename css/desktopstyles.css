@@ -69,7 +69,6 @@ img {
   width: 20%;
   top: 40%;
   left: 40%;
-  top: 20%;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
   z-index: 9999999999999;
