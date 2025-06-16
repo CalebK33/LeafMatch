@@ -1,33 +1,40 @@
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("ID");
-        
-const database = {
-  "1": {
-    title: "Golden Acrea Palm",
-    name: "Ioannes Doe",
-    description: "Plant one is a really cool plant for now...",
-  },
-  "2": {
-    title: "Cestrum Nocturnum",
-    name: "Ioanna Doe",
-    description: "Plant two is a really fantastic and interesting plant :)",
-  },
-  "3": {
-    title: "Sacred Fig",
-    name: "Incognita Singula",
-    description: "Plant three is exactly the same as plant two! It is not a different plant",
-  },
-};
 
-const entry = database[id];
-if (entry) {
-  document.getElementById("title").textContent = entry.title;
-  document.getElementById("name").textContent = entry.name;
-  document.getElementById("description").textContent = entry.description;
-  document.getElementById("image").src = "images/plants/plant" + id + ".jpg";
-} else {
-  document.getElementById("title").textContent = "Not Found";
-  document.getElementById("title").textContent = "This plant does't seem to exist...";
-  document.getElementById("description").textContent = "No data available for ID: " + id;
-  document.getElementById("image").src = "images/plants/placeholder.jpg";
+async function loadDatabase() {
+  const response = await fetch("/scripts/database.txt");
+  const text = await response.text();
+
+  const lines = text
+    .split("\n")
+    .map(line => line.trim())
+    .filter(line => line !== "");
+
+  const database = {};
+  for (let i = 0; i < lines.length; i += 4) {
+    const entryID = lines[i];
+    database[entryID] = {
+      title: lines[i + 1] || "",
+      name: lines[i + 2] || "",
+      description: lines[i + 3] || "",
+    };
+  }
+
+  return database;
 }
+
+loadDatabase().then(database => {
+  const entry = database[id];
+
+  if (entry) {
+    document.getElementById("title").textContent = entry.title;
+    document.getElementById("name").textContent = entry.name;
+    document.getElementById("description").textContent = entry.description;
+    document.getElementById("image").src = "images/plants/plant" + id + ".jpg";
+  } else {
+    document.getElementById("title").textContent = "Not Found";
+    document.getElementById("name").textContent = "This plant doesn't seem to exist...";
+    document.getElementById("description").textContent = "No data available for ID: " + id;
+    document.getElementById("image").src = "images/plants/placeholder.jpg";
+  }
+});
