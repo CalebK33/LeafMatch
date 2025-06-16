@@ -114,35 +114,59 @@
   <script src="scripts/database.js"></script>
   <script src="scripts/pagescripts.js"></script>
   <script>
+    async function loadDatabase() {
+      const response = await fetch("/data/database.txt");
+      const text = await response.text();
+  
+      const lines = text
+        .split("\n")
+        .map(line => line.trim())
+        .filter(line => line !== "");
+  
+      const database = {};
+      for (let i = 0; i < lines.length; i += 4) {
+        const entryID = lines[i];
+        database[entryID] = {
+          title: lines[i + 1] || "",
+          name: lines[i + 2] || "",
+          description: lines[i + 3] || "",
+        };
+      }
+  
+      return database;
+    }
+  
     const plantList = document.getElementById("plantList");
     const searchInput = document.getElementById("pageSearch");
-
-    function renderList(filter = "") {
-      plantList.innerHTML = "";
-      const entries = Object.entries(database).filter(([id, entry]) =>
-        entry.title.toLowerCase().includes(filter.toLowerCase())
-      );
-      for (const [id, entry] of entries) {
-        const link = document.createElement("a");
-        link.href = `plant?ID=${id}`;
-        link.textContent = entry.title;
-        plantList.appendChild(link);
+  
+    loadDatabase().then(database => {
+      function renderList(filter = "") {
+        plantList.innerHTML = "";
+        const entries = Object.entries(database).filter(([id, entry]) =>
+          entry.title.toLowerCase().includes(filter.toLowerCase())
+        );
+        for (const [id, entry] of entries) {
+          const link = document.createElement("a");
+          link.href = `plant?ID=${id}`;
+          link.textContent = entry.title;
+          plantList.appendChild(link);
+        }
       }
-    }
-
-    const urlQuery = new URLSearchParams(window.location.search).get("q");
-    if (urlQuery) searchInput.value = urlQuery;
-    renderList(searchInput.value || "");
-
-    searchInput.addEventListener("input", () => {
-      renderList(searchInput.value);
-    });
-
-    document.getElementById("sidebarSearch").addEventListener("keypress", (e) => {
-      if (e.key === "Enter") {
-        const query = e.target.value.trim();
-        if (query) window.location.href = `database?q=${encodeURIComponent(query)}`;
-      }
+  
+      const urlQuery = new URLSearchParams(window.location.search).get("q");
+      if (urlQuery) searchInput.value = urlQuery;
+      renderList(searchInput.value || "");
+  
+      searchInput.addEventListener("input", () => {
+        renderList(searchInput.value);
+      });
+  
+      document.getElementById("sidebarSearch").addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          const query = e.target.value.trim();
+          if (query) window.location.href = `database?q=${encodeURIComponent(query)}`;
+        }
+      });
     });
   </script>
 </body>
