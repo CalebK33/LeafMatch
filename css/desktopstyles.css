@@ -50,7 +50,7 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 100000000000000000000000000000000000000000000000000;
+  z-index: 100;
   background-color: rgb(175, 230, 175);
   transition: opacity 0.4s;
 }
@@ -71,7 +71,7 @@ img {
   left: 40%;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
-  z-index: 9999999999999;
+  z-index: 99;
 }
 
 .nocamera {
@@ -85,6 +85,7 @@ img {
   z-index: 10;
   object-fit: cover;
 }
+
 .nocameraback {
   position: fixed;
   top: 0;
