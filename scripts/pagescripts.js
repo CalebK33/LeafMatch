@@ -1,4 +1,3 @@
-
 function openSidebar() {
   document.getElementById("sidebar").classList.add("open");
 }
@@ -8,11 +7,11 @@ function closeSidebar() {
 }
 
 function promptClose() {
-    document.getElementById("ready").style.display = 'none';
+  document.getElementById("ready").style.display = 'none';
 }
 
 function promptOpen() {
-  document.getElementById("ready").style.display = ''
+  document.getElementById("ready").style.display = '';
 }
 
 if (!navigator.userAgent.match(/Android|iPhone|iPod|BlackBerry|Windows Phone/i)) {
@@ -20,12 +19,10 @@ if (!navigator.userAgent.match(/Android|iPhone|iPod|BlackBerry|Windows Phone/i))
 }
 
 const coll = document.getElementsByClassName("collapsible");
-
 for (let i = 0; i < coll.length; i++) {
   coll[i].addEventListener("click", function () {
     this.classList.toggle("active");
     const content = this.nextElementSibling;
-
     if (content.classList.contains("visible")) {
       content.classList.remove("visible");
       content.style.display = "none";
@@ -38,6 +35,7 @@ for (let i = 0; i < coll.length; i++) {
 
 let deferredPrompt;
 const installBtn = document.getElementById('installBtn');
+
 function isIOS() {
   return /iPhone|iPad|iPod/.test(navigator.userAgent);
 }
@@ -51,7 +49,7 @@ function isSupportedPWAInstallBrowser() {
 }
 
 function isInStandaloneMode() {
-  return (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone);
+  return (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true);
 }
 
 function shouldShowCustomInstallPrompt() {
@@ -59,6 +57,11 @@ function shouldShowCustomInstallPrompt() {
 }
 
 installBtn.addEventListener('click', () => {
+  if (isInStandaloneMode()) {
+    alert("LeafMatch is already installed.");
+    return;
+  }
+
   if (deferredPrompt) {
     deferredPrompt.prompt();
     deferredPrompt.userChoice.then(choice => {
@@ -70,18 +73,18 @@ installBtn.addEventListener('click', () => {
       deferredPrompt = null;
     });
   } else if (shouldShowCustomInstallPrompt()) {
-    promptOpen();
-  } else if (!isSupportedPWAInstallBrowser()){
+    promptOpen(); // shows iOS-style guide
+  } else if (!isSupportedPWAInstallBrowser()) {
     alert("Installation isn't supported in your current browser. Read the FAQ for more info.");
   } else {
-    alert("Unable to install LeafMatch, try again in a second. Is the app already installed?")
+    alert("Unable to install LeafMatch. Try again in a second, or check if it’s already installed.");
   }
 });
 
 window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault(); 
+  e.preventDefault();
   deferredPrompt = e;
-  installBtn.style.display = 'inline-block'; 
+  installBtn.style.display = 'inline-block';
 });
 
 promptClose();
