@@ -56,8 +56,18 @@ function preprocessImage(imageData) {
   return new ort.Tensor('float32', floatData, [1, 3, height, width]);
 }
 
-function postprocess(data, conf) {
+function postprocess(data) {
   const maxIndex = data.indexOf(Math.max(...data));
-  //alert("confidence level: " + conf)
-  window.location.href = `/plant?ID=${maxIndex + 1}`;
+  const loader = document.querySelector('.loader');
+
+  if (loader) {
+    loader.style.transition = 'opacity 0.3s';
+    loader.style.opacity = '0';
+
+    setTimeout(() => {
+      window.location.href = `/plant?ID=${maxIndex + 1}`;
+    }, 333); 
+  } else {
+    window.location.href = `/plant?ID=${maxIndex + 1}`;
+  }
 }
