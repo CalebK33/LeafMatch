@@ -79,8 +79,8 @@ function deniedClose() {
 }
 
 function loadingScreen() {
-    loadingscreen.style.opacity = 1;
     loadingscreen.style.display = '';
+    loadingscreen.style.opacity = 1;
 }
 
 function endLoadingScreen() {
