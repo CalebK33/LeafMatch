@@ -223,7 +223,6 @@ function upload() {
     
         if (fileInput.files.length > 0) {
             smallloader.style.display = ""
-            document.getElementById('nocameraback').src = 'images/ui/white.png';
             const file = fileInput.files[0];
             const reader = new FileReader();
     
@@ -232,6 +231,7 @@ function upload() {
                 img.src = event.target.result;
     
                 img.onload = function () {
+                    document.getElementById('nocameraback').src = 'images/ui/white.png';
                     canvas.width = img.width;
                     canvas.height = img.height;
     
