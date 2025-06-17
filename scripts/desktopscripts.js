@@ -10,6 +10,7 @@ let minimum = false;
 let run = 0;
 let blocked = 0;
 let uploadfix = 0;
+let runbefore = 0;
 
 const denied = document.getElementById('denied');
 const prompt = document.getElementById('prompt');
@@ -127,21 +128,32 @@ async function startCamera() {
                 .catch(() => {
                     blocked = 1;
                     nocamera.style.display = '';
-                    denied.style.display = '';
                 });
 
         } else if (result.state === 'prompt') {
-            run = 1;
-            prompt.style.display = '';
-            nocamera.style.display = '';
-            prompton = 1;
+            if (runbefore == 0) {
+                runbefore = 1;
+                run = 1;
+                prompt.style.display = '';
+                nocamera.style.display = '';
+                prompton = 1;
+            }
+            else {
+                nocamera.style.display = '';
+            }
 
         } else if (result.state === 'denied') {
-            run = 1;
-            blocked = 1;
-            denied.style.display = '';
-            nocamera.style.display = '';
-            prompton = 1;
+            if (runbefore == 0) {
+                runbefore = 1;
+                run = 1;
+                blocked = 1;
+                denied.style.display = '';
+                nocamera.style.display = '';
+                prompton = 1;
+            }
+            else {
+                nocamera.style.display = '';
+            }
         }
     });
 }
