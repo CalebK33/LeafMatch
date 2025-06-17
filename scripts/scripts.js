@@ -225,6 +225,7 @@ function retakePhoto() {
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
     const button1 = document.getElementById('button1');
+    document.getElementById('nocameraback').src = 'images/ui/nocamera.jpg';
 
     button1.style.display = '';
     button2.style.display = '';
@@ -277,6 +278,7 @@ function upload() {
               img.src = event.target.result;
   
               img.onload = function() {
+                  document.getElementById('nocameraback').src = 'images/ui/white.png';
                   canvas.width = img.width;
                   canvas.height = img.height;
   
