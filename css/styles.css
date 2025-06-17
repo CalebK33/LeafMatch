@@ -39,9 +39,9 @@ img {
 
 .smallloader {
   position: fixed;
-  width: 20%;
-  top: 30%;
-  left: 40%;
+  width: 50%;
+  top: 25%;
+  left: 25%;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
   z-index: 99;
