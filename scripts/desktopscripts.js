@@ -79,7 +79,7 @@ function deniedClose() {
 }
 
 function loadingScreen() {
-    loadingscreen.style.opacity = 1;
+    loadingscreen.style.opacity = 0;
     loadingscreen.style.display = '';
 }
 
