@@ -67,6 +67,7 @@ img {
   border: 5px solid rgb(100, 160, 100)
   z-index: 10;
   object-fit: cover;
+  z-index: -10;
 }
 
 .prompt {
