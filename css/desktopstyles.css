@@ -67,7 +67,7 @@ img {
 .smallloader {
   position: fixed;
   width: 20%;
-  top: 40%;
+  top: 30%;
   left: 40%;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
