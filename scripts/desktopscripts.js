@@ -214,7 +214,6 @@ function uploadstart() {
 
 function upload() {
     if (prompton == 0) {
-        smallloader.style.display = ""
         const video = document.getElementById('video');
         const fileInput = document.getElementById('fileInput');
         const canvas = document.getElementById('canvas');
@@ -223,6 +222,7 @@ function upload() {
         const button3 = document.getElementById('uploadbutton');
     
         if (fileInput.files.length > 0) {
+            smallloader.style.display = ""
             document.getElementById('nocameraback').src = 'images/ui/white.png';
             const file = fileInput.files[0];
             const reader = new FileReader();
