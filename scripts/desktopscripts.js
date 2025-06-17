@@ -79,9 +79,17 @@ function deniedClose() {
     denied.style.display = 'none';
 }
 
-function loadingScreen() {
+function loadingScreen(fadeIn = false) {
     loadingscreen.style.display = '';
-    loadingscreen.style.opacity = 1;
+    if (fadeIn) {
+        loadingscreen.style.opacity = 0;
+        loadingscreen.style.transition = 'opacity 0.5s';
+        void loadingscreen.offsetWidth;
+        loadingscreen.style.opacity = 1;
+    } else {
+        loadingscreen.style.transition = 'none';
+        loadingscreen.style.opacity = 1;
+    }
 }
 
 function endLoadingScreen() {
@@ -178,7 +186,7 @@ function acceptedPhoto() {
     cross.style.display = "none";
     
     loadingscreen.style.opacity = 0;
-    loadingScreen();     
+    loadingScreen(true);     
     minimum = false;     
     setTimeout(timed, 400); 
 
