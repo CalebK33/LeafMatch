@@ -79,8 +79,9 @@ function deniedClose() {
     denied.style.display = 'none';
 }
 
-function loadingScreen(fadeIn = false) {
+function loadingScreen() {
     loadingscreen.style.display = '';
+    loadingscreen.style.opacity = 1;
 }
 
 function endLoadingScreen() {
@@ -177,7 +178,7 @@ function acceptedPhoto() {
     cross.style.display = "none";
     
     loadingscreen.style.opacity = 0;
-    loadingScreen(true);     
+    loadingScreen();     
     minimum = false;     
     setTimeout(timed, 400); 
 
@@ -313,7 +314,7 @@ function flash() {
             height: 100vh;
             background-color: white;
             opacity: 1;
-            z-index: 9999;
+            z-index: 999;
             pointer-events: none;
             transition: opacity 0.5s;
         `;
@@ -331,4 +332,4 @@ function flash() {
 
 startCamera();
 loadingScreen();
-setTimeout(timed, 400)
+setTimeout(timed, 400);
