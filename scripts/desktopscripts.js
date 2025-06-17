@@ -13,7 +13,6 @@ let uploadfix = 0;
 let runbefore = 0;
 
 const denied = document.getElementById('denied');
-const nocameraback = document.getElementById('nocameraback');
 const prompt = document.getElementById('prompt');
 const tick = document.getElementById('tick');
 const cross = document.getElementById('cross');
@@ -191,7 +190,7 @@ function retakePhoto() {
     photo.style.display = 'none';
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
-    nocameraback.src = 'images/ui/nocamera.jpg';
+    document.getElementById('nocameraback').src = 'images/ui/nocamera.jpg';
 
     button2.style.display = '';
     button3.style.display = '';
@@ -253,7 +252,7 @@ function upload() {
                     button3.style.display = 'none';
     
                     photo.style.display = '';
-                    nocameraback.src = 'images/ui/white.png';
+                    document.getElementById('nocameraback').src = 'images/ui/white.png';
                     acceptordeny();
                 };
             };
