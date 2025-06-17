@@ -178,7 +178,7 @@ function retakePhoto() {
     photo.style.display = 'none';
     const button2 = document.getElementById('birb');
     const button3 = document.getElementById('uploadbutton');
-    nocamera.src = 'images/ui/nocamera.jpg';
+    nocameraback.src = 'images/ui/nocamera.jpg';
 
     button2.style.display = '';
     button3.style.display = '';
@@ -240,7 +240,7 @@ function upload() {
                     button3.style.display = 'none';
     
                     photo.style.display = '';
-                    nocamera.src = 'images/ui/white.png';
+                    nocameraback.src = 'images/ui/white.png';
                     acceptordeny();
                 };
             };
