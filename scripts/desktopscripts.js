@@ -81,15 +81,6 @@ function deniedClose() {
 
 function loadingScreen(fadeIn = false) {
     loadingscreen.style.display = '';
-    if (fadeIn) {
-        loadingscreen.style.opacity = 0;
-        loadingscreen.style.transition = 'opacity 0.5s';
-        void loadingscreen.offsetWidth;
-        loadingscreen.style.opacity = 1;
-    } else {
-        loadingscreen.style.transition = 'none';
-        loadingscreen.style.opacity = 1;
-    }
 }
 
 function endLoadingScreen() {
