@@ -1,23 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("ID");
 
-
-const response = await fetch('/scripts/prices.txt');
-const text = await response.text();
-
-const lines = text
-  .split('\n')
-  .map(line => line.trim())
-  .filter(line => line !== "");
-
-const values = {};
-for (let i = 0; i < lines.length; i += 2) {
-  const id = lines[i];
-  const value = lines[i + 1] || "";
-  values[id] = value;
-
-
-
 async function loadDatabase() {
   const response = await fetch("/scripts/database.txt");
   const text = await response.text();
@@ -39,7 +22,6 @@ async function loadDatabase() {
 
   return database;
 }
-
 
 loadDatabase().then(database => {
   const entry = database[id];
