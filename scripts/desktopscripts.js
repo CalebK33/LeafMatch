@@ -223,6 +223,7 @@ function upload() {
         const button3 = document.getElementById('uploadbutton');
     
         if (fileInput.files.length > 0) {
+            document.getElementById('nocameraback').src = 'images/ui/white.png';
             const file = fileInput.files[0];
             const reader = new FileReader();
     
@@ -252,7 +253,6 @@ function upload() {
                     button3.style.display = 'none';
     
                     photo.style.display = '';
-                    document.getElementById('nocameraback').src = 'images/ui/white.png';
                     acceptordeny();
                 };
             };
