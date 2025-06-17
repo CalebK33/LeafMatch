@@ -37,6 +37,16 @@ img {
   animation: spin 2s linear infinite;
 }
 
+.smallloader {
+  position: fixed;
+  width: 20%;
+  top: 30%;
+  left: 40%;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  z-index: 99;
+}
+
 .nocamera {
   position: fixed;
   top: 0;
