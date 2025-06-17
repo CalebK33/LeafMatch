@@ -5,7 +5,7 @@ Books are useful tools to read, and tend to either tell a story or teach informa
 
 2
 Hand
-A writing tool 
+It's a thing
 Pens come in many colours and are used to draw on paper or other materials.
 
 3
@@ -36,6 +36,7 @@ azerbaijan
 8
 Calculator
 Calc
+a thingy
 
 9
 Uno Card
