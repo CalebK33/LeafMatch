@@ -24,6 +24,6 @@ Schoolbag
 Bags carry things. That's all you need to know.
 
 6
-Cornstalk Dracaena
-Dracaena Fragrans
-Cornstalk Dracaena is a flowering plant native to Africa.
+Chair
+You sit on it
+Chairs can be found in many locations, and are used by sitting down on them.
