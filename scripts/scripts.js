@@ -16,12 +16,14 @@ const tick = document.getElementById('tick');
 const cross = document.getElementById('cross');
 const loadingscreen = document.getElementById('loadingscreen');
 const nocamera = document.getElementById('nocamera');
+const smallloader = document.getElementById('smallloader')
 
 denied.style.display = "none";
 prompt.style.display = "none";
 tick.style.display = "none";
 cross.style.display = "none";
 nocamera.style.display = '';
+smallloader.style.display = "none";
 
 let camerasavailable = 1;
 
@@ -194,6 +196,7 @@ function getValue() {
 }
 
 function acceptordeny() {
+    smallloader.style.display = "none";
     tick.style.display = "";
     cross.style.display = "";
 }
@@ -258,6 +261,7 @@ function upload() {
       const video = document.getElementById('video');
   
       if (fileInput.files.length > 0) {
+          smallloader.style.display = ""
           const file = fileInput.files[0];
           const reader = new FileReader();
   
