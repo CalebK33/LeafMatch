@@ -79,8 +79,8 @@ function deniedClose() {
 }
 
 function loadingScreen() {
-    loadingscreen.style.display = '';
     loadingscreen.style.opacity = 1;
+    loadingscreen.style.display = '';
 }
 
 function endLoadingScreen() {
@@ -89,7 +89,7 @@ function endLoadingScreen() {
             loadingscreen.style.opacity = 0;
             loadingscreen.addEventListener('transitionend', () => {
                 loadingscreen.style.display = 'none';
-                loadingscreen.style.opacity = 1; // reset for future uses
+                loadingscreen.style.opacity = 0; 
             }, { once: true });
         }, 100);
     } else {
