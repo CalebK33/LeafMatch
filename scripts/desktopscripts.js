@@ -10,7 +10,6 @@ let minimum = false;
 let run = 0;
 let blocked = 0;
 let uploadfix = 0;
-let firstLoadDone = false;
 
 const denied = document.getElementById('denied');
 const prompt = document.getElementById('prompt');
@@ -18,7 +17,7 @@ const tick = document.getElementById('tick');
 const cross = document.getElementById('cross');
 const loadingscreen = document.getElementById('loadingscreen');
 const nocamera = document.getElementById('nocamera');
-const smallloader = document.getElementById('smallloader');
+const smallloader = document.getElementById('smallloader')
 
 denied.style.display = "none";
 prompt.style.display = "none";
@@ -80,17 +79,8 @@ function deniedClose() {
 }
 
 function loadingScreen() {
-    loadingscreen.style.transition = 'none';
-    loadingscreen.style.opacity = 0;
-    loadingscreen.style.display = '';
-
-    void loadingscreen.offsetWidth;
-
-    if (firstLoadDone) {
-        loadingscreen.style.transition = 'opacity 0.3s';
-    }
-
     loadingscreen.style.opacity = 1;
+    loadingscreen.style.display = '';
 }
 
 function endLoadingScreen() {
@@ -99,7 +89,6 @@ function endLoadingScreen() {
             loadingscreen.style.opacity = 0;
             loadingscreen.addEventListener('transitionend', () => {
                 loadingscreen.style.display = 'none';
-                firstLoadDone = true;
             }, { once: true });
         }, 100);
     } else {
@@ -205,13 +194,13 @@ function retakePhoto() {
 
 function uploadstart() {
     if (prompton == 0) {
-        document.getElementById('fileInput').click();
+        document.getElementById('fileInput').click()
     }
 }
 
 function upload() {
     if (prompton == 0) {
-        smallloader.style.display = "";
+        smallloader.style.display = ""
         const video = document.getElementById('video');
         const fileInput = document.getElementById('fileInput');
         const canvas = document.getElementById('canvas');
@@ -289,7 +278,8 @@ function takePhoto() {
         video.style.display = 'none';
         button2.style.display = 'none';
         button3.style.display = 'none';
-    } else {
+    }
+    else {
         prompt.style.display = '';
     }
 }
@@ -327,4 +317,4 @@ function flash() {
 
 startCamera();
 loadingScreen();
-setTimeout(timed, 400);
+setTimeout(timed, 400)
