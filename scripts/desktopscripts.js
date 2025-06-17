@@ -13,6 +13,7 @@ let uploadfix = 0;
 let runbefore = 0;
 
 const denied = document.getElementById('denied');
+const denied = document.getElementById('nocameraback');
 const prompt = document.getElementById('prompt');
 const tick = document.getElementById('tick');
 const cross = document.getElementById('cross');
