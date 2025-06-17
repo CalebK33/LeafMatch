@@ -50,7 +50,6 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
-  opacity: 0;
   z-index: 100;
   background-color: rgb(175, 230, 175);
   transition: opacity 0.4s;
