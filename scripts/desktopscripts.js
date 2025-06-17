@@ -164,7 +164,8 @@ function acceptordeny() {
 function acceptedPhoto() {
     tick.style.display = "none";
     cross.style.display = "none";
-
+    
+    loadingscreen.style.opacity = 0;
     loadingScreen();     
     minimum = false;     
     setTimeout(timed, 400); 
