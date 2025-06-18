@@ -4,41 +4,31 @@ placeholder
 placeholder
 
 2
-Hand
-placeholder
-placeholder
-
-3
 Water bottle
 placeholder
 placeholder
 
-4
+3
 Pencil
 placeholder
 placeholder
 
-5
-Person (face)
-placeholder
-placeholder
-
-6
+4
 Ruler
 placeholder
 placeholder
 
-7
+5
 School chair
 placeholder
 placeholder
 
-8
+6
 Cauculator
 placeholder
 placeholder
 
-9
+7
 Uno card
 placeholder
 placeholder
