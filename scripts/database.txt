@@ -42,8 +42,3 @@ placeholder
 Uno card
 placeholder
 placeholder
-
-10
-placeholder
-placeholder
-placeholder
