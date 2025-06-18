@@ -1,49 +1,49 @@
 1
-Water Bottle
-you drink from it
-it has water in it
+Book
+placeholder
+placeholder
 
 2
-Book
-It's a book
-Books are useful tools to read, and tend to either tell a story or teach information.
-
-3
 Hand
 placeholder
 placeholder
 
+3
+Water bottle
+placeholder
+placeholder
+
 4
-Laptop
+Pencil
 placeholder
 placeholder
 
 5
-Pencil
-You are a human!
-Please don't tell me you need an explanation of what a human is
+Person (face)
+placeholder
+placeholder
 
 6
-Person face
-placeholder
-placeholder
-
-7
 Ruler
 placeholder
 placeholder
 
+7
+School chair
+placeholder
+placeholder
+
 8
-School Chair
-its a chair
-azerbaijan
+Cauculator
+placeholder
+placeholder
 
 9
-Calculator
-Calc
-a thingy
+Uno card
+placeholder
+placeholder
 
 10
-Uno Card
-uno reverse
-haha
+placeholder
+placeholder
+placeholder
