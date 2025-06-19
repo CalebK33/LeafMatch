@@ -82,6 +82,7 @@ function postprocess(data, confidence) {
             loadingscreen.style.display = 'none';
         }, { once: true });
     }, 100);
+    retakephoto();
   }
   
   }
