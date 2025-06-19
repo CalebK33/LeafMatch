@@ -1,6 +1,5 @@
 let aiSession = null;
 const modelPath = '/plant_model.onnx';
-const loadingscreen = document.getElementById('loadingscreen');
 
 window.addEventListener('DOMContentLoaded', async () => {
   try {
