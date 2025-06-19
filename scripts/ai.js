@@ -1,5 +1,6 @@
 let aiSession = null;
 const modelPath = '/plant_model.onnx';
+const loadingscreen = document.getElementById('loadingscreen');
 
 window.addEventListener('DOMContentLoaded', async () => {
   try {
@@ -75,7 +76,13 @@ function postprocess(data, confidence) {
       }
   }
   else {
-    alert("Sorry, our AI is too much of a FAILURE to identify this object. I will go have a LIGHT DISCUSSION WITH IT AND MAKE SURE IT UNDERSTANDS TO GET IT RIGHT NEXT TIME!")
+        alert("Sorry, our AI is too much of a FAILURE to identify this object. I will go have a LIGHT DISCUSSION WITH IT AND MAKE SURE IT UNDERSTANDS TO GET IT RIGHT NEXT TIME!")
+        setTimeout(() => {
+        loadingscreen.style.opacity = 0;
+        loadingscreen.addEventListener('transitionend', () => {
+            loadingscreen.style.display = 'none';
+        }, { once: true });
+    }, 100);
   }
   
   }
