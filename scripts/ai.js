@@ -80,4 +80,3 @@ function postprocess(data, confidence) {
   }
   
   }
-}
