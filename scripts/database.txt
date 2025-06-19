@@ -1,12 +1,12 @@
 1
 Book
-
-
+none
+none
 
 2
 Water bottle
-placeholder
-placeholder
+none
+none
 
 3
 Pencil
