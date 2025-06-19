@@ -61,23 +61,23 @@ function postprocess(data, confidence) {
   const loader = document.querySelector('.loader');
   const loadingscreen = document.querySelector('.loadingscreen');
   alert(confidence)
-
-  if (loader && loadingscreen) {
-    loader.style.transition = 'opacity 0.35s';
-    loader.style.opacity = '0';
-    loadingscreen.style.transition = 'background-color 0.5s';
-    loadingscreen.style.backgroundColor = 'rgb(200, 255, 200)';
-
-    setTimeout(() => {
+  if (confidence > 75) {
+    if (loader && loadingscreen) {
+      loader.style.transition = 'opacity 0.35s';
+      loader.style.opacity = '0';
+      loadingscreen.style.transition = 'background-color 0.5s';
+      loadingscreen.style.backgroundColor = 'rgb(200, 255, 200)';
+  
+      setTimeout(() => {
+        window.location.href = `/plant?ID=${maxIndex + 1}`;
+      }, 550); 
+    } else {
       window.location.href = `/plant?ID=${maxIndex + 1}`;
-    }, 550); 
-  } else {
-    if (confidence > 60) {
-      window.location.href = `/plant?ID=${maxIndex + 1}`;
-    }
-    else {
-      alert("Sorry, our AI is too much of a failure to identify what you want. Please try again... or don't.")
-      window.location.href = 'https://leafmatch.org';
-    }
+      }
+  }
+  else {
+    alert("Sorry, our AI is too much of a FAILURE to identify this object. I will go have a LIGHT DISCUSSION WITH IT AND MAKE SURE IT UNDERSTANDS TO GET IT RIGHT NEXT TIME!")
+  }
+  
   }
 }
