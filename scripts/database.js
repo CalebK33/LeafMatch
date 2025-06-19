@@ -28,24 +28,9 @@ loadDatabase().then(database => {
   const img = document.getElementById("image");
 
   if (entry) {
-    if (!entry.title = 'none') {
-      document.getElementById("title").textContent = entry.title;
-    } else {
-      document.getElementById("title").textContent = '';
-    }
-    
-    if (!entry.name = 'none') {
-      document.getElementById("name").textContent = entry.name;
-    } else {
-      document.getElementById("name").textContent = '';
-    }
-    
-    if (!entry.description = 'none') {
-      document.getElementById("description").textContent = entry.description;
-    } else {
-      document.getElementById("description").textContent = '';
-    }
-    
+    document.getElementById("title").textContent = entry.title;
+    document.getElementById("name").textContent = entry.name;
+    document.getElementById("description").textContent = entry.description;
 
     img.onerror = () => {
       img.src = "images/plants/placeholder.jpg";
