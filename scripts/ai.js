@@ -71,6 +71,12 @@ function postprocess(data) {
       window.location.href = `/plant?ID=${maxIndex + 1}`;
     }, 550); 
   } else {
-    window.location.href = `/plant?ID=${maxIndex + 1}`;
+    if (confidence > 60) {
+      window.location.href = `/plant?ID=${maxIndex + 1}`;
+    }
+    else {
+      window.location.href = 'leafmatch.org';
+      alert("Sorry, our AI is too much of a failure to identify what you want. Please try again... or don't.")
+    }
   }
 }
