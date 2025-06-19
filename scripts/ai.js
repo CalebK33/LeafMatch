@@ -56,7 +56,7 @@ function preprocessImage(imageData) {
   return new ort.Tensor('float32', floatData, [1, 3, height, width]);
 }
 
-function postprocess(data) {
+function postprocess(data, confidence) {
   const maxIndex = data.indexOf(Math.max(...data));
   const loader = document.querySelector('.loader');
   const loadingscreen = document.querySelector('.loadingscreen');
@@ -75,8 +75,8 @@ function postprocess(data) {
       window.location.href = `/plant?ID=${maxIndex + 1}`;
     }
     else {
-      window.location.href = 'leafmatch.org';
       alert("Sorry, our AI is too much of a failure to identify what you want. Please try again... or don't.")
+      window.location.href = 'https://leafmatch.org';
     }
   }
 }
