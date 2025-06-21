@@ -186,6 +186,7 @@ function acceptedPhoto() {
 }
 
 function retakePhoto() {
+    print('retake');
     const photo = document.getElementById('photo');
     photo.style.display = 'none';
     const button2 = document.getElementById('birb');
