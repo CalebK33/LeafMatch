@@ -17,6 +17,7 @@ async function runAIFromPhoto() {
   const photo = document.getElementById('photo');
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
+  const failed = document.getElementById('failed');
 
   const inputSize = 224;
   canvas.width = inputSize;
@@ -75,6 +76,7 @@ function postprocess(data, confidence) {
       }
   }
   else {
+        failed.style.display = "";
         setTimeout(() => {
         loadingscreen.style.opacity = 0;
         loadingscreen.addEventListener('transitionend', () => {
