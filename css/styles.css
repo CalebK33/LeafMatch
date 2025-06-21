@@ -113,6 +113,49 @@ img {
   cursor: pointer;
 }
 
+.failed {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  max-width: 400px;
+  min-width: 250px;
+  padding: 10px;
+  background-color: rgb(190, 250, 190);
+  border: 3px solid rgb(110, 150, 110);
+  box-shadow: 5px 12px rgba(10, 20, 10, 0.25);
+  text-align: center;
+  z-index: 90;
+}
+
+.failed h1,
+.failed p,
+.failed button {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  color: rgb(100, 150, 100);
+}
+
+.failed h1 {
+  font-size: 25px;
+}
+
+.failed p {
+  font-size: 17px;
+}
+
+.failed button {
+  font-size: 20px;
+  background-color: rgba(200, 250, 200, 0);
+  border: 4px solid rgb(100, 150, 100);
+  margin: 10px;
+  padding: 3px;
+  border-radius: 0;
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   padding: 0;
