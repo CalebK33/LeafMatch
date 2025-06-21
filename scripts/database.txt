@@ -1,34 +1,35 @@
 1
 Book
-none
-none
+Libro, книга, boka
+Books have been used as a way to share information and knowledge. Some famous books are the Brother's Grimm Fairytales, The Lord of the Rings, and 1984.
 
 2
 Water bottle
-none
-none
+
+Botella de agua, бутылка с водой, vattenflaska
+Water bottles are used to carry water for convience and daily use.
 
 3
 Pencil
-placeholder
-placeholder
+Lápiz, карандаш, penna
+Pencils are used to share information. You'll use them to write notes in classes like science and maths.
 
 4
 Ruler
-placeholder
-placeholder
+Regla, линейка, linjal
+Rulers are used to measure things, you'll use them in maths.
 
 5
 School chair
-placeholder
-placeholder
+Silla de escuela, школьный стул, skolstol
+You will find these in most social studies and English classes.
 
 6
 Calculator
-placeholder
-placeholder
+Calculadora, калькулятор, kalkylator
+Calculators do maths for you, you will use them in maths.
 
 7
 Scissors
-placeholder
-placeholder
+Tijeras, ножницы, sax
+Scissors are used to cut things. Just not humans. Don't cut humans.
