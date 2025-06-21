@@ -24,7 +24,7 @@ placeholder
 placeholder
 
 6
-Cauculator
+Calculator
 placeholder
 placeholder
 
