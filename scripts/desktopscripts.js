@@ -349,13 +349,13 @@ document.addEventListener('keydown', function (event) {
     const isTyping = activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA' || activeElement.isContentEditable;
 
     if (!isTyping && event.code === 'Space') {
-        if (button2.style.display !=== 'none') {
+        if (button2.style.display !== 'none') {
             event.preventDefault();
             takePhoto();
             flash();
         }
     } else if (!isTyping && event.code === 'KeyP') {
-        if (!button2.style.display !=== 'none') {
+        if (!button2.style.display !== 'none') {
             event.preventDefault(); 
             changeValue();
         }
