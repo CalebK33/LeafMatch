@@ -362,6 +362,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 event.preventDefault(); 
                 changeValue();
             }
+        } else if (!isTyping && event.code === 'Enter') {
+            if (button2 && button2.style.display === 'none') {
+                event.preventDefault(); 
+                acceptedPhoto();
+            }
         }
     });
 });
