@@ -352,9 +352,8 @@ document.addEventListener('keydown', function (event) {
         event.preventDefault();
         takePhoto();
         flash();
-    } else if (!isTyping && event.code === 'p') {
+    } else if (!isTyping && event.code === 'KeyP') {
         event.preventDefault(); 
         changeValue();
-        startcamera();
     }
 });
