@@ -345,14 +345,16 @@ loadingScreen();
 setTimeout(timed, 400);
 
 document.addEventListener('keydown', function (event) {
-    if (event.code === 'Space') {
-        event.preventDefault(); 
+    const activeElement = document.activeElement;
+    const isTyping = activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA' || activeElement.isContentEditable;
+
+    if (!isTyping && event.code === 'Space') {
+        event.preventDefault();
         takePhoto();
         acceptordeny();
-    } else if (event.code === 'p') {
+    } else if (!isTyping && event.code === 'p') {
         event.preventDefault(); 
         changeValue();
         startcamera();
     }
 });
-
