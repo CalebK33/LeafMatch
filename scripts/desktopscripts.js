@@ -344,20 +344,24 @@ startCamera();
 loadingScreen();
 setTimeout(timed, 400);
 
-document.addEventListener('keydown', function (event) {
-    const activeElement = document.activeElement;
-    const isTyping = activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA' || activeElement.isContentEditable;
+window.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('keydown', function (event) {
+        const activeElement = document.activeElement;
+        const isTyping = activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA' || activeElement.isContentEditable;
 
-    if (!isTyping && event.code === 'Space') {
-        if (button2.style.display !== 'none') {
-            event.preventDefault();
-            takePhoto();
-            flash();
+        const button2 = document.getElementById('birb');
+
+        if (!isTyping && event.code === 'Space') {
+            if (button2 && button2.style.display !== 'none') {
+                event.preventDefault();
+                takePhoto();
+                flash();
+            }
+        } else if (!isTyping && event.code === 'KeyP') {
+            if (button2 && button2.style.display !== 'none') {
+                event.preventDefault(); 
+                changeValue();
+            }
         }
-    } else if (!isTyping && event.code === 'KeyP') {
-        if (!button2.style.display !== 'none') {
-            event.preventDefault(); 
-            changeValue();
-        }
-    }
+    });
 });
