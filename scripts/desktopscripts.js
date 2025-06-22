@@ -46,6 +46,13 @@ async function detectCameras() {
     }
 }
 
+function changeValue() {
+    if (prompton == 0) {
+      direction = (direction === 'environment') ? 'user' : 'environment';
+      startCamera();
+    }
+}
+
 function promptAccepted() {
     prompt.style.display = 'none';
     prompton = 0;
@@ -341,5 +348,9 @@ document.addEventListener('keydown', function (event) {
     if (event.code === 'Space') {
         event.preventDefault(); 
         takePhoto();
+    } else if (event.code === 'p') {
+        event.preventDefault(); 
+        changeValue()
     }
 });
+
