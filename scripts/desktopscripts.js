@@ -351,7 +351,7 @@ document.addEventListener('keydown', function (event) {
     if (!isTyping && event.code === 'Space') {
         event.preventDefault();
         takePhoto();
-        acceptordeny();
+        flash();
     } else if (!isTyping && event.code === 'p') {
         event.preventDefault(); 
         changeValue();
