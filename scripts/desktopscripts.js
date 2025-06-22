@@ -336,3 +336,10 @@ function flash() {
 startCamera();
 loadingScreen();
 setTimeout(timed, 400);
+
+document.addEventListener('keydown', function (event) {
+    if (event.code === 'Space') {
+        event.preventDefault(); 
+        takePhoto();
+    }
+});
