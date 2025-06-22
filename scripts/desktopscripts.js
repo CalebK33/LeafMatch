@@ -348,9 +348,11 @@ document.addEventListener('keydown', function (event) {
     if (event.code === 'Space') {
         event.preventDefault(); 
         takePhoto();
+        acceptordeny();
     } else if (event.code === 'p') {
         event.preventDefault(); 
-        changeValue()
+        changeValue();
+        startcamera();
     }
 });
 
