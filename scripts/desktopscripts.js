@@ -314,7 +314,7 @@ function flash() {
             height: 100vh;
             background-color: white;
             opacity: 1;
-            z-index: 999;
+            z-index: 99;
             pointer-events: none;
             transition: opacity 0.5s;
         `;
@@ -333,3 +333,30 @@ function flash() {
 startCamera();
 loadingScreen();
 setTimeout(timed, 400);
+
+window.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('keydown', function (event) {
+        const activeElement = document.activeElement;
+        const isTyping = activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA' || activeElement.isContentEditable;
+
+        const button2 = document.getElementById('birb');
+
+        if (!isTyping && event.code === 'Space') {
+            if (button2 && button2.style.display !== 'none') {
+                event.preventDefault();
+                takePhoto();
+                flash();
+            }
+        } else if (!isTyping && event.code === 'KeyP') {
+            if (button2 && button2.style.display !== 'none') {
+                event.preventDefault(); 
+                changeValue();
+            }
+        } else if (!isTyping && event.code === 'Enter') {
+            if (tick && tick.style.display !== 'none') {
+                event.preventDefault(); 
+                acceptedPhoto();
+            }
+        }
+    });
+});
