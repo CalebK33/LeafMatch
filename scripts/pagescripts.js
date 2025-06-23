@@ -86,3 +86,16 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 promptClose();
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('keydown', function (event) {
+        const activeElement = document.activeElement;
+        const isTyping = activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA' || activeElement.isContentEditable;
+
+        if (!isTyping && event.code === 'Space') {
+            event.preventDefault();
+            window.location.href = "/desktop";     
+        }
+    }
+}
