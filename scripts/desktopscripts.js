@@ -324,7 +324,7 @@ function flash() {
             height: 100vh;
             background-color: white;
             opacity: 1;
-            z-index: 999;
+            z-index: 99;
             pointer-events: none;
             transition: opacity 0.5s;
         `;
