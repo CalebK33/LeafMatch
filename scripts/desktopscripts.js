@@ -363,7 +363,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 changeValue();
             }
         } else if (!isTyping && event.code === 'Enter') {
-            if (button2 && button2.style.display === 'none') {
+            if (tick && tick.style.display !== 'none') {
                 event.preventDefault(); 
                 acceptedPhoto();
             }
