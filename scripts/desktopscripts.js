@@ -74,6 +74,13 @@ function promptClose() {
     uploadfix = 1;
 }
 
+function changeValue() {
+    if (prompton == 0) {
+      direction = (direction === 'environment') ? 'user' : 'environment';
+      startCamera();
+    }
+}
+
 function deniedClose() {
     prompton = 0;
     denied.style.display = 'none';
