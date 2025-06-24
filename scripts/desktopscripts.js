@@ -12,6 +12,7 @@ let blocked = 0;
 let uploadfix = 0;
 let runbefore = 0;
 
+const failed = document.getElementById('failed');
 const denied = document.getElementById('denied');
 const prompt = document.getElementById('prompt');
 const tick = document.getElementById('tick');
@@ -20,6 +21,7 @@ const loadingscreen = document.getElementById('loadingscreen');
 const nocamera = document.getElementById('nocamera');
 const smallloader = document.getElementById('smallloader')
 
+failed.style.display = "none";
 denied.style.display = "none";
 prompt.style.display = "none";
 tick.style.display = "none";
@@ -41,6 +43,13 @@ async function detectCameras() {
         nocamera.style.display = '';
     } else {
         onlyHasUserCamera = false;
+    }
+}
+
+function changeValue() {
+    if (prompton == 0) {
+      direction = (direction === 'environment') ? 'user' : 'environment';
+      startCamera();
     }
 }
 
@@ -72,13 +81,6 @@ function promptClose() {
     prompt.style.display = 'none';
     nocamera.style.display = '';
     uploadfix = 1;
-}
-
-function changeValue() {
-    if (prompton == 0) {
-      direction = (direction === 'environment') ? 'user' : 'environment';
-      startCamera();
-    }
 }
 
 function deniedClose() {
@@ -193,6 +195,7 @@ function acceptedPhoto() {
 }
 
 function retakePhoto() {
+    failed.style.display = "none";
     const photo = document.getElementById('photo');
     photo.style.display = 'none';
     const button2 = document.getElementById('birb');
