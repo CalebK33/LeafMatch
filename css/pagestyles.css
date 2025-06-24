@@ -250,7 +250,7 @@ p {
 .pimage {
   text-align: center;
   display: block;
-  width: 400px;
+  width: 300px;
   border: 10px solid rgb(110, 160, 110);
   border-radius: 10px;
   margin-left: auto;
