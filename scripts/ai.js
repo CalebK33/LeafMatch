@@ -17,6 +17,7 @@ async function runAIFromPhoto() {
   const photo = document.getElementById('photo');
   const canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
+  const failed = document.getElementById('failed');
 
   const inputSize = 224;
   canvas.width = inputSize;
@@ -56,21 +57,32 @@ function preprocessImage(imageData) {
   return new ort.Tensor('float32', floatData, [1, 3, height, width]);
 }
 
-function postprocess(data) {
+function postprocess(data, confidence) {
   const maxIndex = data.indexOf(Math.max(...data));
   const loader = document.querySelector('.loader');
   const loadingscreen = document.querySelector('.loadingscreen');
-
-  if (loader && loadingscreen) {
-    loader.style.transition = 'opacity 0.35s';
-    loader.style.opacity = '0';
-    loadingscreen.style.transition = 'background-color 0.5s';
-    loadingscreen.style.backgroundColor = 'rgb(200, 255, 200)';
-
-    setTimeout(() => {
+  if (confidence > 75) {
+    if (loader && loadingscreen) {
+      loader.style.transition = 'opacity 0.35s';
+      loader.style.opacity = '0';
+      loadingscreen.style.transition = 'background-color 0.5s';
+      loadingscreen.style.backgroundColor = 'rgb(200, 255, 200)';
+  
+      setTimeout(() => {
+        window.location.href = `/plant?ID=${maxIndex + 1}`;
+      }, 550); 
+    } else {
       window.location.href = `/plant?ID=${maxIndex + 1}`;
-    }, 550); 
-  } else {
-    window.location.href = `/plant?ID=${maxIndex + 1}`;
+      }
   }
-}
+  else {
+        failed.style.display = "";
+        setTimeout(() => {
+        loadingscreen.style.opacity = 0;
+        loadingscreen.addEventListener('transitionend', () => {
+            loadingscreen.style.display = 'none';
+        }, { once: true });
+    }, 100);
+  }
+  
+  }
