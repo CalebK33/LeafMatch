@@ -26,8 +26,8 @@
                 });
             }
 
-            if (!navigator.userAgent.match(/Android|iPhone|iPod|BlackBerry|Windows Phone/i)) {
-            window.location.href = "desktop";
+            if (!navigator.userAgent.match(/Android|iPhone|iPad|iPod|Tablet|BlackBerry|Windows Phone/i)) {
+                window.location.href = "desktop";
             }
         </script>
         <meta charset="UTF-8"> 
@@ -68,6 +68,12 @@
             <p>You have camera access disabled for this site. To take pictures for scanning, please allow access or use the upload files button.
             <br>You may need to reload the page for permission changes to take effect</p>
             <button onclick="deniedClose()">Okay</button>
+        </div>
+
+        <div id="failed" class="failed">
+            <h1>Couldn't Identify Object</h1>
+            <p>Our AI couldn't tell what the photo was of, try getting a better angle or focus on important elements</p>
+            <button onclick="retakePhoto()">Okay</button>
         </div>
         
         <img id="nocamera" class="nocamera" src="images/ui/nocamera.jpg" alt="nocamera">
