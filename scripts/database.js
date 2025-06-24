@@ -32,20 +32,16 @@ loadDatabase().then(database => {
     document.getElementById("name").textContent = entry.name;
     document.getElementById("description").textContent = entry.description;
 
-    const img = new Image();
-    const extensions = ['jpg', 'jpeg', 'png', 'webp'];
-    let index = 0;
-    
-    function tryNextExtension() {
-      if (index < extensions.length) {
-        img.onerror = tryNextExtension;
-        img.src = `images/plants/plant${id}.${extensions[index++]}`;
-      } else {
+  img.onerror = () => {
+    img.onerror = () => {
+      img.onerror = () => {
         img.src = "images/plants/placeholder.jpg";
       }
+      img.src = "images/plants/plant" + id + ".jpeg";
     }
-    
-    tryNextExtension();
+    img.src = "images/plants/plant" + id + ".png";
+  };
+  img.src = "images/plants/plant" + id + ".jpg";
 
   } else {
     document.getElementById("title").textContent = "Not Found";
