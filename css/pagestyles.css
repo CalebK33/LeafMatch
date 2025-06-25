@@ -260,7 +260,9 @@ p {
 }
 
 .aimage {
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
   animation: fadeInUp 0.6s ease 0.5s forwards;
   width: 300px;
   border: 10px solid rgb(110, 160, 110);
