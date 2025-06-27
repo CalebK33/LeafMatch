@@ -282,12 +282,10 @@ p {
 
 .prompt {
   position: fixed;
-  top: 30%;
-  left: 50%;
+  top: 33%;
+  left: 20%;
   transform: translateX(-50%);
   width: 60%;
-  max-width: 400px;
-  min-width: 250px;
   padding: 10px;
   background-color: rgb(190, 250, 190);
   border: 3px solid rgb(110, 150, 110);
