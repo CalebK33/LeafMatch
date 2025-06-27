@@ -61,6 +61,7 @@ function postprocess(data, confidence) {
   const maxIndex = data.indexOf(Math.max(...data));
   const loader = document.querySelector('.loader');
   const loadingscreen = document.querySelector('.loadingscreen');
+  alert(confidence)
   if (confidence > 65) {
     if (loader && loadingscreen) {
       loader.style.transition = 'opacity 0.35s';
