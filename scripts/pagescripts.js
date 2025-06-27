@@ -71,7 +71,7 @@ installBtn.addEventListener('click', () => {
       deferredPrompt = null;
     });
   } else if (shouldShowCustomInstallPrompt()) {
-    promptOpen(); // shows iOS-style guide
+    promptOpen(); 
   } else if (!isSupportedPWAInstallBrowser()) {
     alert("Installation isn't supported in your current browser. Read the FAQ for more info.");
   } else {
@@ -86,3 +86,19 @@ window.addEventListener('beforeinstallprompt', (e) => {
 });
 
 promptClose();
+
+window.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('keydown', function (event) {
+        const activeElement = document.activeElement;
+        const isTyping = activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA' || activeElement.isContentEditable;
+
+        if (!isTyping && event.code === 'Space') {
+              event.preventDefault();
+              window.location.href = "/";
+            }
+        } else if (!isTyping && event.code === 'Enter') {
+            event.preventDefault(); 
+            window.location.href = "/database";
+        }
+    });
+});
