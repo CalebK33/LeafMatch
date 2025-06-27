@@ -88,7 +88,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
 promptClose();
 
 window.addEventListener('DOMContentLoaded', () => {
-    alert("DOM LOADED")
     document.addEventListener('keydown', function (event) {
         const activeElement = document.activeElement;
         const isTyping = activeElement.tagName === 'INPUT' || activeElement.tagName === 'TEXTAREA' || activeElement.isContentEditable;
