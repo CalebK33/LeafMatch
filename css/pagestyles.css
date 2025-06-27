@@ -283,7 +283,8 @@ p {
 .prompt {
   position: fixed;
   top: 30%;
-  left: 50%;
+  margin-left: auto;
+  margin-right: auto;
   transform: translateX(-50%);
   width: 60%;
   max-width: 400px;
