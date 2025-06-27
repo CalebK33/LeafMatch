@@ -281,7 +281,7 @@ p {
 }
 
 .prompt {
-  position: fixed;
+  position: relative;
   top: 30%;
   margin-left: auto;
   margin-right: auto;
