@@ -285,6 +285,7 @@ p {
   top: 30%;
   margin-left: auto;
   margin-right: auto;
+  display: block;
   transform: translateX(-50%);
   width: 60%;
   max-width: 400px;
