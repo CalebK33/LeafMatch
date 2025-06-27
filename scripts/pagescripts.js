@@ -54,38 +54,40 @@ function shouldShowCustomInstallPrompt() {
   return isIOS() || (!deferredPrompt && isAndroid() && !isInStandaloneMode());
 }
 
-installBtn.addEventListener('click', () => {
-  if (isInStandaloneMode()) {
-    alert("LeafMatch is already installed.");
-    return;
-  }
-
-  if (deferredPrompt) {
-    deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(choice => {
-      if (choice.outcome === 'accepted') {
-        console.log('App installed');
-      } else {
-        console.log('User dismissed install');
-      }
-      deferredPrompt = null;
-    });
-  } else if (shouldShowCustomInstallPrompt()) {
-    promptOpen(); 
-  } else if (!isSupportedPWAInstallBrowser()) {
-    alert("Installation isn't supported in your current browser. Read the FAQ for more info.");
-  } else {
-    alert("Unable to install LeafMatch. Try again in a second, or check if it’s already installed.");
-  }
-});
-
-window.addEventListener('beforeinstallprompt', (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-  installBtn.style.display = 'inline-block';
-});
-
-promptClose();
+if (window.location.pathname === "/download") {
+  installBtn.addEventListener('click', () => {
+    if (isInStandaloneMode()) {
+      alert("LeafMatch is already installed.");
+      return;
+    }
+  
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(choice => {
+        if (choice.outcome === 'accepted') {
+          console.log('App installed');
+        } else {
+          console.log('User dismissed install');
+        }
+        deferredPrompt = null;
+      });
+    } else if (shouldShowCustomInstallPrompt()) {
+      promptOpen(); 
+    } else if (!isSupportedPWAInstallBrowser()) {
+      alert("Installation isn't supported in your current browser. Read the FAQ for more info.");
+    } else {
+      alert("Unable to install LeafMatch. Try again in a second, or check if it’s already installed.");
+    }
+  });
+  
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBtn.style.display = 'inline-block';
+  });
+  
+  promptClose();
+}
 
 window.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', function (event) {
