@@ -95,7 +95,6 @@ window.addEventListener('DOMContentLoaded', () => {
         if (!isTyping && event.code === 'Space') {
               event.preventDefault();
               window.location.href = "/";
-            }
         } else if (!isTyping && event.code === 'Enter') {
             event.preventDefault(); 
             window.location.href = "/database";
