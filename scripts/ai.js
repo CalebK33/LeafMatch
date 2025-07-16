@@ -59,9 +59,9 @@ function preprocessImage(imageData) {
 
 function postprocess(data, confidence) {
   const maxIndex = data.indexOf(Math.max(...data));
-  const strcon = confidence.toString()
-  const slicedstr = strcon.slice(0, 5)
-  const roundedConfidence = parseInt(slicedstr)
+  const strcon = confidence.toString();
+  const slicedstr = strcon.slice(0, 5);
+  const roundedConfidence = parseInt(slicedstr);
   
   const loader = document.querySelector('.loader');
   const loadingscreen = document.querySelector('.loadingscreen');
