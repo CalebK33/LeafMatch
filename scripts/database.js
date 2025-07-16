@@ -1,5 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("ID");
+console.log(window.location.path)
 if (!id && window.location.path == "/plant") {
   window.location.href = "/database";
 }
