@@ -1,5 +1,8 @@
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("ID");
+if !(id) {
+  window.location.href = "/database";
+}
 const confidence = urlParams.get("c");
 
 async function loadDatabase() {
