@@ -1,5 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("ID");
+const confidence = urlParams.get("c");
 
 async function loadDatabase() {
   const response = await fetch("/scripts/database.txt");
@@ -29,7 +30,10 @@ loadDatabase().then(database => {
 
   if (entry) {
     document.getElementById("title").textContent = entry.title;
-    document.getElementById("name").textContent = entry.name;
+    if (confidence):
+      document.getElementById("name").textContent = entry.name + " - " confidence + "% Confidence";
+    else:
+      document.getElementById("name").textContent = entry.name;
     document.getElementById("description").textContent = entry.description;
 
   img.onerror = () => {
