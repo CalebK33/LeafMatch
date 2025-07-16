@@ -1,7 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("ID");
 console.log(window.location.href)
-if (!id && window.location.href == "/plant") {
+if (window.location.href == "https://leafmatch.org/plant") {
   window.location.href = "/database";
 }
 const confidence = urlParams.get("c");
