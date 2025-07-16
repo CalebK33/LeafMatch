@@ -1,7 +1,7 @@
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("ID");
-console.log(window.location.path)
-if (!id && window.location.path == "/plant") {
+console.log(window.location.pathname)
+if (!id && window.location.pathname == "/plant") {
   window.location.href = "/database";
 }
 const confidence = urlParams.get("c");
