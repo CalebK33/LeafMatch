@@ -59,6 +59,10 @@ function preprocessImage(imageData) {
 
 function postprocess(data, confidence) {
   const maxIndex = data.indexOf(Math.max(...data));
+  const strcon = confidence.toString()
+  const slicedstr = strcon.slice(0, 5)
+  const roundedConfidence = parseInt(slicedstr)
+  
   const loader = document.querySelector('.loader');
   const loadingscreen = document.querySelector('.loadingscreen');
   if (confidence > 75) {
@@ -69,10 +73,10 @@ function postprocess(data, confidence) {
       loadingscreen.style.backgroundColor = 'rgb(200, 255, 200)';
   
       setTimeout(() => {
-        window.location.href = `/plant?ID=${maxIndex + 1}&c=${confidence}`;
+        window.location.href = `/plant?ID=${maxIndex + 1}&c=${roundedConfidence}`;
       }, 550); 
     } else {
-      window.location.href = `/plant?ID=${maxIndex + 1}&c=${confidence}`;
+      window.location.href = `/plant?ID=${maxIndex + 1}&c=${roundedConfidence}`;
       }
   }
   else {
