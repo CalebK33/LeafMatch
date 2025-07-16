@@ -1,11 +1,6 @@
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("ID");
 const confidence = urlParams.get("c");
-if (confidence) {
-  const strcon = confidence.toString()
-  const slicedstr = strcon.slice(0, 5)
-  const roundedConfidence = parseInt(slicedstr)
-}
 
 async function loadDatabase() {
   const response = await fetch("/scripts/database.txt");
@@ -36,7 +31,7 @@ loadDatabase().then(database => {
   if (entry) {
     document.getElementById("title").textContent = entry.title;
     if (confidence) {
-      document.getElementById("name").textContent = entry.name + " - " + roundedConfidence + "% Confidence";
+      document.getElementById("name").textContent = entry.name + " - " + confidence + "% Confidence";
     }
     else {
       document.getElementById("name").textContent = entry.name;
