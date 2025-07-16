@@ -62,7 +62,7 @@ function postprocess(data, confidence) {
   const loader = document.querySelector('.loader');
   const loadingscreen = document.querySelector('.loadingscreen');
   alert(confidence)
-  if (confidence > 65) {
+  if (confidence > 75) {
     if (loader && loadingscreen) {
       loader.style.transition = 'opacity 0.35s';
       loader.style.opacity = '0';
