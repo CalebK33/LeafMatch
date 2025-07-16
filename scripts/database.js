@@ -33,7 +33,7 @@ loadDatabase().then(database => {
     if (confidence) {
       document.getElementById("name").textContent = entry.name + " - " + confidence + "% Confidence";
     }
-    else: {
+    else {
       document.getElementById("name").textContent = entry.name;
     }
     document.getElementById("description").textContent = entry.description;
