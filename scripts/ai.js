@@ -61,7 +61,6 @@ function postprocess(data, confidence) {
   const maxIndex = data.indexOf(Math.max(...data));
   const loader = document.querySelector('.loader');
   const loadingscreen = document.querySelector('.loadingscreen');
-  alert(confidence)
   if (confidence > 75) {
     if (loader && loadingscreen) {
       loader.style.transition = 'opacity 0.35s';
@@ -70,10 +69,10 @@ function postprocess(data, confidence) {
       loadingscreen.style.backgroundColor = 'rgb(200, 255, 200)';
   
       setTimeout(() => {
-        window.location.href = `/plant?ID=${maxIndex + 1}`;
+        window.location.href = `/plant?ID=${maxIndex + 1}&c=${confidence}`;
       }, 550); 
     } else {
-      window.location.href = `/plant?ID=${maxIndex + 1}`;
+      window.location.href = `/plant?ID=${maxIndex + 1}&c=${confidence}`;
       }
   }
   else {
