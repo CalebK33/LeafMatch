@@ -30,12 +30,14 @@ loadDatabase().then(database => {
 
   if (entry) {
     document.getElementById("title").textContent = entry.title;
-    if (confidence):
+    if (confidence) {
       document.getElementById("name").textContent = entry.name + " - " confidence + "% Confidence";
-    else:
+    }
+    else: {
       document.getElementById("name").textContent = entry.name;
+    }
     document.getElementById("description").textContent = entry.description;
-
+      
   img.onerror = () => {
     img.onerror = () => {
       img.onerror = () => {
