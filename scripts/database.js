@@ -35,7 +35,7 @@ loadDatabase().then(database => {
   if (entry) {
     document.getElementById("title").textContent = entry.title;
     if (confidence) {
-      if (parseFloat(confidence) and parseFloat(confidence) < 100)
+      if (parseFloat(confidence) and parseFloat(confidence) < 100) {
         document.getElementById("name").textContent = entry.name + " - " + confidence + "% Confidence";
       } else {
         window.location.href = "/plant?ID=" + id;
