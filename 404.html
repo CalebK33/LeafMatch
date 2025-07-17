@@ -1,6 +1,24 @@
 <!doctype html>
 <html lang="en-nz">
     <head> 
+
+        <script>
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.register('/service-worker.js')
+                .then(reg => {
+                  console.log('Service Worker registered:', reg);
+    
+                  reg.onupdatefound = () => {
+                    const newSW = reg.installing;
+                    newSW.onstatechange = () => {
+                      if (newSW.state === 'installed' && navigator.serviceWorker.controller) {
+                        alert('A new version is available. Refresh to update.');
+                      }
+                    };
+                  };
+                });
+            }
+        </script>
         <meta charset="UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="robots" content="noindex">
