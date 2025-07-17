@@ -35,7 +35,11 @@ loadDatabase().then(database => {
   if (entry) {
     document.getElementById("title").textContent = entry.title;
     if (confidence) {
-      document.getElementById("name").textContent = entry.name + " - " + confidence + "% Confidence";
+      if (parseFloat(confidence) and parseFloat(confidence) < 100)
+        document.getElementById("name").textContent = entry.name + " - " + confidence + "% Confidence";
+      } else {
+        window.location.href = "/plant?ID=" + id;
+      }
     }
     else {
       document.getElementById("name").textContent = entry.name;
