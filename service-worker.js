@@ -9,14 +9,12 @@ const FILES_TO_CACHE = [
   '/scripts/database.js', '/images/ui/loading.png', '/images/ui/leaf.png', 
   '/images/ui/addfilesbutton.png', '/images/ui/cross.png', 
   '/images/ui/tick.png', '/images/ui/exitfullscreen.png', 
-  '/images/ui/fullscreen.png', '/images/ui/logo.png', 
-  '/images/ui/nocamera.jpg', '/images/ui/qr-code.png', 
-  '/images/ui/sidebar.png', '/images/ui/switchcamera.png', 
+  '/images/ui/fullscreen.png', '/images/ui/logo.png', '/images/ui/nocamera.jpg', 
+  '/images/ui/qr-code.png', '/images/ui/sidebar.png', '/images/ui/switchcamera.png', 
   '/images/ui/takepicture.png', '/images/plants/placeholder.jpg'
 ];
 
 self.addEventListener('install', (event) => {
-  console.log('Service Worker installing...');
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       const cachePromises = FILES_TO_CACHE.map(file => {
@@ -25,7 +23,6 @@ self.addEventListener('install', (event) => {
             if (!response.ok) {
               throw new Error(`Failed to fetch ${file}`);
             }
-            console.log(`Caching new resource: ${file}`);
             return cache.put(file, response);
           })
           .catch(err => {
@@ -41,13 +38,11 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
-  console.log('Service Worker activating...');
   event.waitUntil(
     caches.keys().then(keys =>
       Promise.all(
         keys.map(key => {
           if (key !== CACHE_NAME) {
-            console.log(`Deleting old cache: ${key}`);
             return caches.delete(key);
           }
         })
@@ -62,34 +57,50 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
-  event.respondWith(
-    caches.match(event.request).then(cached => {
-      if (cached) {
-        console.log(`Serving cached resource: ${event.request.url}`);
-        return cached;
-      }
-
-      return fetch(event.request).then(response => {
-        const cloned = response.clone();
-        if (event.request.url.startsWith(self.location.origin) && response.status === 200) {
-          caches.open(CACHE_NAME).then(cache => {
-            console.log(`Caching new resource: ${event.request.url}`);
-            cache.put(event.request, cloned);
-          }).catch(err => {
-            console.error(`Error caching resource ${event.request.url}:`, err);
-          });
+  if (event.request.url.includes('/plant')) {
+    event.respondWith(
+      caches.match(event.request).then(cached => {
+        if (cached) {
+          return cached;
         }
-        return response;
-      }).catch((err) => {
-        console.error('Fetch failed; returning offline page:', err);
-
-        if (event.request.destination === 'document') {
-          console.log('Network request failed, serving offline page.');
+        return fetch(event.request).then(response => {
+          const cloned = response.clone();
+          if (event.request.url.startsWith(self.location.origin) && response.status === 200) {
+            caches.open(CACHE_NAME).then(cache => {
+              cache.put(event.request, cloned);
+            });
+          }
+          return response;
+        }).catch((err) => {
           return caches.match('/offline.html');
+        });
+      })
+    );
+  } else {
+    event.respondWith(
+      caches.match(event.request).then(cached => {
+        if (cached) {
+          return cached;
         }
-      });
-    }).catch(err => {
-      console.error('Error during cache match:', err);
-    })
-  );
+        return fetch(event.request).then(response => {
+          const cloned = response.clone();
+          if (event.request.url.startsWith(self.location.origin) && response.status === 200) {
+            caches.open(CACHE_NAME).then(cache => {
+              cache.put(event.request, cloned);
+            });
+          }
+          return response;
+        }).catch((err) => {
+          if (event.request.destination === 'image') {
+            return caches.match('/images/ui/placeholder.jpg');
+          }
+          if (event.request.destination === 'document') {
+            return caches.match('/offline.html');
+          }
+        });
+      }).catch(err => {
+        console.error('Error during cache match:', err);
+      })
+    );
+  }
 });
