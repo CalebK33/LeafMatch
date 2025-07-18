@@ -21,12 +21,25 @@ self.addEventListener('install', (event) => {
   console.log('Service Worker installing...');
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(FILES_TO_CACHE).catch(err => {
-        console.error('Failed to cache essential files', err);
+      const cachePromises = FILES_TO_CACHE.map(file => {
+        return fetch(file)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error(`Failed to fetch ${file}`);
+            }
+            console.log(`Caching new resource: ${file}`);
+            return cache.put(file, response);
+          })
+          .catch(err => {
+            console.error(`Failed to cache ${file}:`, err);
+          });
       });
+      return Promise.all(cachePromises);
+    }).catch(err => {
+      console.error('Error opening cache or caching files:', err);
     })
   );
-  self.skipWaiting();
+  self.skipWaiting(); // Force service worker to activate
 });
 
 // Activate the service worker and clear old caches if necessary
@@ -42,9 +55,11 @@ self.addEventListener('activate', (event) => {
           }
         })
       )
-    )
+    ).catch(err => {
+      console.error('Error cleaning up old caches:', err);
+    })
   );
-  self.clients.claim();
+  self.clients.claim(); // Ensure clients controlled by this service worker
 });
 
 // Fetch event to handle network requests and serve cached content when offline
@@ -68,16 +83,50 @@ self.addEventListener('fetch', (event) => {
           caches.open(CACHE_NAME).then(cache => {
             console.log(`Caching new resource: ${event.request.url}`);
             cache.put(event.request, cloned);
+          }).catch(err => {
+            console.error(`Error caching resource ${event.request.url}:`, err);
           });
         }
         return response;
-      }).catch(() => {
+      }).catch((err) => {
+        console.error('Fetch failed; returning offline page:', err);
+
         // If it's a document and we're offline, return the offline page
         if (event.request.destination === 'document') {
           console.log('Network request failed, serving offline page.');
           return caches.match('/offline.html');
         }
       });
+    }).catch(err => {
+      console.error('Error during cache match:', err);
     })
   );
+});
+
+// Handling the beforeinstallprompt event for manual install prompt control
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent the default prompt
+  e.preventDefault();
+  // Store the event so you can trigger it later
+  deferredPrompt = e;
+  console.log('Before Install Prompt event captured.');
+  
+  // Optionally, show a custom UI element to trigger the install prompt
+  const installButton = document.querySelector('#install-button');
+  if (installButton) {
+    installButton.style.display = 'block';
+    installButton.addEventListener('click', () => {
+      // Show the install prompt when the user clicks the install button
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        } else {
+          console.log('User dismissed the install prompt');
+        }
+        deferredPrompt = null; // Reset after use
+      });
+    });
+  }
 });
