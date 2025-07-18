@@ -1,9 +1,8 @@
 const CACHE_NAME = 'leafmatch-v1';
 const FILES_TO_CACHE = [
-  '/', // Root page
-  '/index.html', '/about.html', '/database.html', '/download.html', 
-  '/help.html', '/plant.html', '/desktop.html', '/404.html', 
-  '/unsupported.html', '/offline.html', '/plant_model.onnx', 
+  '/', 
+  '/index.html', '/about.html', '/download.html', '/help.html', '/plant.html', '/desktop.html', 
+  '/404.html', '/offline.html', '/unsupported.html', '/plant_model.onnx', 
   '/css/styles.css', '/css/desktopstyles.css', '/css/pagestyles.css', 
   '/css/titlefont.ttf', '/scripts/scripts.js', '/scripts/desktopscripts.js', 
   '/scripts/ai.js', '/scripts/pagescripts.js', '/scripts/search.js', 
@@ -16,7 +15,6 @@ const FILES_TO_CACHE = [
   '/images/ui/takepicture.png', '/images/plants/placeholder.jpg'
 ];
 
-// Install the service worker and cache all the required files
 self.addEventListener('install', (event) => {
   console.log('Service Worker installing...');
   event.waitUntil(
@@ -39,10 +37,9 @@ self.addEventListener('install', (event) => {
       console.error('Error opening cache or caching files:', err);
     })
   );
-  self.skipWaiting(); // Force service worker to activate
+  self.skipWaiting();
 });
 
-// Activate the service worker and clear old caches if necessary
 self.addEventListener('activate', (event) => {
   console.log('Service Worker activating...');
   event.waitUntil(
@@ -59,25 +56,20 @@ self.addEventListener('activate', (event) => {
       console.error('Error cleaning up old caches:', err);
     })
   );
-  self.clients.claim(); // Ensure clients controlled by this service worker
+  self.clients.claim();
 });
 
-// Fetch event to handle network requests and serve cached content when offline
 self.addEventListener('fetch', (event) => {
-  // Only handle GET requests
   if (event.request.method !== 'GET') return;
 
   event.respondWith(
     caches.match(event.request).then(cached => {
-      // If we have a cached version, use it
       if (cached) {
         console.log(`Serving cached resource: ${event.request.url}`);
         return cached;
       }
 
-      // Try fetching from the network, and then cache the response
       return fetch(event.request).then(response => {
-        // Only cache successful responses for the same domain
         const cloned = response.clone();
         if (event.request.url.startsWith(self.location.origin) && response.status === 200) {
           caches.open(CACHE_NAME).then(cache => {
@@ -91,7 +83,6 @@ self.addEventListener('fetch', (event) => {
       }).catch((err) => {
         console.error('Fetch failed; returning offline page:', err);
 
-        // If it's a document and we're offline, return the offline page
         if (event.request.destination === 'document') {
           console.log('Network request failed, serving offline page.');
           return caches.match('/offline.html');
@@ -101,32 +92,4 @@ self.addEventListener('fetch', (event) => {
       console.error('Error during cache match:', err);
     })
   );
-});
-
-// Handling the beforeinstallprompt event for manual install prompt control
-let deferredPrompt;
-window.addEventListener('beforeinstallprompt', (e) => {
-  // Prevent the default prompt
-  e.preventDefault();
-  // Store the event so you can trigger it later
-  deferredPrompt = e;
-  console.log('Before Install Prompt event captured.');
-  
-  // Optionally, show a custom UI element to trigger the install prompt
-  const installButton = document.querySelector('#install-button');
-  if (installButton) {
-    installButton.style.display = 'block';
-    installButton.addEventListener('click', () => {
-      // Show the install prompt when the user clicks the install button
-      deferredPrompt.prompt();
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the install prompt');
-        } else {
-          console.log('User dismissed the install prompt');
-        }
-        deferredPrompt = null; // Reset after use
-      });
-    });
-  }
 });
